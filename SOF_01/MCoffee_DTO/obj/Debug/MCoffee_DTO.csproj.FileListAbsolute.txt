@@ -1,0 +1,5 @@
+C:\Users\Ho Thai Ngoc\source\repos\SOF_01\MCoffee_DTO\bin\Debug\MCoffee_DTO.dll
+C:\Users\Ho Thai Ngoc\source\repos\SOF_01\MCoffee_DTO\bin\Debug\MCoffee_DTO.pdb
+C:\Users\Ho Thai Ngoc\source\repos\SOF_01\MCoffee_DTO\obj\Debug\MCoffee_DTO.csproj.CoreCompileInputs.cache
+C:\Users\Ho Thai Ngoc\source\repos\SOF_01\MCoffee_DTO\obj\Debug\MCoffee_DTO.dll
+C:\Users\Ho Thai Ngoc\source\repos\SOF_01\MCoffee_DTO\obj\Debug\MCoffee_DTO.pdb

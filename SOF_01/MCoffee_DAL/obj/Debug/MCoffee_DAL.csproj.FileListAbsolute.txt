@@ -1,0 +1,9 @@
+C:\Users\Ho Thai Ngoc\source\repos\SOF_01\MCoffee_DAL\bin\Debug\MCoffee_DAL.dll
+C:\Users\Ho Thai Ngoc\source\repos\SOF_01\MCoffee_DAL\bin\Debug\MCoffee_DAL.pdb
+C:\Users\Ho Thai Ngoc\source\repos\SOF_01\MCoffee_DAL\bin\Debug\MCoffee_DTO.dll
+C:\Users\Ho Thai Ngoc\source\repos\SOF_01\MCoffee_DAL\bin\Debug\MCoffee_DTO.pdb
+C:\Users\Ho Thai Ngoc\source\repos\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.csprojAssemblyReference.cache
+C:\Users\Ho Thai Ngoc\source\repos\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.csproj.CoreCompileInputs.cache
+C:\Users\Ho Thai Ngoc\source\repos\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.csproj.CopyComplete
+C:\Users\Ho Thai Ngoc\source\repos\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.dll
+C:\Users\Ho Thai Ngoc\source\repos\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.pdb
