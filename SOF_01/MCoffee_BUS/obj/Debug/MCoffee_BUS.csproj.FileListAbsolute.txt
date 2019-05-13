@@ -20,3 +20,14 @@ C:\Users\vu\Desktop\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\MCoffee_DTO.dll
 C:\Users\vu\Desktop\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\MCoffee_DAL.pdb
 C:\Users\vu\Desktop\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\MCoffee_DTO.pdb
 C:\Users\vu\Desktop\SOF_01_public\SOF_01\MCoffee_BUS\obj\Debug\MCoffee_BUS.csproj.CopyComplete
+C:\Users\Ho Thai Ngoc\Desktop\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\MCoffee_BUS.dll
+C:\Users\Ho Thai Ngoc\Desktop\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\MCoffee_BUS.pdb
+C:\Users\Ho Thai Ngoc\Desktop\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\MCoffee_DAL.dll
+C:\Users\Ho Thai Ngoc\Desktop\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\MCoffee_DTO.dll
+C:\Users\Ho Thai Ngoc\Desktop\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\MCoffee_DAL.pdb
+C:\Users\Ho Thai Ngoc\Desktop\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\MCoffee_DTO.pdb
+C:\Users\Ho Thai Ngoc\Desktop\SOF_01_public\SOF_01\MCoffee_BUS\obj\Debug\MCoffee_BUS.csprojAssemblyReference.cache
+C:\Users\Ho Thai Ngoc\Desktop\SOF_01_public\SOF_01\MCoffee_BUS\obj\Debug\MCoffee_BUS.csproj.CoreCompileInputs.cache
+C:\Users\Ho Thai Ngoc\Desktop\SOF_01_public\SOF_01\MCoffee_BUS\obj\Debug\MCoffee_BUS.csproj.CopyComplete
+C:\Users\Ho Thai Ngoc\Desktop\SOF_01_public\SOF_01\MCoffee_BUS\obj\Debug\MCoffee_BUS.dll
+C:\Users\Ho Thai Ngoc\Desktop\SOF_01_public\SOF_01\MCoffee_BUS\obj\Debug\MCoffee_BUS.pdb

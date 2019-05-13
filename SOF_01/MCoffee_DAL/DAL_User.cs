@@ -47,16 +47,16 @@ namespace MCoffee_DAL
             {
                 conn.Open();
 
-                SqlCommand cmd = new SqlCommand("Select * from [USER] WHERE Username IN(@Username)", conn);
+                SqlCommand cmd = new SqlCommand("Select * from [USER] WHERE [USERNAME] IN(@Username)", conn);
                 cmd.Parameters.AddWithValue("@Username", SUsername);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    if(dr["Password"].ToString().Equals(SPassword))
+                    if(dr["PASSWORD"].ToString().Equals(SPassword))
                     {
-                        dictionary.Add("DUsername", dr["Username"].ToString());
-                        dictionary.Add("DPassword", dr["Password"].ToString());
-                        dictionary.Add("DType", dr["Type"].ToString());
+                        dictionary.Add("DUsername", dr["USERNAME"].ToString());
+                        dictionary.Add("DPassword", dr["PASSWORD"].ToString());
+                        dictionary.Add("DType", dr["TYPE"].ToString());
                         return dictionary;
                     }
                 }                  

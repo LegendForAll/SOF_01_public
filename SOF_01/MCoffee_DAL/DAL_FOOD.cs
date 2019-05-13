@@ -65,8 +65,10 @@ namespace MCoffee_DAL
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT [ID_FOD],[ID_CAT],[DISPLAYNAME]," +
-                    "[OUTPUTPRICE] FROM [FOOD] ORDER BY [ID_FOD] ASC", conn);
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT [ID_FOD],[ID_CAT],[DISPLAYNAME]," 
+                    + "[OUTPUTPRICE] FROM [FOOD] ORDER BY [ID_FOD] ASC", conn
+                    );
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -92,12 +94,13 @@ namespace MCoffee_DAL
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand
-                    ("SELECT [ID_FOD],[FOOD].[ID_CAT],[DISPLAYNAME], [OUTPUTPRICE]" +
-                    "FROM [FOOD],[FOOD_CATEGORY] " +
-                    "WHERE [FOOD].[ID_CAT]=[FOOD_CATEGORY].[ID_CAT]" +
-                    " AND [NAMECAT]=@NAMECAT" +
-                    " ORDER BY [ID_FOD] ASC", conn);
+                SqlCommand cmd = new SqlCommand (
+                      "SELECT [ID_FOD],[FOOD].[ID_CAT],[DISPLAYNAME], [OUTPUTPRICE]" 
+                    + " FROM [FOOD],[FOOD_CATEGORY] " 
+                    + " WHERE [FOOD].[ID_CAT]=[FOOD_CATEGORY].[ID_CAT] " 
+                    + " AND [NAMECAT]=@NAMECAT " 
+                    + " ORDER BY [ID_FOD] ASC ", conn
+                    );
                 cmd.Parameters.AddWithValue("@NAMECAT", Category);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -124,11 +127,13 @@ namespace MCoffee_DAL
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE [FOOD] SET " +
-                    "[ID_CAT]=@ID_CAT, " +
-                    "[DISPLAYNAME]=@DISPLAYNAME, " +
-                    "[OUTPUTPRICE]=@OUTPUTPRICE " +
-                    "WHERE [ID_FOD]=@ID_FOD", conn);
+                SqlCommand cmd = new SqlCommand(
+                    "UPDATE [FOOD] SET " 
+                    + "[ID_CAT]=@ID_CAT, " 
+                    + "[DISPLAYNAME]=@DISPLAYNAME, " 
+                    + "[OUTPUTPRICE]=@OUTPUTPRICE " 
+                    + "WHERE [ID_FOD]=@ID_FOD", conn
+                    );
                 cmd.Parameters.AddWithValue("@ID_FOD", food.ID_FOD);
                 cmd.Parameters.AddWithValue("@ID_CAT", food.ID_CAT);
                 cmd.Parameters.AddWithValue("@DISPLAYNAME", food.DISPLAYNAME);
@@ -152,8 +157,10 @@ namespace MCoffee_DAL
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("DELETE FROM [FOOD] " +
-                    "WHERE [ID_FOD] = @ID_FOD", conn);
+                SqlCommand cmd = new SqlCommand(
+                    "DELETE FROM [FOOD] " 
+                    + "WHERE [ID_FOD] = @ID_FOD", conn
+                    );
                 cmd.Parameters.AddWithValue("@ID_FOD", ID_FOD);
                 if (cmd.ExecuteNonQuery() > 0)
                     return true;
