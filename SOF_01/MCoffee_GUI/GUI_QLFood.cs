@@ -39,6 +39,21 @@ namespace MCoffee_GUI
             cbIDcategory.DataSource = listcategory;
             cbIDcategory.DisplayMember = "ID_CAT";
             cbIDcategory.Text = "1";
+
+            List<DTO_FOOD> listfood = new List<DTO_FOOD>();
+            food_BUS.SelectAllByCategory(ref listfood, cbViewCategory.Text);
+            dgvFoodCategory.DataSource = listfood;
+            dgvFoodCategory.AllowUserToAddRows = false;
+            if (listfood.Count == 0)
+            {
+                MessageBox.Show("Chưa có nhân viên nào trong danh sách");
+            }
+            else
+            {
+                txbID.Text = dgvFoodCategory.CurrentRow.Cells["ID_FOD"].Value.ToString();
+                txbName.Text = dgvFoodCategory.CurrentRow.Cells["DISPLAYNAME"].Value.ToString();
+                txbPrice.Text = dgvFoodCategory.CurrentRow.Cells["OUTPUTPRICE"].Value.ToString();
+            }
         }
 
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -78,6 +93,7 @@ namespace MCoffee_GUI
                 txbName.Text = dgvFoodCategory.Rows[numrow].Cells[1].Value.ToString();
                 txbPrice.Text = dgvFoodCategory.Rows[numrow].Cells[2].Value.ToString();
             }
+            cbCategory.Text = cbViewCategory.Text;
         }
 
         private void btUpdate_Click(object sender, EventArgs e)
@@ -93,6 +109,8 @@ namespace MCoffee_GUI
                     food_DTO.DISPLAYNAME = txbName.Text;
                     food_DTO.ID_CAT = cbIDcategory.Text;
                     food_BUS.Update(food_DTO);
+                    MessageBox.Show("Update thanh cong");
+                    cbCategory_SelectedIndexChanged(sender, e);
                 }
                 catch (Exception f)
                 { }
@@ -112,6 +130,8 @@ namespace MCoffee_GUI
                 try
                 {
                     food_BUS.Delete(txbID.Text);
+                    MessageBox.Show("Xóa Thành Công");
+                    cbCategory_SelectedIndexChanged(sender, e);
                 }
                 catch (Exception f)
                 { }
