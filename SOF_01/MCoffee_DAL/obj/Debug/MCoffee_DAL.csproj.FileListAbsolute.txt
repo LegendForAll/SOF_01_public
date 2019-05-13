@@ -7,3 +7,12 @@ C:\Users\Ho Thai Ngoc\source\repos\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.cspr
 C:\Users\Ho Thai Ngoc\source\repos\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.csproj.CopyComplete
 C:\Users\Ho Thai Ngoc\source\repos\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.dll
 C:\Users\Ho Thai Ngoc\source\repos\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.pdb
+C:\Users\vu\Desktop\SOF_01_public\SOF_01\MCoffee_DAL\bin\Debug\MCoffee_DAL.dll
+C:\Users\vu\Desktop\SOF_01_public\SOF_01\MCoffee_DAL\bin\Debug\MCoffee_DAL.pdb
+C:\Users\vu\Desktop\SOF_01_public\SOF_01\MCoffee_DAL\bin\Debug\MCoffee_DTO.dll
+C:\Users\vu\Desktop\SOF_01_public\SOF_01\MCoffee_DAL\bin\Debug\MCoffee_DTO.pdb
+C:\Users\vu\Desktop\SOF_01_public\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.csprojAssemblyReference.cache
+C:\Users\vu\Desktop\SOF_01_public\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.csproj.CoreCompileInputs.cache
+C:\Users\vu\Desktop\SOF_01_public\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.csproj.CopyComplete
+C:\Users\vu\Desktop\SOF_01_public\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.dll
+C:\Users\vu\Desktop\SOF_01_public\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.pdb
