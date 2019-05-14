@@ -170,7 +170,7 @@ namespace MCoffee_GUI
                     if (delta != 0)
                     {
                         int num_repo = bus_object.getNum_Repo(info.ID_OBJ);
-                        bus_object.updateNumRepo(info.ID_OBJ, num_repo + Math.Abs(delta));
+                        bus_object.updateNumRepo(info.ID_OBJ, num_repo -delta);
                     }
                 }
                     if (result.Flag)
