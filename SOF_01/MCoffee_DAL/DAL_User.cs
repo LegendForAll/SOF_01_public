@@ -17,7 +17,7 @@ namespace MCoffee_DAL
             {
                 conn.Open();
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO USER VALUES(@Id, @Name, @Type, @Username, @Password, @DateStart, @Address)", conn);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [USER] VALUES(@Id, @Name, @Type, @Username, @Password, @DateStart, @Address)", conn);
                 cmd.Parameters.AddWithValue("@Id", usr.Id);
                 cmd.Parameters.AddWithValue("@Name", usr.Name);
                 cmd.Parameters.AddWithValue("@Type", usr.Type);
