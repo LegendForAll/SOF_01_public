@@ -98,17 +98,20 @@ namespace MCoffee_GUI
 
         private void dataGridViewObject_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            String id = dataGridViewObject.Rows[e.RowIndex].Cells[0].Value.ToString();
-            String name = dataGridViewObject.Rows[e.RowIndex].Cells[1].Value.ToString();
-            String suplier = dataGridViewObject.Rows[e.RowIndex].Cells[2].Value.ToString();
-            String unit = dataGridViewObject.Rows[e.RowIndex].Cells[3].Value.ToString();
-            String num_repo = dataGridViewObject.Rows[e.RowIndex].Cells[4].Value.ToString();
+            if (e.RowIndex >= 0)
+            {
+                String id = dataGridViewObject.Rows[e.RowIndex].Cells[0].Value.ToString();
+                String name = dataGridViewObject.Rows[e.RowIndex].Cells[1].Value.ToString();
+                String suplier = dataGridViewObject.Rows[e.RowIndex].Cells[2].Value.ToString();
+                String unit = dataGridViewObject.Rows[e.RowIndex].Cells[3].Value.ToString();
+                String num_repo = dataGridViewObject.Rows[e.RowIndex].Cells[4].Value.ToString();
 
-            tbID.Text = id;
-            tbName.Text = name;
-            tbNumberRepo.Text = num_repo;
-            cbSuplier.SelectedIndex = cbSuplier.FindString(suplier);
-            cbUnit.SelectedIndex = cbUnit.FindString(unit);
+                tbID.Text = id;
+                tbName.Text = name;
+                tbNumberRepo.Text = num_repo;
+                cbSuplier.SelectedIndex = cbSuplier.FindString(suplier);
+                cbUnit.SelectedIndex = cbUnit.FindString(unit);
+            }
         }
 
         private void btUpdate_Click(object sender, EventArgs e)

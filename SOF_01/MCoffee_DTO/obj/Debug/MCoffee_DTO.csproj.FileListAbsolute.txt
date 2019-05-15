@@ -9,3 +9,9 @@ C:\Users\vu\Desktop\SOF_01_public\SOF_01\MCoffee_DTO\obj\Debug\MCoffee_DTO.cspro
 C:\Users\vu\Desktop\SOF_01_public\SOF_01\MCoffee_DTO\obj\Debug\MCoffee_DTO.csproj.CoreCompileInputs.cache
 C:\Users\vu\Desktop\SOF_01_public\SOF_01\MCoffee_DTO\obj\Debug\MCoffee_DTO.dll
 C:\Users\vu\Desktop\SOF_01_public\SOF_01\MCoffee_DTO\obj\Debug\MCoffee_DTO.pdb
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_DTO\bin\Debug\MCoffee_DTO.dll
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_DTO\bin\Debug\MCoffee_DTO.pdb
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_DTO\obj\Debug\MCoffee_DTO.csprojAssemblyReference.cache
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_DTO\obj\Debug\MCoffee_DTO.csproj.CoreCompileInputs.cache
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_DTO\obj\Debug\MCoffee_DTO.dll
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_DTO\obj\Debug\MCoffee_DTO.pdb

@@ -25,3 +25,36 @@ C:\Users\Ho Thai Ngoc\Desktop\SOF_01_public\SOF_01\MCoffee_DAL\obj\Debug\MCoffee
 C:\Users\Ho Thai Ngoc\Desktop\SOF_01_public\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.csproj.CopyComplete
 C:\Users\Ho Thai Ngoc\Desktop\SOF_01_public\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.dll
 C:\Users\Ho Thai Ngoc\Desktop\SOF_01_public\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.pdb
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_DAL\bin\Debug\MCoffee_DAL.dll
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_DAL\bin\Debug\MCoffee_DAL.pdb
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_DAL\bin\Debug\MCoffee_DTO.dll
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_DAL\bin\Debug\Untility.dll
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_DAL\bin\Debug\MCoffee_DTO.pdb
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_DAL\bin\Debug\Untility.pdb
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.csprojAssemblyReference.cache
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.csproj.CoreCompileInputs.cache
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.csproj.CopyComplete
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.dll
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.pdb
+D:\HK6\SOF_01_public-dangtu\SOF_01_public-dangtu\SOF_01\MCoffee_DAL\bin\Debug\MCoffee_DAL.dll
+D:\HK6\SOF_01_public-dangtu\SOF_01_public-dangtu\SOF_01\MCoffee_DAL\bin\Debug\MCoffee_DAL.pdb
+D:\HK6\SOF_01_public-dangtu\SOF_01_public-dangtu\SOF_01\MCoffee_DAL\bin\Debug\MCoffee_DTO.dll
+D:\HK6\SOF_01_public-dangtu\SOF_01_public-dangtu\SOF_01\MCoffee_DAL\bin\Debug\Untility.dll
+D:\HK6\SOF_01_public-dangtu\SOF_01_public-dangtu\SOF_01\MCoffee_DAL\bin\Debug\MCoffee_DTO.pdb
+D:\HK6\SOF_01_public-dangtu\SOF_01_public-dangtu\SOF_01\MCoffee_DAL\bin\Debug\Untility.pdb
+D:\HK6\SOF_01_public-dangtu\SOF_01_public-dangtu\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.csprojAssemblyReference.cache
+D:\HK6\SOF_01_public-dangtu\SOF_01_public-dangtu\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.csproj.CoreCompileInputs.cache
+D:\HK6\SOF_01_public-dangtu\SOF_01_public-dangtu\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.csproj.CopyComplete
+D:\HK6\SOF_01_public-dangtu\SOF_01_public-dangtu\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.dll
+D:\HK6\SOF_01_public-dangtu\SOF_01_public-dangtu\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.pdb
+D:\HK6\SOF_01_public-dangtu_2\SOF_01_public-dangtu\SOF_01\MCoffee_DAL\bin\Debug\MCoffee_DAL.dll
+D:\HK6\SOF_01_public-dangtu_2\SOF_01_public-dangtu\SOF_01\MCoffee_DAL\bin\Debug\MCoffee_DAL.pdb
+D:\HK6\SOF_01_public-dangtu_2\SOF_01_public-dangtu\SOF_01\MCoffee_DAL\bin\Debug\MCoffee_DTO.dll
+D:\HK6\SOF_01_public-dangtu_2\SOF_01_public-dangtu\SOF_01\MCoffee_DAL\bin\Debug\Untility.dll
+D:\HK6\SOF_01_public-dangtu_2\SOF_01_public-dangtu\SOF_01\MCoffee_DAL\bin\Debug\MCoffee_DTO.pdb
+D:\HK6\SOF_01_public-dangtu_2\SOF_01_public-dangtu\SOF_01\MCoffee_DAL\bin\Debug\Untility.pdb
+D:\HK6\SOF_01_public-dangtu_2\SOF_01_public-dangtu\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.csprojAssemblyReference.cache
+D:\HK6\SOF_01_public-dangtu_2\SOF_01_public-dangtu\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.csproj.CoreCompileInputs.cache
+D:\HK6\SOF_01_public-dangtu_2\SOF_01_public-dangtu\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.csproj.CopyComplete
+D:\HK6\SOF_01_public-dangtu_2\SOF_01_public-dangtu\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.dll
+D:\HK6\SOF_01_public-dangtu_2\SOF_01_public-dangtu\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.pdb

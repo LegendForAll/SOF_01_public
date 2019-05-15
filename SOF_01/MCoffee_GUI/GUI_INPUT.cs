@@ -112,19 +112,21 @@ namespace MCoffee_GUI
 
         private void dataGridViewInfo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            String id = dataGridViewInput.Rows[e.RowIndex].Cells["ID"].Value.ToString();
-            tbID.Text = id.ToString();
-            dtpInput.Value = (DateTime) dataGridViewInput.Rows[e.RowIndex].Cells["DATEINPUT"].Value;
-            LoadDataGridInputInfo(id);
-
-            listOldCount = new List<int>();
-            listOldCount.Clear();
-            for (int i = 0; i < dataGridViewInputInfo.RowCount; i++)
+            if (e.RowIndex >= 0)
             {
-                int count = Int16.Parse(dataGridViewInputInfo.Rows[i].Cells["Count"].Value.ToString());
-                listOldCount.Add(count);
+                String id = dataGridViewInput.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+                tbID.Text = id.ToString();
+                dtpInput.Value = (DateTime)dataGridViewInput.Rows[e.RowIndex].Cells["DATEINPUT"].Value;
+                LoadDataGridInputInfo(id);
+
+                listOldCount = new List<int>();
+                listOldCount.Clear();
+                for (int i = 0; i < dataGridViewInputInfo.RowCount; i++)
+                {
+                    int count = Int16.Parse(dataGridViewInputInfo.Rows[i].Cells["Count"].Value.ToString());
+                    listOldCount.Add(count);
+                }
             }
-               
         }
 
         private void btReset_Click(object sender, EventArgs e)
