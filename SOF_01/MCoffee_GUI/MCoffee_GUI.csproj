@@ -77,6 +77,12 @@
     <Compile Include="GUI_AddFoodCategory.Designer.cs">
       <DependentUpon>GUI_AddFoodCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_INPUT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_INPUT.Designer.cs">
+      <DependentUpon>GUI_INPUT.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,11 +95,29 @@
     <Compile Include="GUI_Main.Designer.cs">
       <DependentUpon>GUI_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_OBJECT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_OBJECT.Designer.cs">
+      <DependentUpon>GUI_OBJECT.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_QLFood.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI_QLFood.Designer.cs">
       <DependentUpon>GUI_QLFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_SUPLIER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_SUPLIER.Designer.cs">
+      <DependentUpon>GUI_SUPLIER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_UNIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_UNIT.Designer.cs">
+      <DependentUpon>GUI_UNIT.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,14 +127,26 @@
     <EmbeddedResource Include="GUI_AddFoodCategory.resx">
       <DependentUpon>GUI_AddFoodCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI_INPUT.resx">
+      <DependentUpon>GUI_INPUT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_Login.resx">
       <DependentUpon>GUI_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_Main.resx">
       <DependentUpon>GUI_Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI_OBJECT.resx">
+      <DependentUpon>GUI_OBJECT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_QLFood.resx">
       <DependentUpon>GUI_QLFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_SUPLIER.resx">
+      <DependentUpon>GUI_SUPLIER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_UNIT.resx">
+      <DependentUpon>GUI_UNIT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -143,6 +179,10 @@
     <ProjectReference Include="..\MCoffee_DTO\MCoffee_DTO.csproj">
       <Project>{1eeb39ad-6975-4160-b0dc-8c116a63d9f3}</Project>
       <Name>MCoffee_DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Untility\Untility.csproj">
+      <Project>{4899db66-7c6b-4b73-84de-60dbd62a2592}</Project>
+      <Name>Untility</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

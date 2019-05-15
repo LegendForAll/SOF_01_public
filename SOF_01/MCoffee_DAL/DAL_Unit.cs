@@ -42,7 +42,7 @@ namespace MCoffee_DAL
 
                     id = pre + suf;
                 }
-                else id = "UN00000001";
+                else id = "UN0001";
             }
             catch (Exception e)
             {

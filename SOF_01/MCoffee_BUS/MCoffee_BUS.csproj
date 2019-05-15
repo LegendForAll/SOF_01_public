@@ -44,6 +44,11 @@
   <ItemGroup>
     <Compile Include="BUS_FOOD.cs" />
     <Compile Include="BUS_FOOD_CATEGORY.cs" />
+    <Compile Include="BUS_Input.cs" />
+    <Compile Include="BUS_InputInfo.cs" />
+    <Compile Include="BUS_Object.cs" />
+    <Compile Include="BUS_Suplier.cs" />
+    <Compile Include="BUS_Unit.cs" />
     <Compile Include="BUS_User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -55,6 +60,10 @@
     <ProjectReference Include="..\MCoffee_DTO\MCoffee_DTO.csproj">
       <Project>{1eeb39ad-6975-4160-b0dc-8c116a63d9f3}</Project>
       <Name>MCoffee_DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Untility\Untility.csproj">
+      <Project>{4899db66-7c6b-4b73-84de-60dbd62a2592}</Project>
+      <Name>Untility</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

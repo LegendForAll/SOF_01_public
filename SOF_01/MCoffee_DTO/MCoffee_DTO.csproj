@@ -44,6 +44,12 @@
   <ItemGroup>
     <Compile Include="DTO_FOOD.cs" />
     <Compile Include="DTO_FOOD_CATEGORY.cs" />
+    <Compile Include="DTO_Input.cs" />
+    <Compile Include="DTO_InputInfo.cs" />
+    <Compile Include="DTO_Object.cs" />
+    <Compile Include="DTO_Object2.cs" />
+    <Compile Include="DTO_Suplier.cs" />
+    <Compile Include="DTO_Unit.cs" />
     <Compile Include="DTO_User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

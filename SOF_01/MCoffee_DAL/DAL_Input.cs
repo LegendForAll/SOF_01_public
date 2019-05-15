@@ -32,10 +32,10 @@ namespace MCoffee_DAL
                     while (reader.Read())
                         id = reader["ID_INP"].ToString();
                     String pre = id.Substring(0, 2);
-                    String suf = id.Substring(2, id.Length - 2);
+                    String suf = id.Substring(2, id.Length - 2); 
 
                     int num = Int32.Parse(suf);
-                    num = num + 1;
+                    num = num + 1; 
 
                     String strNum = num.ToString();
                     suf = suf.Substring(0, suf.Length - strNum.Length);
@@ -43,7 +43,7 @@ namespace MCoffee_DAL
 
                     id = pre + suf;
                 }
-                else id = "IP00000001";
+                else id = "IP0001";
             }
             catch (Exception e)
             {

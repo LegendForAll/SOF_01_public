@@ -80,11 +80,14 @@ namespace MCoffee_GUI
         private void dataGridSuplier_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int row = e.RowIndex;
-            tbId.Text = dataGridSuplier.Rows[row].Cells[0].Value.ToString();
-            tbName.Text = dataGridSuplier.Rows[row].Cells[1].Value.ToString();
-            tbAddress.Text = dataGridSuplier.Rows[row].Cells[2].Value.ToString();
-            tbPhoneNumber.Text = dataGridSuplier.Rows[row].Cells[3].Value.ToString();
-            dtContract.Value = (DateTime)dataGridSuplier.Rows[row].Cells[4].Value;
+            if (row >= 0)
+            {
+                tbId.Text = dataGridSuplier.Rows[row].Cells[0].Value.ToString();
+                tbName.Text = dataGridSuplier.Rows[row].Cells[1].Value.ToString();
+                tbAddress.Text = dataGridSuplier.Rows[row].Cells[2].Value.ToString();
+                tbPhoneNumber.Text = dataGridSuplier.Rows[row].Cells[3].Value.ToString();
+                dtContract.Value = (DateTime)dataGridSuplier.Rows[row].Cells[4].Value;
+            }           
         }
 
         private void btUpdate_Click(object sender, EventArgs e)

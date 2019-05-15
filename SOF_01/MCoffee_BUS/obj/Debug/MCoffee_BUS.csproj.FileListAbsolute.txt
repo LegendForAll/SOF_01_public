@@ -31,3 +31,16 @@ C:\Users\Ho Thai Ngoc\Desktop\SOF_01_public\SOF_01\MCoffee_BUS\obj\Debug\MCoffee
 C:\Users\Ho Thai Ngoc\Desktop\SOF_01_public\SOF_01\MCoffee_BUS\obj\Debug\MCoffee_BUS.csproj.CopyComplete
 C:\Users\Ho Thai Ngoc\Desktop\SOF_01_public\SOF_01\MCoffee_BUS\obj\Debug\MCoffee_BUS.dll
 C:\Users\Ho Thai Ngoc\Desktop\SOF_01_public\SOF_01\MCoffee_BUS\obj\Debug\MCoffee_BUS.pdb
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\MCoffee_BUS.dll
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\MCoffee_BUS.pdb
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\MCoffee_DAL.dll
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\MCoffee_DTO.dll
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\Untility.dll
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\MCoffee_DAL.pdb
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\MCoffee_DTO.pdb
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\Untility.pdb
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_BUS\obj\Debug\MCoffee_BUS.csprojAssemblyReference.cache
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_BUS\obj\Debug\MCoffee_BUS.csproj.CoreCompileInputs.cache
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_BUS\obj\Debug\MCoffee_BUS.csproj.CopyComplete
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_BUS\obj\Debug\MCoffee_BUS.dll
+E:\GitHub\SOF_01_public\SOF_01\MCoffee_BUS\obj\Debug\MCoffee_BUS.pdb

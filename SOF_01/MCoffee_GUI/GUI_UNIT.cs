@@ -142,10 +142,13 @@ namespace MCoffee_GUI
 
         private void DataGridUnit_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            String id = dataGridViewUnit.Rows[e.RowIndex].Cells[0].Value.ToString();
-            String name = dataGridViewUnit.Rows[e.RowIndex].Cells[1].Value.ToString();
-            tbID.Text = id.ToString();
-            tbName.Text = name;
+            if (e.RowIndex >= 0)
+            {
+                String id = dataGridViewUnit.Rows[e.RowIndex].Cells[0].Value.ToString();
+                String name = dataGridViewUnit.Rows[e.RowIndex].Cells[1].Value.ToString();
+                tbID.Text = id.ToString();
+                tbName.Text = name;
+            }
         }
     }
 }
