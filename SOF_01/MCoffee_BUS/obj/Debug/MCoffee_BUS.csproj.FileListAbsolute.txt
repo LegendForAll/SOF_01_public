@@ -70,3 +70,16 @@ D:\HK6\SOF_01_public-dangtu_2\SOF_01_public-dangtu\SOF_01\MCoffee_BUS\obj\Debug\
 D:\HK6\SOF_01_public-dangtu_2\SOF_01_public-dangtu\SOF_01\MCoffee_BUS\obj\Debug\MCoffee_BUS.csproj.CopyComplete
 D:\HK6\SOF_01_public-dangtu_2\SOF_01_public-dangtu\SOF_01\MCoffee_BUS\obj\Debug\MCoffee_BUS.dll
 D:\HK6\SOF_01_public-dangtu_2\SOF_01_public-dangtu\SOF_01\MCoffee_BUS\obj\Debug\MCoffee_BUS.pdb
+C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\MCoffee_BUS.dll
+C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\MCoffee_BUS.pdb
+C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\MCoffee_DAL.dll
+C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\MCoffee_DTO.dll
+C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\Untility.dll
+C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\MCoffee_DAL.pdb
+C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\MCoffee_DTO.pdb
+C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_BUS\bin\Debug\Untility.pdb
+C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_BUS\obj\Debug\MCoffee_BUS.csprojAssemblyReference.cache
+C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_BUS\obj\Debug\MCoffee_BUS.csproj.CoreCompileInputs.cache
+C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_BUS\obj\Debug\MCoffee_BUS.csproj.CopyComplete
+C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_BUS\obj\Debug\MCoffee_BUS.dll
+C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_BUS\obj\Debug\MCoffee_BUS.pdb

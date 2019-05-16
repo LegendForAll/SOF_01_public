@@ -15,3 +15,9 @@ E:\GitHub\SOF_01_public\SOF_01\MCoffee_DTO\obj\Debug\MCoffee_DTO.csprojAssemblyR
 E:\GitHub\SOF_01_public\SOF_01\MCoffee_DTO\obj\Debug\MCoffee_DTO.csproj.CoreCompileInputs.cache
 E:\GitHub\SOF_01_public\SOF_01\MCoffee_DTO\obj\Debug\MCoffee_DTO.dll
 E:\GitHub\SOF_01_public\SOF_01\MCoffee_DTO\obj\Debug\MCoffee_DTO.pdb
+C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_DTO\bin\Debug\MCoffee_DTO.dll
+C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_DTO\bin\Debug\MCoffee_DTO.pdb
+C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_DTO\obj\Debug\MCoffee_DTO.csprojAssemblyReference.cache
+C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_DTO\obj\Debug\MCoffee_DTO.csproj.CoreCompileInputs.cache
+C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_DTO\obj\Debug\MCoffee_DTO.dll
+C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_DTO\obj\Debug\MCoffee_DTO.pdb
