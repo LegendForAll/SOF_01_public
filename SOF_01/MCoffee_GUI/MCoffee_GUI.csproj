@@ -90,6 +90,12 @@
     <Compile Include="GUI_AddFoodCategory.Designer.cs">
       <DependentUpon>GUI_AddFoodCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_BILL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_BILL.Designer.cs">
+      <DependentUpon>GUI_BILL.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_INPUT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,12 @@
     </Compile>
     <Compile Include="GUI_OBJECT.Designer.cs">
       <DependentUpon>GUI_OBJECT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ORDER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ORDER.Designer.cs">
+      <DependentUpon>GUI_ORDER.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI_QLFood.cs">
       <SubType>Form</SubType>
@@ -168,6 +180,9 @@
     <EmbeddedResource Include="GUI_AddFoodCategory.resx">
       <DependentUpon>GUI_AddFoodCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI_BILL.resx">
+      <DependentUpon>GUI_BILL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_INPUT.resx">
       <DependentUpon>GUI_INPUT.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_OBJECT.resx">
       <DependentUpon>GUI_OBJECT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_ORDER.resx">
+      <DependentUpon>GUI_ORDER.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_QLFood.resx">
       <DependentUpon>GUI_QLFood.cs</DependentUpon>

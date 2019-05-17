@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MCoffee_BUS;
+using MCoffee_DTO;
+using Untility;
 
 namespace MCoffee_GUI
 {
@@ -15,6 +17,8 @@ namespace MCoffee_GUI
     {
         // use Object nv_BUS doing Layer Business
         BUS_User nv_BUS = new BUS_User();
+        BUS_Table tab_BUS = new BUS_Table();
+        BUS_BILL bil_BUS = new BUS_BILL();
 
         public GUI_Main()
         {
@@ -81,9 +85,9 @@ namespace MCoffee_GUI
         private void Pbx_user_Click(object sender, EventArgs e)
         {
             MessageBox.Show("user");
-            int options = 0;
             pn_user.BringToFront();
             tabControl1.SelectedTab = tabPage1;
+
         }
 
         private void Pbx_order_Click(object sender, EventArgs e)
@@ -92,6 +96,62 @@ namespace MCoffee_GUI
             int options = 1;
             pn_order.BringToFront();
             tabControl1.SelectedTab = tabPage2;
+
+            //gridview
+            List<DTO_Table> listtab = tab_BUS.SelectAll();
+            dataGridView1.DataSource = listtab;
+
+            //flowpanel
+            foreach (DTO_Table item in listtab)
+            {
+                //create button table
+                Button btn = new Button();
+                btn.Text = item.ID + Environment.NewLine;
+                btn.Size = new Size(80, 80);
+                fpn_table.Controls.Add(btn);
+
+                //add event button_click
+                btn.Click += Btn_Click;
+                btn.Tag = item;
+
+                //set color
+                switch (item.STATUS.ToString())
+                {
+                    case "1":
+                    {
+                            btn.BackColor = Color.Silver;
+                            break;
+                    }
+                    case "0":
+                    {
+                            btn.BackColor = Color.White;
+                            break;
+                    }
+                }
+            }
+        }
+
+        public void ShowBill (String id)
+        {
+            lst_bill.Items.Clear();
+            ListViewItem lsi = new ListViewItem(id.ToString());
+            lsi.SubItems.Add("Food");
+            lsi.SubItems.Add("Bill");
+            lsi.SubItems.Add("Count");
+            lsi.SubItems.Add("Price");
+            lst_bill.Items.Add(lsi);
+        }
+
+
+        private void Btn_Click(object sender, EventArgs e)
+        {
+            String id = ((sender as Button).Tag as DTO_Table).ID;
+            //MessageBox.Show("ID: " + id);
+            ShowBill(id);
+
+            DTO_BILL bill = bil_BUS.SelectID_Table(id);
+            tbx_idTable.Text = id;
+            tbx_idBill.Text = bill.ID;
         }
 
         private void Pbx_repos_Click(object sender, EventArgs e)

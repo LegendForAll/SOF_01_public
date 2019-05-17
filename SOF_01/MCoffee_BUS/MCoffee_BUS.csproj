@@ -42,12 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS_BILL.cs" />
+    <Compile Include="BUS_BILL_INFO.cs" />
     <Compile Include="BUS_FOOD.cs" />
     <Compile Include="BUS_FOOD_CATEGORY.cs" />
     <Compile Include="BUS_Input.cs" />
     <Compile Include="BUS_InputInfo.cs" />
     <Compile Include="BUS_Object.cs" />
     <Compile Include="BUS_Suplier.cs" />
+    <Compile Include="BUS_Table.cs" />
     <Compile Include="BUS_Unit.cs" />
     <Compile Include="BUS_User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
