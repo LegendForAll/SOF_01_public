@@ -1,0 +1,12 @@
+E:\SOF_01_public-master\SOF_01\Untility\bin\Debug\Untility.dll
+E:\SOF_01_public-master\SOF_01\Untility\bin\Debug\Untility.pdb
+E:\SOF_01_public-master\SOF_01\Untility\obj\Debug\Untility.csprojAssemblyReference.cache
+E:\SOF_01_public-master\SOF_01\Untility\obj\Debug\Untility.csproj.CoreCompileInputs.cache
+E:\SOF_01_public-master\SOF_01\Untility\obj\Debug\Untility.dll
+E:\SOF_01_public-master\SOF_01\Untility\obj\Debug\Untility.pdb
+C:\Users\HoangMai\SOF_01_public\SOF_01\Untility\bin\Debug\Untility.dll
+C:\Users\HoangMai\SOF_01_public\SOF_01\Untility\bin\Debug\Untility.pdb
+C:\Users\HoangMai\SOF_01_public\SOF_01\Untility\obj\Debug\Untility.csprojAssemblyReference.cache
+C:\Users\HoangMai\SOF_01_public\SOF_01\Untility\obj\Debug\Untility.csproj.CoreCompileInputs.cache
+C:\Users\HoangMai\SOF_01_public\SOF_01\Untility\obj\Debug\Untility.dll
+C:\Users\HoangMai\SOF_01_public\SOF_01\Untility\obj\Debug\Untility.pdb
