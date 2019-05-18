@@ -160,19 +160,19 @@ namespace MCoffee_DAL
             return bill;
         }
 
-        public List<DTO_BILL> Select_DATE(DateTime date)
+
+        public List<DTO_BILL> Select_STATUS( String status)
         {
             List<DTO_BILL> listbill = new List<DTO_BILL>();
-            String query = "SELECT * FROM [BILL] ";
-            query += "[DATETIME] = '2019-09-09 00:00:00.0000000'";
-
-            String temp = date.ToString("yyyy-MM-dd 00:00:00.0000000");
+            String query = "SELECT * FROM [BILL]";
+            query += "WHERE [STATUS] = @STATUS";
 
             SqlCommand cmmd = new SqlCommand();
             cmmd.Connection = conn;
             cmmd.CommandType = System.Data.CommandType.Text;
             cmmd.CommandText = query;
-            
+            cmmd.Parameters.AddWithValue("@STATUS", status);
+
 
             try
             {
@@ -190,6 +190,98 @@ namespace MCoffee_DAL
                                                     reader["STATUS"].ToString(),
                                                     Convert.ToDouble(reader["SUMPRICE"].ToString()),
                                                     Convert.ToDouble(reader["SUBPRICE"].ToString())));
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                conn.Close();
+                System.Console.WriteLine(e.Message);
+                return null;
+            }
+
+            conn.Close();
+            return listbill;
+        }
+
+
+        public List<DTO_BILL> Select_USER(String id_user)
+        {
+            List<DTO_BILL> listbill = new List<DTO_BILL>();
+            String query = "SELECT * FROM [BILL]";
+            query += "WHERE [ID_EMP] = @ID_EMP";
+
+            SqlCommand cmmd = new SqlCommand();
+            cmmd.Connection = conn;
+            cmmd.CommandType = System.Data.CommandType.Text;
+            cmmd.CommandText = query;
+            cmmd.Parameters.AddWithValue("@ID_EMP", id_user);
+
+
+            try
+            {
+                conn.Open();
+                SqlDataReader reader;
+                reader = cmmd.ExecuteReader();
+                if (reader.HasRows == true)
+                {
+                    while (reader.Read())
+                    {
+                        listbill.Add(new DTO_BILL(reader["ID_BIL"].ToString(),
+                                                    Convert.ToDateTime(reader["DATETIME"].ToString()),
+                                                    reader["ID_EMP"].ToString(),
+                                                    reader["ID_TAB"].ToString(),
+                                                    reader["STATUS"].ToString(),
+                                                    Convert.ToDouble(reader["SUMPRICE"].ToString()),
+                                                    Convert.ToDouble(reader["SUBPRICE"].ToString())));
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                conn.Close();
+                System.Console.WriteLine(e.Message);
+                return null;
+            }
+
+            conn.Close();
+            return listbill;
+        }
+
+
+        public List<DTO_BILL> Select_DATE(DateTime date)
+        {
+            List<DTO_BILL> listbill = new List<DTO_BILL>();
+            String query = "SELECT * FROM [BILL]";
+
+            SqlCommand cmmd = new SqlCommand();
+            cmmd.Connection = conn;
+            cmmd.CommandType = System.Data.CommandType.Text;
+            cmmd.CommandText = query;
+
+            try
+            {
+                conn.Open();
+                SqlDataReader reader;
+                reader = cmmd.ExecuteReader();
+                if (reader.HasRows == true)
+                {
+                    while (reader.Read())
+                    {
+                        DateTime sql_time = Convert.ToDateTime(reader["DATETIME"].ToString());
+
+                        //compare DateTime .NET vs SQL server
+                        if (sql_time.Day == date.Day && sql_time.Month == date.Month && sql_time.Year == date.Year)
+                        {
+                            listbill.Add(new DTO_BILL(reader["ID_BIL"].ToString(),
+                            Convert.ToDateTime(reader["DATETIME"].ToString()),
+                            reader["ID_EMP"].ToString(),
+                            reader["ID_TAB"].ToString(),
+                            reader["STATUS"].ToString(),
+                            Convert.ToDouble(reader["SUMPRICE"].ToString()),
+                            Convert.ToDouble(reader["SUBPRICE"].ToString())));
+                        }
+
                     }
                 }
             }

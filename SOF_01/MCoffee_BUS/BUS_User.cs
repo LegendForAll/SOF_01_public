@@ -44,5 +44,10 @@ namespace MCoffee_BUS
         {
             return dal.Display(sql);
         }
+
+        public List<DTO_User> SelectAll()
+        {
+            return dal.SelectAll();
+        }
     }
 }

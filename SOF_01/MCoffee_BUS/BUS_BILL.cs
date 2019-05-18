@@ -52,5 +52,15 @@ namespace MCoffee_BUS
         {
             return dal_bill.SelectAll();
         }
+
+        public List<DTO_BILL> Select_STATUS(String status)
+        {
+            return dal_bill.Select_STATUS(status);
+        }
+
+        public List<DTO_BILL> Select_USER(String id_user)
+        {
+            return dal_bill.Select_USER(id_user);
+        }
     }
 }

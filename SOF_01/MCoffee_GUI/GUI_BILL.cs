@@ -15,7 +15,7 @@ namespace MCoffee_GUI
 {
     public partial class GUI_BILL : Form
     {
-
+        BUS_User bus_user = new BUS_User();
         BUS_BILL bus_bil = new BUS_BILL();
         BUS_BILL_INFO bus_bil_info = new BUS_BILL_INFO();
 
@@ -26,6 +26,16 @@ namespace MCoffee_GUI
             dgv_bill.AllowUserToAddRows = false;
 
             LoadDataGridBill();
+            LoadCombox();
+        }
+
+        public void LoadCombox()
+        {
+            // combox user
+            List<DTO_User> ob_user = bus_user.SelectAll();
+            cbx_user.DataSource = new BindingSource(ob_user, String.Empty);
+            cbx_user.DisplayMember = "Name";
+            cbx_user.ValueMember = "Id";
         }
 
         public void LoadDataGridBill()
@@ -38,6 +48,7 @@ namespace MCoffee_GUI
             STATUS_BILL.DataPropertyName = "STATUS";
             BILL_PRICE.DataPropertyName = "SUMPRICE";
             SUB_BILL.DataPropertyName = "SUMPRICE";
+
         }
 
         public void LoadDataGridBillInfo(String id_bill)
@@ -63,18 +74,24 @@ namespace MCoffee_GUI
             }
         }
 
-        private void dtp_fill_ValueChanged(object sender, EventArgs e)
-        {
-            //List<DTO_BILL> listbill = bus_bil.Select_DATE(dtp_fill.Value);
-            //dgv_bill.DataSource = listbill;
-            //MessageBox.Show(dtp_fill.Value.ToString());
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_fill_Click(object sender, EventArgs e)
         {
             List<DTO_BILL> listbill = bus_bil.Select_DATE(dtp_fill.Value);
             dgv_bill.DataSource = listbill;
-            MessageBox.Show(dtp_fill.Value.ToString("yyyy-MM-dd 00:00:00.0000000"));
         }
+
+        private void cbx_status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<DTO_BILL> listbill = bus_bil.Select_STATUS(cbx_status.Text);
+            dgv_bill.DataSource = listbill;
+        }
+
+        private void cbx_user_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<DTO_BILL> listbill = bus_bil.Select_USER(cbx_user.SelectedValue.ToString());
+            dgv_bill.DataSource = listbill;
+        }
+
+
     }
 }

@@ -144,6 +144,12 @@
     <Compile Include="GUI_ReportNumRepo.Designer.cs">
       <DependentUpon>GUI_ReportNumRepo.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_RESEARCH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_RESEARCH.Designer.cs">
+      <DependentUpon>GUI_RESEARCH.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_SUPLIER.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_ReportNumRepo.resx">
       <DependentUpon>GUI_ReportNumRepo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_RESEARCH.resx">
+      <DependentUpon>GUI_RESEARCH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_SUPLIER.resx">
       <DependentUpon>GUI_SUPLIER.cs</DependentUpon>

@@ -58,16 +58,17 @@ namespace MCoffee_DAL
 
             return false;
         }
+
         public bool SelectAll(ref List<DTO_FOOD_CATEGORY> ListCategory)
         {
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT [ID_CAT] , [NAMECAT] FROM [FOOD_CATEGORY] ORDER BY [ID_CAT] ASC", conn);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM [FOOD_CATEGORY] ORDER BY [ID_CAT] ASC", conn);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    ListCategory.Add(new DTO_FOOD_CATEGORY(dr["ID_CAT"].ToString(), dr["NAMECAT"].ToString()));
+                    ListCategory.Add(new DTO_FOOD_CATEGORY(dr["ID_CAT"].ToString(), dr["DISPLAYNAME"].ToString()));
                 }
                 if (cmd.ExecuteNonQuery() > 0)
                     return true;

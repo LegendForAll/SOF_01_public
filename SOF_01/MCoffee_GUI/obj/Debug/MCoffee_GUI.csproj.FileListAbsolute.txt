@@ -210,3 +210,4 @@ D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MC
 D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.pdb
 D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_ORDER.resources
 D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_BILL.resources
+D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_RESEARCH.resources

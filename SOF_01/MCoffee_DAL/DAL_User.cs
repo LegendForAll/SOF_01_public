@@ -94,5 +94,45 @@ namespace MCoffee_DAL
 
             return null;
         }
+
+        public List<DTO_User> SelectAll()
+        {
+            List<DTO_User> listUser = new List<DTO_User>();
+            String query = "SELECT * FROM [USER]";
+
+            SqlCommand cmmd = new SqlCommand();
+            cmmd.Connection = conn;
+            cmmd.CommandType = System.Data.CommandType.Text;
+            cmmd.CommandText = query;
+
+            try
+            {
+                conn.Open();
+                SqlDataReader reader;
+                reader = cmmd.ExecuteReader();
+                if (reader.HasRows == true)
+                {
+                    while (reader.Read())
+                    {
+                        listUser.Add(new DTO_User(reader["ID_EMP"].ToString(),
+                                                    reader["NAME"].ToString(),
+                                                    reader["TYPE"].ToString(),
+                                                    reader["USERNAME"].ToString(),
+                                                    reader["PASSWORD"].ToString(),
+                                                    Convert.ToDateTime(reader["DATESTART"].ToString()),
+                                                    reader["ADDRESS"].ToString()));
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                conn.Close();
+                System.Console.WriteLine(e.Message);
+                return null;
+            }
+
+            conn.Close();
+            return listUser;
+        }
     }
 }

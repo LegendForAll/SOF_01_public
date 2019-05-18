@@ -224,5 +224,10 @@ namespace MCoffee_GUI
                        MessageBoxIcon.Error);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(dtpInput.Value.ToShortDateString());
+        }
     }
 }

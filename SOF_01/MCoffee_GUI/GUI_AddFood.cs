@@ -40,14 +40,14 @@ namespace MCoffee_GUI
             int nextID = 0;
             food_BUS.NextID(ref nextID);
             txbID.Text = nextID.ToString();
-            List<DTO_FOOD_CATEGORY> listcategory=new List<DTO_FOOD_CATEGORY>();
+            List<DTO_FOOD_CATEGORY> listcategory = new List<DTO_FOOD_CATEGORY>();
             food_category_BUS.SelectAll(ref listcategory);
             cbCategory.Items.Add(listcategory);
             cbCategory.DataSource = listcategory;
             cbCategory.DisplayMember = "NAMECAT";
-            cbIDCAT.DataSource = cbCategory.DataSource;
-            cbIDCAT.DisplayMember = "ID_CAT";
-            cbIDCAT.Text = "1";
+            //cbIDCAT.DataSource = cbCategory.DataSource;
+            //cbIDCAT.DisplayMember = "ID_CAT";
+            //cbIDCAT.Text = "1";
         }
     }
 }

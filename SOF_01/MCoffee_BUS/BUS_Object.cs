@@ -56,5 +56,15 @@ namespace MCoffee_BUS
         {
             return dal_object.SelectAll();
         }
+
+        public List<DTO_Object2> Select_SUPLIER(String suplier)
+        {
+            return dal_object.Select_SUPLIER(suplier);
+        }
+
+        public List<DTO_Object2> Select_NAME(String name)
+        {
+            return dal_object.Select_NAME(name);
+        }
     }
 }

@@ -89,18 +89,20 @@ namespace MCoffee_DAL
 
             return false;
         }
+
         public bool SelectAllByCategory(ref List<DTO_FOOD> ListFood, String Category)
         {
             try
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand (
-                      "SELECT [ID_FOD],[FOOD].[ID_CAT],[DISPLAYNAME], [OUTPUTPRICE]" 
-                    + " FROM [FOOD],[FOOD_CATEGORY] " 
-                    + " WHERE [FOOD].[ID_CAT]=[FOOD_CATEGORY].[ID_CAT] " 
-                    + " AND [NAMECAT]=@NAMECAT " 
-                    + " ORDER BY [ID_FOD] ASC ", conn
-                    );
+                      "SELECT [ID_FOD], [FOOD].[ID_CAT], [FOOD].DISPLAYNAME, [OUTPUTPRICE] "
+                    + "FROM [FOOD], [FOOD_CATEGORY] "
+                    + "WHERE [FOOD].[ID_CAT] = [FOOD_CATEGORY].[ID_CAT] "
+                    + "AND [FOOD_CATEGORY].DISPLAYNAME = @NAMECAT "
+                    + "ORDER BY [ID_FOD] ASC"
+                    , conn);
+
                 cmd.Parameters.AddWithValue("@NAMECAT", Category);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -122,6 +124,7 @@ namespace MCoffee_DAL
 
             return false;
         }
+
         public bool Update(DTO_FOOD food)
         {
             try

@@ -36,6 +36,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btReset = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.btUpdate = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btAdd = new System.Windows.Forms.Button();
             this.dtpInput = new System.Windows.Forms.DateTimePicker();
@@ -45,7 +46,7 @@
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DATEINPUT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
-            this.btUpdate = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInputInfo)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInput)).BeginInit();
@@ -92,6 +93,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btReset);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btUpdate);
@@ -122,6 +124,16 @@
             this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Ngày nhập";
+            // 
+            // btUpdate
+            // 
+            this.btUpdate.Location = new System.Drawing.Point(188, 103);
+            this.btUpdate.Name = "btUpdate";
+            this.btUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btUpdate.TabIndex = 4;
+            this.btUpdate.Text = "Sửa";
+            this.btUpdate.UseVisualStyleBackColor = true;
+            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
             // 
             // label1
             // 
@@ -199,15 +211,15 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Danh sách phiếu nhập";
             // 
-            // btUpdate
+            // button1
             // 
-            this.btUpdate.Location = new System.Drawing.Point(188, 103);
-            this.btUpdate.Name = "btUpdate";
-            this.btUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btUpdate.TabIndex = 4;
-            this.btUpdate.Text = "Sửa";
-            this.btUpdate.UseVisualStyleBackColor = true;
-            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
+            this.button1.Location = new System.Drawing.Point(454, 74);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // GUI_INPUT
             // 
@@ -250,5 +262,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Count;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRICEINPUT;
         private System.Windows.Forms.Button btUpdate;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -206,7 +206,7 @@ namespace MCoffee_DAL
             String query = "SELECT [ID_OBJ], [OBJECT].[DISPLAYNAME], [SUPLIER].[DISPLAYNAME] AS SUPLIERNAME, ";
             query += "[UNIT].[DISPLAYNAME] AS UNITNAME, [NUM_REPO] ";
             query += "FROM [OBJECT], [SUPLIER], [UNIT] ";
-            query += "WHERE [OBJECT].ID_SUP = [SUPLIER].[ID_SUP] AND [OBJECT].[ID_UNI] = [UNIT].[ID_UNI] ";
+            query += "WHERE [OBJECT].[ID_SUP] = [SUPLIER].[ID_SUP] AND [OBJECT].[ID_UNI] = [UNIT].[ID_UNI] ";
 
             List<DTO_Object2> listObject = new List<DTO_Object2>();
 
@@ -214,6 +214,90 @@ namespace MCoffee_DAL
             cmmd.Connection = conn;
             cmmd.CommandType = System.Data.CommandType.Text;
             cmmd.CommandText = query;
+
+            try
+            {
+                conn.Open();
+                SqlDataReader reader;
+                reader = cmmd.ExecuteReader();
+                if (reader.HasRows == true)
+                {
+                    while (reader.Read())
+                        listObject.Add(new DTO_Object2(reader["ID_OBJ"].ToString(),
+                            reader["DISPLAYNAME"].ToString(),
+                            reader["SUPLIERNAME"].ToString(),
+                            reader["UNITNAME"].ToString(),
+                            (int)reader["NUM_REPO"]));
+                }
+            }
+            catch (Exception e)
+            {
+                conn.Close();
+                System.Console.WriteLine(e.Message);
+                return null;
+            }
+
+            conn.Close();
+            return listObject;
+        }
+
+        public List<DTO_Object2> Select_SUPLIER(String suplier)
+        {
+            String query = "SELECT [ID_OBJ], [OBJECT].[DISPLAYNAME], [SUPLIER].[DISPLAYNAME] AS SUPLIERNAME, ";
+            query += "[UNIT].[DISPLAYNAME] AS UNITNAME, [NUM_REPO] ";
+            query += "FROM [OBJECT], [SUPLIER], [UNIT] ";
+            query += "WHERE [OBJECT].[ID_SUP] = [SUPLIER].[ID_SUP] AND [OBJECT].[ID_UNI] = [UNIT].[ID_UNI] ";
+            query += "AND [SUPLIER].[DISPLAYNAME] = @Name";
+
+            List <DTO_Object2> listObject = new List<DTO_Object2>();
+
+            SqlCommand cmmd = new SqlCommand();
+            cmmd.Connection = conn;
+            cmmd.CommandType = System.Data.CommandType.Text;
+            cmmd.CommandText = query;
+            cmmd.Parameters.AddWithValue("@Name", suplier);
+
+            try
+            {
+                conn.Open();
+                SqlDataReader reader;
+                reader = cmmd.ExecuteReader();
+                if (reader.HasRows == true)
+                {
+                    while (reader.Read())
+                        listObject.Add(new DTO_Object2(reader["ID_OBJ"].ToString(),
+                            reader["DISPLAYNAME"].ToString(),
+                            reader["SUPLIERNAME"].ToString(),
+                            reader["UNITNAME"].ToString(),
+                            (int)reader["NUM_REPO"]));
+                }
+            }
+            catch (Exception e)
+            {
+                conn.Close();
+                System.Console.WriteLine(e.Message);
+                return null;
+            }
+
+            conn.Close();
+            return listObject;
+        }
+
+        public List<DTO_Object2> Select_NAME(String name)
+        {
+            String query = "SELECT [ID_OBJ], [OBJECT].[DISPLAYNAME], [SUPLIER].[DISPLAYNAME] AS SUPLIERNAME, ";
+            query += "[UNIT].[DISPLAYNAME] AS UNITNAME, [NUM_REPO] ";
+            query += "FROM [OBJECT], [SUPLIER], [UNIT] ";
+            query += "WHERE [OBJECT].[ID_SUP] = [SUPLIER].[ID_SUP] AND [OBJECT].[ID_UNI] = [UNIT].[ID_UNI] ";
+            query += "AND [OBJECT].[DISPLAYNAME] = @Name";
+
+            List<DTO_Object2> listObject = new List<DTO_Object2>();
+
+            SqlCommand cmmd = new SqlCommand();
+            cmmd.Connection = conn;
+            cmmd.CommandType = System.Data.CommandType.Text;
+            cmmd.CommandText = query;
+            cmmd.Parameters.AddWithValue("@Name", name);
 
             try
             {
