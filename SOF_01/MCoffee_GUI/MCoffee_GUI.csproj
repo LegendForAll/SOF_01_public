@@ -72,11 +72,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cross_tabReport.cs">
+    <Compile Include="DataSet_Price.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Cross_tabReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
+      <DependentUpon>DataSet_Price.xsd</DependentUpon>
     </Compile>
     <Compile Include="GUI_AddFood.cs">
       <SubType>Form</SubType>
@@ -101,12 +100,6 @@
     </Compile>
     <Compile Include="GUI_INPUT.Designer.cs">
       <DependentUpon>GUI_INPUT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI_InputReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI_InputReport.Designer.cs">
-      <DependentUpon>GUI_InputReport.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI_Login.cs">
       <SubType>Form</SubType>
@@ -138,11 +131,23 @@
     <Compile Include="GUI_QLFood.Designer.cs">
       <DependentUpon>GUI_QLFood.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI_ReportNumRepo.cs">
+    <Compile Include="GUI_reportCROSSTAB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI_ReportNumRepo.Designer.cs">
-      <DependentUpon>GUI_ReportNumRepo.cs</DependentUpon>
+    <Compile Include="GUI_reportCROSSTAB.Designer.cs">
+      <DependentUpon>GUI_reportCROSSTAB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_reportOBJECT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_reportOBJECT.Designer.cs">
+      <DependentUpon>GUI_reportOBJECT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_reportPRICE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_reportPRICE.Designer.cs">
+      <DependentUpon>GUI_reportPRICE.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI_RESEARCH.cs">
       <SubType>Form</SubType>
@@ -162,24 +167,26 @@
     <Compile Include="GUI_UNIT.Designer.cs">
       <DependentUpon>GUI_UNIT.cs</DependentUpon>
     </Compile>
-    <Compile Include="InputReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>InputReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReportNumRepo.cs">
+    <Compile Include="RP_Food.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ReportNumRepo.rpt</DependentUpon>
+      <DependentUpon>RP_Food.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="Cross_tabReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Cross_tabReport.cs</LastGenOutput>
-    </EmbeddedResource>
+    <Compile Include="RP_object.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RP_object.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RP_price.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RP_price.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="GUI_AddFood.resx">
       <DependentUpon>GUI_AddFood.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,9 +198,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_INPUT.resx">
       <DependentUpon>GUI_INPUT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI_InputReport.resx">
-      <DependentUpon>GUI_InputReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_Login.resx">
       <DependentUpon>GUI_Login.cs</DependentUpon>
@@ -210,8 +214,14 @@
     <EmbeddedResource Include="GUI_QLFood.resx">
       <DependentUpon>GUI_QLFood.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI_ReportNumRepo.resx">
-      <DependentUpon>GUI_ReportNumRepo.cs</DependentUpon>
+    <EmbeddedResource Include="GUI_reportCROSSTAB.resx">
+      <DependentUpon>GUI_reportCROSSTAB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_reportOBJECT.resx">
+      <DependentUpon>GUI_reportOBJECT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_reportPRICE.resx">
+      <DependentUpon>GUI_reportPRICE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_RESEARCH.resx">
       <DependentUpon>GUI_RESEARCH.cs</DependentUpon>
@@ -221,10 +231,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_UNIT.resx">
       <DependentUpon>GUI_UNIT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InputReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>InputReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -236,10 +242,29 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ReportNumRepo.rpt">
+    <EmbeddedResource Include="RP_Food.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ReportNumRepo.cs</LastGenOutput>
+      <LastGenOutput>RP_Food.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="RP_object.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RP_object.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP_price.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RP_price.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DataSet_Price.xsc">
+      <DependentUpon>DataSet_Price.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet_Price.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Price.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet_Price.xss">
+      <DependentUpon>DataSet_Price.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

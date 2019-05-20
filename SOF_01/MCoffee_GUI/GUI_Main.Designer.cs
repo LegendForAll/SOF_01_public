@@ -36,6 +36,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lb_type = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.tbx_status = new System.Windows.Forms.TextBox();
+            this.tbx_price = new System.Windows.Forms.TextBox();
+            this.tbx_subPrice = new System.Windows.Forms.TextBox();
+            this.tbx_idBill = new System.Windows.Forms.TextBox();
+            this.tbx_idTable = new System.Windows.Forms.TextBox();
             this.lst_bill = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -49,9 +56,10 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.pn_repos = new System.Windows.Forms.Panel();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_bill = new System.Windows.Forms.Button();
+            this.btn_repos = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_price = new System.Windows.Forms.Button();
             this.pn_report = new System.Windows.Forms.Panel();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.pn_ops = new System.Windows.Forms.Panel();
@@ -65,13 +73,6 @@
             this.pbx_report = new System.Windows.Forms.PictureBox();
             this.pbx_ops = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.tbx_idTable = new System.Windows.Forms.TextBox();
-            this.tbx_idBill = new System.Windows.Forms.TextBox();
-            this.tbx_subPrice = new System.Windows.Forms.TextBox();
-            this.tbx_price = new System.Windows.Forms.TextBox();
-            this.tbx_status = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -180,6 +181,64 @@
             this.tabPage2.Size = new System.Drawing.Size(711, 397);
             this.tabPage2.TabIndex = 1;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(555, 194);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 25;
+            this.button5.Text = "order";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(555, 165);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 24;
+            this.button4.Text = "submit";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // tbx_status
+            // 
+            this.tbx_status.Location = new System.Drawing.Point(555, 139);
+            this.tbx_status.Name = "tbx_status";
+            this.tbx_status.Size = new System.Drawing.Size(71, 20);
+            this.tbx_status.TabIndex = 23;
+            this.tbx_status.Text = "STATUS";
+            // 
+            // tbx_price
+            // 
+            this.tbx_price.Location = new System.Drawing.Point(555, 87);
+            this.tbx_price.Name = "tbx_price";
+            this.tbx_price.Size = new System.Drawing.Size(143, 20);
+            this.tbx_price.TabIndex = 22;
+            this.tbx_price.Text = "PRICE";
+            // 
+            // tbx_subPrice
+            // 
+            this.tbx_subPrice.Location = new System.Drawing.Point(555, 113);
+            this.tbx_subPrice.Name = "tbx_subPrice";
+            this.tbx_subPrice.Size = new System.Drawing.Size(143, 20);
+            this.tbx_subPrice.TabIndex = 21;
+            this.tbx_subPrice.Text = "SUB_PRICE";
+            // 
+            // tbx_idBill
+            // 
+            this.tbx_idBill.Location = new System.Drawing.Point(239, 61);
+            this.tbx_idBill.Name = "tbx_idBill";
+            this.tbx_idBill.Size = new System.Drawing.Size(71, 20);
+            this.tbx_idBill.TabIndex = 20;
+            this.tbx_idBill.Text = "ID_Bill";
+            // 
+            // tbx_idTable
+            // 
+            this.tbx_idTable.Location = new System.Drawing.Point(316, 61);
+            this.tbx_idTable.Name = "tbx_idTable";
+            this.tbx_idTable.Size = new System.Drawing.Size(71, 20);
+            this.tbx_idTable.TabIndex = 19;
+            this.tbx_idTable.Text = "ID_Table";
+            // 
             // lst_bill
             // 
             this.lst_bill.BackColor = System.Drawing.SystemColors.Control;
@@ -279,9 +338,10 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.button3);
+            this.tabPage4.Controls.Add(this.btn_bill);
+            this.tabPage4.Controls.Add(this.btn_repos);
             this.tabPage4.Controls.Add(this.button2);
-            this.tabPage4.Controls.Add(this.button1);
+            this.tabPage4.Controls.Add(this.btn_price);
             this.tabPage4.Controls.Add(this.pn_report);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
@@ -290,32 +350,42 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btn_bill
             // 
-            this.button3.Location = new System.Drawing.Point(490, 64);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(186, 69);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_bill.Location = new System.Drawing.Point(11, 139);
+            this.btn_bill.Name = "btn_bill";
+            this.btn_bill.Size = new System.Drawing.Size(186, 69);
+            this.btn_bill.TabIndex = 20;
+            this.btn_bill.Text = "BILL";
+            this.btn_bill.UseVisualStyleBackColor = true;
+            // 
+            // btn_repos
+            // 
+            this.btn_repos.Location = new System.Drawing.Point(11, 214);
+            this.btn_repos.Name = "btn_repos";
+            this.btn_repos.Size = new System.Drawing.Size(186, 69);
+            this.btn_repos.TabIndex = 19;
+            this.btn_repos.Text = "REPOSITORY";
+            this.btn_repos.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(250, 64);
+            this.button2.Location = new System.Drawing.Point(11, 289);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(186, 69);
             this.button2.TabIndex = 18;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btn_price
             // 
-            this.button1.Location = new System.Drawing.Point(11, 64);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(186, 69);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_price.Location = new System.Drawing.Point(11, 64);
+            this.btn_price.Name = "btn_price";
+            this.btn_price.Size = new System.Drawing.Size(186, 69);
+            this.btn_price.TabIndex = 17;
+            this.btn_price.Text = "PRICE ";
+            this.btn_price.UseVisualStyleBackColor = true;
+            this.btn_price.Click += new System.EventHandler(this.btn_price_Click);
             // 
             // pn_report
             // 
@@ -456,64 +526,6 @@
             this.pictureBox6.TabIndex = 7;
             this.pictureBox6.TabStop = false;
             // 
-            // tbx_idTable
-            // 
-            this.tbx_idTable.Location = new System.Drawing.Point(316, 61);
-            this.tbx_idTable.Name = "tbx_idTable";
-            this.tbx_idTable.Size = new System.Drawing.Size(71, 20);
-            this.tbx_idTable.TabIndex = 19;
-            this.tbx_idTable.Text = "ID_Table";
-            // 
-            // tbx_idBill
-            // 
-            this.tbx_idBill.Location = new System.Drawing.Point(239, 61);
-            this.tbx_idBill.Name = "tbx_idBill";
-            this.tbx_idBill.Size = new System.Drawing.Size(71, 20);
-            this.tbx_idBill.TabIndex = 20;
-            this.tbx_idBill.Text = "ID_Bill";
-            // 
-            // tbx_subPrice
-            // 
-            this.tbx_subPrice.Location = new System.Drawing.Point(555, 113);
-            this.tbx_subPrice.Name = "tbx_subPrice";
-            this.tbx_subPrice.Size = new System.Drawing.Size(143, 20);
-            this.tbx_subPrice.TabIndex = 21;
-            this.tbx_subPrice.Text = "SUB_PRICE";
-            // 
-            // tbx_price
-            // 
-            this.tbx_price.Location = new System.Drawing.Point(555, 87);
-            this.tbx_price.Name = "tbx_price";
-            this.tbx_price.Size = new System.Drawing.Size(143, 20);
-            this.tbx_price.TabIndex = 22;
-            this.tbx_price.Text = "PRICE";
-            // 
-            // tbx_status
-            // 
-            this.tbx_status.Location = new System.Drawing.Point(555, 139);
-            this.tbx_status.Name = "tbx_status";
-            this.tbx_status.Size = new System.Drawing.Size(71, 20);
-            this.tbx_status.TabIndex = 23;
-            this.tbx_status.Text = "STATUS";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(555, 165);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 24;
-            this.button4.Text = "submit";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(555, 194);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 25;
-            this.button5.Text = "order";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
             // GUI_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -573,9 +585,9 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_repos;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_price;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
@@ -594,5 +606,6 @@
         private System.Windows.Forms.TextBox tbx_status;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_bill;
     }
 }

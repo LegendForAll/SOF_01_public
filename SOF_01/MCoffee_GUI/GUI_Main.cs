@@ -178,5 +178,11 @@ namespace MCoffee_GUI
             pn_ops.BringToFront();
             tabControl1.SelectedTab = tabPage5;
         }
+
+        private void btn_price_Click(object sender, EventArgs e)
+        {
+            Form rp_price = new GUI_reportPRICE();
+            rp_price.Show();
+        }
     }
 }

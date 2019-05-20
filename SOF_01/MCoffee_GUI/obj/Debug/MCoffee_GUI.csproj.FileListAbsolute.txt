@@ -194,12 +194,10 @@ D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MC
 D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_AddFood.resources
 D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_AddFoodCategory.resources
 D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_INPUT.resources
-D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_InputReport.resources
 D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_Login.resources
 D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_Main.resources
 D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_OBJECT.resources
 D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_QLFood.resources
-D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_ReportNumRepo.resources
 D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_SUPLIER.resources
 D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_UNIT.resources
 D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.Properties.Resources.resources
@@ -211,3 +209,6 @@ D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MC
 D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_ORDER.resources
 D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_BILL.resources
 D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_RESEARCH.resources
+D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_reportPRICE.resources
+D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_reportCROSSTAB.resources
+D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_reportOBJECT.resources
