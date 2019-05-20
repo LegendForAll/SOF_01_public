@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MCoffee_DTO;
 using MCoffee_BUS;
+using Untility;
+using System.Data.SqlClient;
 
 namespace MCoffee_GUI
 {
@@ -18,15 +20,16 @@ namespace MCoffee_GUI
         public GUI_Users()
         {
             InitializeComponent();
+            LoadComboBoxTypeUser();
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            if(txtIdUser.Text!="" && txtNameUser.Text!="" && txtType.Text!="" &&
+            if(txtIdUser.Text!="" && txtNameUser.Text!="" && cbxType.Text!="" &&
                 txtUsername.Text!="" && txtPassword.Text!="" &&
                 dtpDateStart.Value.ToString()!="" && txtAddress.Text!="")
             {
-                DTO_User user_DTO = new DTO_User(txtIdUser.Text, txtNameUser.Text, txtType.Text, txtUsername.Text,
+                DTO_User user_DTO = new DTO_User(txtIdUser.Text, txtNameUser.Text, cbxType.Text, txtUsername.Text,
                                              txtPassword.Text, dtpDateStart.Value, txtAddress.Text);
                 if (user_BUS.Insert(user_DTO))
                 {
@@ -54,6 +57,48 @@ namespace MCoffee_GUI
             dtbUser = user_BUS.Display("Select * from [USER]");
             dataGridView1.DataSource = dtbUser;
             dataGridView1.AllowUserToAddRows = false;
+        }
+        public void LoadComboBoxTypeUser()
+        {
+            BUS_User bus_User = new BUS_User();
+            List<DTO_User> listTypeUser = bus_User.SelectAllTypeUser();
+
+            cbxType.DataSource = listTypeUser;
+            cbxType.DisplayMember = "TYPE";
+            cbxType.ValueMember = "ID_EMP";
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            String Id = txtIdUser.Text;
+            String name = txtUsername.Text;
+
+            if (user_BUS.isExit(Id))
+            {
+                DialogResult resultDialog = MessageBox.Show("Bạn có thực sự muốn xóa User " + name,
+                                            "Infomation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                if (resultDialog == DialogResult.Yes)
+                {
+                    Result result = user_BUS.Delete(Id);
+                    if (result.Flag)
+                    {
+                        MessageBox.Show("Xóa User thành công", "Successful", MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+                        User_GUI_Load(sender, e);
+                    }
+                    else
+                        MessageBox.Show("Xóa User không thành công\nError:" + result.Message,
+                                        "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+                MessageBox.Show("User không tồn tại", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

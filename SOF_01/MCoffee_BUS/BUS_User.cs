@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MCoffee_DTO;
 using MCoffee_DAL;
 using System.Data;
+using Untility;
 
 namespace MCoffee_BUS
 {
@@ -43,6 +44,29 @@ namespace MCoffee_BUS
         public DataTable Display(string sql)
         {
             return dal.Display(sql);
+        }
+
+        public List<DTO_User> SelectAllTypeUser()
+        {
+            return dal.SelectAllTypeUser();
+        }
+
+        public List<DTO_User> SelectAll()
+        {
+            return dal.SelectAll();
+        }
+        public Result Delete(String id)
+        {
+            return dal.Delete(id);
+        }
+        public bool isExit(String id)
+        {
+            List<DTO_User> user = new List<DTO_User>();
+            user = SelectAll();
+            foreach (DTO_User i in user)
+                if (i.Id.Equals(id))
+                    return true;
+            return false;
         }
     }
 }

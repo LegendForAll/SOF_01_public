@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using MCoffee_DTO; 
+using MCoffee_DTO;
+using Untility;
 
 namespace MCoffee_DAL
 {
@@ -93,6 +94,110 @@ namespace MCoffee_DAL
             { conn.Close(); }
 
             return null;
+        }
+        public List<DTO_User> SelectAllTypeUser()
+        {
+            String query = "SELECT DISTINCT [TYPE] FROM [USER]";
+
+            List<DTO_User> listUser = new List<DTO_User>();
+
+            SqlCommand cmmd = new SqlCommand();
+            cmmd.Connection = conn;
+            cmmd.CommandType = System.Data.CommandType.Text;
+            cmmd.CommandText = query;
+
+            try
+            {
+                conn.Open();
+                SqlDataReader reader;
+                reader = cmmd.ExecuteReader();
+
+                if (reader.HasRows == true)
+                {
+                    while (reader.Read())
+                        listUser.Add(new DTO_User(reader["ID_EMP"].ToString(),
+                                    reader["NAME"].ToString(),
+                                    reader["TYPE"].ToString(),
+                                    reader["USERNAME"].ToString(),
+                                    reader["PASSWORD"].ToString(),
+                                    Convert.ToDateTime(reader["DATESTART"].ToString()),
+                                    reader["ADDRESS"].ToString()));
+                }
+            }
+            catch (Exception e)
+            {
+                conn.Close();
+                System.Console.WriteLine(e.Message);
+                return null;
+            }
+
+            conn.Close();
+            return listUser;
+        }
+        public Result Delete(String id)
+        {
+            String query = "DELETE FROM [USER] WHERE [ID_EMP] = @ID_EMP";
+
+            SqlCommand cmmd = new SqlCommand();
+            cmmd.Connection = conn;
+            cmmd.CommandType = System.Data.CommandType.Text;
+            cmmd.CommandText = query;
+            cmmd.Parameters.AddWithValue("@ID_EMP", id);
+
+            try
+            {
+                conn.Open();
+                cmmd.ExecuteNonQuery();
+            }
+            catch(Exception e)
+            {
+                conn.Close();
+                System.Console.WriteLine(e.Message);
+                return new Result(false, e.Message);
+            }
+            conn.Close();
+            return new Result(true);
+
+        }
+        public List<DTO_User> SelectAll()
+        {
+            String query = "SELECT [ID_EMP], [NAME], [TYPE], [USERNAME], [PASSWORD], ";
+                    query += "[DATESTART], [ADDRESS] FROM [USER]";
+
+            List<DTO_User> listUser = new List<DTO_User>();
+
+            SqlCommand cmmd = new SqlCommand();
+            cmmd.Connection = conn;
+            cmmd.CommandType = System.Data.CommandType.Text;
+            cmmd.CommandText = query;
+
+            try
+            {
+                conn.Open();
+                SqlDataReader reader;
+                reader = cmmd.ExecuteReader();
+
+                if (reader.HasRows == true)
+                {
+                    while (reader.Read())
+                        listUser.Add(new DTO_User(reader["ID_EMP"].ToString(),
+                                    reader["NAME"].ToString(),
+                                    reader["TYPE"].ToString(),
+                                    reader["USERNAME"].ToString(),
+                                    reader["PASSWORD"].ToString(),
+                                    Convert.ToDateTime(reader["DATESTART"].ToString()),
+                                    reader["ADDRESS"].ToString()));
+                }
+            }
+            catch (Exception e)
+            {
+                conn.Close();
+                System.Console.WriteLine(e.Message);
+                return null;
+            }
+
+            conn.Close();
+            return listUser;
         }
     }
 }

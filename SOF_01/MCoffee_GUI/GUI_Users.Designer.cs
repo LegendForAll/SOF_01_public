@@ -30,13 +30,13 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cbxType = new System.Windows.Forms.ComboBox();
             this.dtpDateStart = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtNameUser = new System.Windows.Forms.TextBox();
-            this.txtType = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtIdUser = new System.Windows.Forms.TextBox();
@@ -48,11 +48,12 @@
             this.btnNameUser = new System.Windows.Forms.Button();
             this.btnIdUser = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cbxType2 = new System.Windows.Forms.ComboBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dtpDateStart2 = new System.Windows.Forms.DateTimePicker();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtAddress2 = new System.Windows.Forms.TextBox();
             this.txtNameUser2 = new System.Windows.Forms.TextBox();
-            this.txtType2 = new System.Windows.Forms.TextBox();
             this.txtUsername2 = new System.Windows.Forms.TextBox();
             this.txtPassword2 = new System.Windows.Forms.TextBox();
             this.txtIdUser2 = new System.Windows.Forms.TextBox();
@@ -63,21 +64,6 @@
             this.btnTypeUser2 = new System.Windows.Forms.Button();
             this.btnNameUser2 = new System.Windows.Forms.Button();
             this.btnIdUser2 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -97,13 +83,13 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.cbxType);
             this.tabPage1.Controls.Add(this.dtpDateStart);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.btnDelete);
             this.tabPage1.Controls.Add(this.btnInsert);
             this.tabPage1.Controls.Add(this.txtAddress);
             this.tabPage1.Controls.Add(this.txtNameUser);
-            this.tabPage1.Controls.Add(this.txtType);
             this.tabPage1.Controls.Add(this.txtUsername);
             this.tabPage1.Controls.Add(this.txtPassword);
             this.tabPage1.Controls.Add(this.txtIdUser);
@@ -122,6 +108,14 @@
             this.tabPage1.Text = "Thêm/Xóa Nhân viên";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // cbxType
+            // 
+            this.cbxType.FormattingEnabled = true;
+            this.cbxType.Location = new System.Drawing.Point(310, 154);
+            this.cbxType.Name = "cbxType";
+            this.cbxType.Size = new System.Drawing.Size(568, 33);
+            this.cbxType.TabIndex = 26;
+            // 
             // dtpDateStart
             // 
             this.dtpDateStart.Location = new System.Drawing.Point(310, 341);
@@ -132,14 +126,6 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.NameUser,
-            this.Type,
-            this.Username,
-            this.Password,
-            this.DateStart,
-            this.Address});
             this.dataGridView1.Location = new System.Drawing.Point(28, 549);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 33;
@@ -154,6 +140,7 @@
             this.btnDelete.TabIndex = 15;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnInsert
             // 
@@ -179,13 +166,6 @@
             this.txtNameUser.Size = new System.Drawing.Size(568, 31);
             this.txtNameUser.TabIndex = 12;
             // 
-            // txtType
-            // 
-            this.txtType.Location = new System.Drawing.Point(310, 154);
-            this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(568, 31);
-            this.txtType.TabIndex = 11;
-            // 
             // txtUsername
             // 
             this.txtUsername.Location = new System.Drawing.Point(310, 214);
@@ -199,6 +179,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(568, 31);
             this.txtPassword.TabIndex = 9;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtIdUser
             // 
@@ -272,12 +253,12 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.cbxType2);
             this.tabPage2.Controls.Add(this.dataGridView2);
             this.tabPage2.Controls.Add(this.dtpDateStart2);
             this.tabPage2.Controls.Add(this.btnUpdate);
             this.tabPage2.Controls.Add(this.txtAddress2);
             this.tabPage2.Controls.Add(this.txtNameUser2);
-            this.tabPage2.Controls.Add(this.txtType2);
             this.tabPage2.Controls.Add(this.txtUsername2);
             this.tabPage2.Controls.Add(this.txtPassword2);
             this.tabPage2.Controls.Add(this.txtIdUser2);
@@ -296,6 +277,23 @@
             this.tabPage2.Text = "Sửa Nhân viên";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // cbxType2
+            // 
+            this.cbxType2.FormattingEnabled = true;
+            this.cbxType2.Location = new System.Drawing.Point(310, 154);
+            this.cbxType2.Name = "cbxType2";
+            this.cbxType2.Size = new System.Drawing.Size(568, 33);
+            this.cbxType2.TabIndex = 25;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(28, 549);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 33;
+            this.dataGridView2.Size = new System.Drawing.Size(1059, 452);
+            this.dataGridView2.TabIndex = 24;
+            // 
             // dtpDateStart2
             // 
             this.dtpDateStart2.Location = new System.Drawing.Point(310, 341);
@@ -311,6 +309,7 @@
             this.btnUpdate.TabIndex = 21;
             this.btnUpdate.Text = "Sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txtAddress2
             // 
@@ -325,13 +324,6 @@
             this.txtNameUser2.Name = "txtNameUser2";
             this.txtNameUser2.Size = new System.Drawing.Size(568, 31);
             this.txtNameUser2.TabIndex = 19;
-            // 
-            // txtType2
-            // 
-            this.txtType2.Location = new System.Drawing.Point(310, 154);
-            this.txtType2.Name = "txtType2";
-            this.txtType2.Size = new System.Drawing.Size(568, 31);
-            this.txtType2.TabIndex = 18;
             // 
             // txtUsername2
             // 
@@ -417,127 +409,14 @@
             this.btnIdUser2.Text = "Mã Nhân viên";
             this.btnIdUser2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7});
-            this.dataGridView2.Location = new System.Drawing.Point(28, 549);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 33;
-            this.dataGridView2.Size = new System.Drawing.Size(1059, 452);
-            this.dataGridView2.TabIndex = 24;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã Nhân viên";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 190;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Họ tên";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Loại Nhân viên";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 185;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Username";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 155;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Password";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 151;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Ngày vào làm";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 143;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Địa chỉ";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 89;
-            // 
-            // Id
-            // 
-            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Id.HeaderText = "Mã Nhân viên";
-            this.Id.Name = "Id";
-            this.Id.Width = 190;
-            // 
-            // NameUser
-            // 
-            this.NameUser.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.NameUser.HeaderText = "Họ tên";
-            this.NameUser.Name = "NameUser";
-            this.NameUser.Width = 120;
-            // 
-            // Type
-            // 
-            this.Type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Type.HeaderText = "Loại Nhân viên";
-            this.Type.Name = "Type";
-            this.Type.Width = 185;
-            // 
-            // Username
-            // 
-            this.Username.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Username.HeaderText = "Username";
-            this.Username.Name = "Username";
-            this.Username.Width = 155;
-            // 
-            // Password
-            // 
-            this.Password.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Password.HeaderText = "Password";
-            this.Password.Name = "Password";
-            this.Password.Width = 151;
-            // 
-            // DateStart
-            // 
-            this.DateStart.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.DateStart.HeaderText = "Ngày vào làm";
-            this.DateStart.Name = "DateStart";
-            this.DateStart.Width = 143;
-            // 
-            // Address
-            // 
-            this.Address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Address.HeaderText = "Địa chỉ";
-            this.Address.Name = "Address";
-            this.Address.Width = 89;
-            // 
             // GUI_Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1142, 1117);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1136, 1112);
             this.Controls.Add(this.tabControl1);
+            this.MaximizeBox = false;
             this.Name = "GUI_Users";
             this.Text = "GUI_Users";
             this.tabControl1.ResumeLayout(false);
@@ -563,7 +442,6 @@
         private System.Windows.Forms.Button btnPassword;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtNameUser;
-        private System.Windows.Forms.TextBox txtType;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtIdUser;
@@ -575,7 +453,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.TextBox txtAddress2;
         private System.Windows.Forms.TextBox txtNameUser2;
-        private System.Windows.Forms.TextBox txtType2;
         private System.Windows.Forms.TextBox txtUsername2;
         private System.Windows.Forms.TextBox txtPassword2;
         private System.Windows.Forms.TextBox txtIdUser2;
@@ -589,19 +466,7 @@
         private System.Windows.Forms.DateTimePicker dtpDateStart;
         private System.Windows.Forms.DateTimePicker dtpDateStart2;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameUser;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateStart;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
+        private System.Windows.Forms.ComboBox cbxType;
+        private System.Windows.Forms.ComboBox cbxType2;
     }
 }
