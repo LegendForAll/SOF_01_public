@@ -89,6 +89,12 @@
     <Compile Include="GUI_Main.Designer.cs">
       <DependentUpon>GUI_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_QLCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_QLCategory.Designer.cs">
+      <DependentUpon>GUI_QLCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_QLFood.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_Main.resx">
       <DependentUpon>GUI_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_QLCategory.resx">
+      <DependentUpon>GUI_QLCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_QLFood.resx">
       <DependentUpon>GUI_QLFood.cs</DependentUpon>

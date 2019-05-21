@@ -25,5 +25,13 @@ namespace MCoffee_BUS
         {
             return food_category.SelectAll(ref ListCategory);
         }
+        public bool Update(DTO_FOOD_CATEGORY dal)
+        {
+            return food_category.Update(dal);
+        }
+        public bool Delete(String ID_CAT)
+        {
+            return food_category.Delete(ID_CAT);
+        }
     }
 }

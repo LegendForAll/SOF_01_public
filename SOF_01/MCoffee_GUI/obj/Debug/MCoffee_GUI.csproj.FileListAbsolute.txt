@@ -38,3 +38,4 @@ C:\Users\vu\Desktop\SOF_01_public\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_A
 C:\Users\vu\Desktop\SOF_01_public\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_QLFood.resources
 C:\Users\vu\Desktop\SOF_01_public\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_AddFoodCategory.resources
 C:\Users\vu\Desktop\SOF_01_public\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.QLTable.resources
+C:\Users\vu\Desktop\SOF_01_public\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_QLCategory.resources

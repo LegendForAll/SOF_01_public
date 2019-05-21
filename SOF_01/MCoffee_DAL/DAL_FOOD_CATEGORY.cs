@@ -86,5 +86,51 @@ namespace MCoffee_DAL
 
             return false;
         }
+        public bool Update(DTO_FOOD_CATEGORY foodcategory)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE [FOOD_CATEGORY] SET " +
+                    "[DISPLAYNAME]=@DISPLAYNAME " +
+                    "WHERE [ID_CAT]=@ID_CAT", conn);
+                cmd.Parameters.AddWithValue("@DISPLAYNAME", foodcategory.DISPLAYNAME);
+                cmd.Parameters.AddWithValue("@ID_CAT", foodcategory.ID_CAT);
+                if (cmd.ExecuteNonQuery() > 0)
+                    return true;
+            }
+
+            catch (Exception e)
+            { }
+
+            finally
+            {
+                conn.Close();
+            }
+
+            return false;
+        }
+        public bool Delete(String ID_CAT)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("DELETE FROM [FOOD_CATEGORY] " +
+                    "WHERE [ID_CAT] = @ID_CAT", conn);
+                cmd.Parameters.AddWithValue("@ID_CAT", ID_CAT);
+                if (cmd.ExecuteNonQuery() > 0)
+                    return true;
+            }
+
+            catch (Exception e)
+            { }
+
+            finally
+            {
+                conn.Close();
+            }
+
+            return false;
+        }
     }
 }
