@@ -95,17 +95,16 @@ namespace MCoffee_DAL
 
             return null;
         }
-        public List<DTO_User> SelectAllTypeUser()
+        public List<DTO_TypeUser> SelectAllTypeUser()
         {
-            String query = "SELECT DISTINCT [TYPE] FROM [USER]";
-
-            List<DTO_User> listUser = new List<DTO_User>();
-
+            String query = "SELECT * FROM [USER] ";
             SqlCommand cmmd = new SqlCommand();
             cmmd.Connection = conn;
             cmmd.CommandType = System.Data.CommandType.Text;
             cmmd.CommandText = query;
 
+
+            List<DTO_TypeUser> listUser = new List<DTO_TypeUser>();
             try
             {
                 conn.Open();
@@ -115,13 +114,8 @@ namespace MCoffee_DAL
                 if (reader.HasRows == true)
                 {
                     while (reader.Read())
-                        listUser.Add(new DTO_User(reader["ID_EMP"].ToString(),
-                                    reader["NAME"].ToString(),
-                                    reader["TYPE"].ToString(),
-                                    reader["USERNAME"].ToString(),
-                                    reader["PASSWORD"].ToString(),
-                                    Convert.ToDateTime(reader["DATESTART"].ToString()),
-                                    reader["ADDRESS"].ToString()));
+                        listUser.Add(new DTO_TypeUser(reader["ID_EMP"].ToString(),
+                                    reader["TYPE"].ToString()));
                 }
             }
             catch (Exception e)
@@ -158,46 +152,6 @@ namespace MCoffee_DAL
             conn.Close();
             return new Result(true);
 
-        }
-        public List<DTO_User> SelectAll()
-        {
-            String query = "SELECT [ID_EMP], [NAME], [TYPE], [USERNAME], [PASSWORD], ";
-                    query += "[DATESTART], [ADDRESS] FROM [USER]";
-
-            List<DTO_User> listUser = new List<DTO_User>();
-
-            SqlCommand cmmd = new SqlCommand();
-            cmmd.Connection = conn;
-            cmmd.CommandType = System.Data.CommandType.Text;
-            cmmd.CommandText = query;
-
-            try
-            {
-                conn.Open();
-                SqlDataReader reader;
-                reader = cmmd.ExecuteReader();
-
-                if (reader.HasRows == true)
-                {
-                    while (reader.Read())
-                        listUser.Add(new DTO_User(reader["ID_EMP"].ToString(),
-                                    reader["NAME"].ToString(),
-                                    reader["TYPE"].ToString(),
-                                    reader["USERNAME"].ToString(),
-                                    reader["PASSWORD"].ToString(),
-                                    Convert.ToDateTime(reader["DATESTART"].ToString()),
-                                    reader["ADDRESS"].ToString()));
-                }
-            }
-            catch (Exception e)
-            {
-                conn.Close();
-                System.Console.WriteLine(e.Message);
-                return null;
-            }
-
-            conn.Close();
-            return listUser;
         }
     }
 }

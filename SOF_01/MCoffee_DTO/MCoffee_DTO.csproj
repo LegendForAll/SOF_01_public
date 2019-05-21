@@ -51,6 +51,7 @@
     <Compile Include="DTO_Object.cs" />
     <Compile Include="DTO_Object2.cs" />
     <Compile Include="DTO_Suplier.cs" />
+    <Compile Include="DTO_TypeUser.cs" />
     <Compile Include="DTO_Unit.cs" />
     <Compile Include="DTO_User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

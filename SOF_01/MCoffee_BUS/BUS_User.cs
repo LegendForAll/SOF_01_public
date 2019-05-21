@@ -46,24 +46,20 @@ namespace MCoffee_BUS
             return dal.Display(sql);
         }
 
-        public List<DTO_User> SelectAllTypeUser()
+        public List<DTO_TypeUser> SelectAllTypeUser()
         {
             return dal.SelectAllTypeUser();
         }
-
-        public List<DTO_User> SelectAll()
-        {
-            return dal.SelectAll();
-        }
+        
         public Result Delete(String id)
         {
             return dal.Delete(id);
         }
         public bool isExit(String id)
         {
-            List<DTO_User> user = new List<DTO_User>();
-            user = SelectAll();
-            foreach (DTO_User i in user)
+            List<DTO_TypeUser> user = new List<DTO_TypeUser>();
+            user = SelectAllTypeUser();
+            foreach (DTO_TypeUser i in user)
                 if (i.Id.Equals(id))
                     return true;
             return false;
