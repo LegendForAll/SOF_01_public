@@ -17,11 +17,13 @@ namespace MCoffee_DAL
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT [NUMBER] , [STATUS] FROM [TABLE] ORDER BY [NUMBER] ASC", conn);
+                SqlCommand cmd = new SqlCommand("SELECT [ID_TAB], [NUMBER],[AREA] , [STATUS] " +
+                    "FROM [TABLE] ORDER BY [ID_TAB] ASC", conn);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    ListCategory.Add(new DTO_TABLE(Int32.Parse(dr["NUMBER"].ToString()), dr["STATUS"].ToString()));
+                    ListCategory.Add(new DTO_TABLE(dr["ID_TAB"].ToString(),dr["NUMBER"].ToString(), 
+                        dr["AREA"].ToString(),Int32.Parse(dr["STATUS"].ToString())));
                 }
                 if (cmd.ExecuteNonQuery() > 0)
                     return true;
@@ -37,16 +39,16 @@ namespace MCoffee_DAL
 
             return false;
         }
-        public bool UpdateStatus(String number, int status)
+        public bool UpdateStatus(String IdTable, int status)
         {
             try
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("UPDATE [TABLE] " +
                     "SET [STATUS]=@STATUS" +
-                    " WHERE [NUMBER]=@NUMBER", conn);
+                    " WHERE [ID_TAB]=@ID_TAB", conn);
                 cmd.Parameters.AddWithValue("@STATUS", status);
-                cmd.Parameters.AddWithValue("@NUMBER", number);
+                cmd.Parameters.AddWithValue("@ID_TAB", IdTable);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (cmd.ExecuteNonQuery() > 0)
                     return true;

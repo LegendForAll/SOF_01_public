@@ -36,7 +36,7 @@ namespace MCoffee_GUI
                 btn.Click += btn_Click;
                 switch (item.STATUS)
                 {
-                    case "0":
+                    case 0:
                         btn.BackColor = Color.Aqua;
                         btn.Text = "Ban " + item.NUMBER + "\ncó người";
                         break;
@@ -55,8 +55,8 @@ namespace MCoffee_GUI
             List<DTO_FOOD_CATEGORY> listcategory = new List<DTO_FOOD_CATEGORY>();
             food_category_BUS.SelectAll(ref listcategory);
             cbCategory.DataSource = listcategory;
-            cbCategory.DisplayMember = "NAMECAT";
-            cbCategory.Text = listcategory[0].NAMECAT;
+            cbCategory.DisplayMember = "DISPLAYNAME";
+            cbCategory.Text = listcategory[0].DISPLAYNAME;
 
             List<DTO_FOOD> listfood = new List<DTO_FOOD>();
             food_BUS.SelectAllByCategory(ref listfood, cbCategory.Text);
@@ -70,13 +70,13 @@ namespace MCoffee_GUI
         {
             cbFood.Text = null;
             List<DTO_FOOD> listfood = new List<DTO_FOOD>();
-            food_BUS.SelectAllByCategory(ref listfood, (cbCategory.SelectedItem as DTO_FOOD_CATEGORY).NAMECAT);
+            food_BUS.SelectAllByCategory(ref listfood, (cbCategory.SelectedItem as DTO_FOOD_CATEGORY).DISPLAYNAME);
             cbFood.DataSource = listfood;
             cbFood.DisplayMember = "DISPLAYNAME";
         }
         void btn_Click(object sender, EventArgs e)
         {
-            int tableID = ((sender as Button).Tag as DTO_TABLE).NUMBER;
+            string tableID = ((sender as Button).Tag as DTO_TABLE).ID_TAB;
             lvBill.Tag = (sender as Button).Tag;
             ShowBill(tableID);
             int sumprice = 0;
@@ -88,7 +88,7 @@ namespace MCoffee_GUI
                 bill_info_BUS.Sumprice(ref sumprice, IdBill);
             lbTongTien.Text ="Sum:"+ sumprice.ToString();
         }
-        void ShowBill(int id)
+        void ShowBill(string id)
         {
             lvBill.Items.Clear();
             List<DTO_Menu> listmenu=new List<DTO_Menu>();
@@ -96,7 +96,7 @@ namespace MCoffee_GUI
             foreach (DTO_Menu item in listmenu)
             {
                 ListViewItem lsvItem = new ListViewItem(item.DISPLAYNAME.ToString());
-                lsvItem.SubItems.Add(item.NUMBER.ToString());
+                lsvItem.SubItems.Add(item.COUNT.ToString());
                 lsvItem.SubItems.Add(item.PRICE.ToString());
                 lvBill.Items.Add(lsvItem);
             }
@@ -120,10 +120,12 @@ namespace MCoffee_GUI
                 bill_BUS.NextID(ref ID_Bill);
                 IdBill = ID_Bill.ToString();
                 bill.ID_BIL = ID_Bill.ToString();
-                bill.NUMBER = table.NUMBER.ToString();
-                bill.STATUS = 1;
+                bill.ID_TAB = table.ID_TAB.ToString();
+                bill.STATUS = "1";
                 bill.SUBPRICE =0;
                 bill.SUMPRICE = 0;
+                bill.ID_EMP = "A";
+                bill.DATETIME = DateTime.Now;
                 bill_BUS.Insert(bill);
             }
             DTO_FOOD food = new DTO_FOOD();
@@ -149,7 +151,7 @@ namespace MCoffee_GUI
             {
                 bill_BUS.UpdateSubPrice(Int32.Parse(txtSubPrice.Text), IdBill);
                 table_BUS.UpdateStatus(table.NUMBER.ToString(), 1);
-                bill_BUS.UpdateStatus(IdBill, 0);
+                bill_BUS.UpdateStatus(IdBill,"0");
                 LoadTable();
                 ShowBill(table.NUMBER);
             }
@@ -161,11 +163,6 @@ namespace MCoffee_GUI
             bool test = food_BUS.SelectAllByName(ref food, cbFood.Text);
             if(test)
                 pbFood.Image = new Bitmap(food.PICTURE);
-        }
-
-        private void pbFood_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

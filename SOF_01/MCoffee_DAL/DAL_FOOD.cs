@@ -74,7 +74,7 @@ namespace MCoffee_DAL
                 {
                     ListFood.Add(new DTO_FOOD(dr["ID_FOD"].ToString(), dr["ID_CAT"].ToString()
                         , dr["DISPLAYNAME"].ToString(), 
-                        Int32.Parse( dr["OUTPUTPRICE"].ToString()), dr["PICTURE"].ToString()));
+                        double.Parse( dr["OUTPUTPRICE"].ToString()), dr["PICTURE"].ToString()));
                 }
                 if (cmd.ExecuteNonQuery() > 0)
                     return true;
@@ -96,18 +96,18 @@ namespace MCoffee_DAL
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand
-                    ("SELECT [ID_FOD],[FOOD].[ID_CAT],[DISPLAYNAME], [OUTPUTPRICE],[PICTURE]" +
+                    ("SELECT [ID_FOD],[FOOD].[ID_CAT],[FOOD].[DISPLAYNAME], [OUTPUTPRICE],[PICTURE]" +
                     "FROM [FOOD],[FOOD_CATEGORY] " +
-                    "WHERE [FOOD].[ID_CAT]=[FOOD_CATEGORY].[ID_CAT]" +
-                    " AND [NAMECAT]=@NAMECAT" +
+                    "WHERE [FOOD].[ID_CAT]=[FOOD_CATEGORY].[ID_CAT] " +
+                    " AND [FOOD_CATEGORY].[DISPLAYNAME]=@DISPLAYNAME " +
                     " ORDER BY [ID_FOD] ASC", conn);
-                cmd.Parameters.AddWithValue("@NAMECAT", Category);
+                cmd.Parameters.AddWithValue("@DISPLAYNAME", Category);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
                     ListFood.Add(new DTO_FOOD(dr["ID_FOD"].ToString(), dr["ID_CAT"].ToString()
                         , dr["DISPLAYNAME"].ToString(), 
-                        Int32.Parse(dr["OUTPUTPRICE"].ToString()), dr["PICTURE"].ToString()));
+                        double.Parse(dr["OUTPUTPRICE"].ToString()), dr["PICTURE"].ToString()));
                 }
                 if (cmd.ExecuteNonQuery() > 0)
                     return true;
@@ -131,7 +131,7 @@ namespace MCoffee_DAL
                 SqlCommand cmd = new SqlCommand("UPDATE [FOOD] SET " +
                     "[ID_CAT]=@ID_CAT, " +
                     "[DISPLAYNAME]=@DISPLAYNAME, " +
-                    "[OUTPUTPRICE]=@OUTPUTPRICE " +
+                    "[OUTPUTPRICE]=@OUTPUTPRICE, " +
                     "[PICTURE]=@PICTURE " +
                     "WHERE [ID_FOD]=@ID_FOD", conn);
                 cmd.Parameters.AddWithValue("@ID_FOD", food.ID_FOD);
@@ -194,7 +194,7 @@ namespace MCoffee_DAL
                 {
                     ListFood.Add(new DTO_FOOD(dr["ID_FOD"].ToString(), dr["ID_CAT"].ToString()
                         , dr["DISPLAYNAME"].ToString(), 
-                        Int32.Parse(dr["OUTPUTPRICE"].ToString()), dr["PICTURE"].ToString()));
+                        double.Parse(dr["OUTPUTPRICE"].ToString()), dr["PICTURE"].ToString()));
                 }
                 if (cmd.ExecuteNonQuery() > 0)
                     return true;
@@ -226,7 +226,7 @@ namespace MCoffee_DAL
                 {
                     food=new DTO_FOOD(dr["ID_FOD"].ToString(), dr["ID_CAT"].ToString()
                         , dr["DISPLAYNAME"].ToString(), 
-                        Int32.Parse(dr["OUTPUTPRICE"].ToString()), dr["PICTURE"].ToString());
+                        double.Parse(dr["OUTPUTPRICE"].ToString()), dr["PICTURE"].ToString());
                     return true;
                 }
                 if (cmd.ExecuteNonQuery() > 0)

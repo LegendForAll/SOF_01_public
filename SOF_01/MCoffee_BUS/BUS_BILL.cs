@@ -23,15 +23,15 @@ namespace MCoffee_BUS
         {
             return bill.Insert(dal);
         }
-        public bool UpdateSumPrice(int SUMPRICE,String ID_BIL)
+        public bool UpdateSumPrice(double SUMPRICE,String ID_BIL)
         {
             return bill.UpdateSumPrice(SUMPRICE, ID_BIL);
         }
-        public bool UpdateSubPrice(int SUBPRICE, String ID_BIL)
+        public bool UpdateSubPrice(double SUBPRICE, String ID_BIL)
         {
             return bill.UpdateSubPrice(SUBPRICE, ID_BIL);
         }
-        public bool UpdateStatus(String ID_BIL, int status)
+        public bool UpdateStatus(String ID_BIL, string status)
         {
             return bill.UpdateStatus(ID_BIL, status);
         }

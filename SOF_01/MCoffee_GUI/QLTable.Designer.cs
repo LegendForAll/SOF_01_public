@@ -147,7 +147,6 @@
             this.pbFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbFood.TabIndex = 9;
             this.pbFood.TabStop = false;
-            this.pbFood.Click += new System.EventHandler(this.pbFood_Click);
             // 
             // QLTable
             // 

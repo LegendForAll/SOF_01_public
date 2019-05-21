@@ -12,7 +12,7 @@ namespace MCoffee_DAL
 {
     public class DAL_BILL_INFO : DBConnection
     {
-        public bool SelectAllByTableNumber(ref List<DTO_Menu> ListBillInfo, String number)
+        public bool SelectAllByTableNumber(ref List<DTO_Menu> ListBillInfo, String IdTable)
         {
             try
             {
@@ -22,15 +22,15 @@ namespace MCoffee_DAL
                     "FROM [BILL],[BILL_INFO],[FOOD] " +
                     "WHERE [BILL].[ID_BIL]=[BILL_INFO].[ID_BIL] " +
                     "AND [BILL_INFO].[ID_FOD]=[FOOD].[ID_FOD]" +
-                    "AND [NUMBER]=@NUMBER " +
+                    "AND [ID_TAB]=@ID_TAB " +
                     "AND [STATUS]=@STATUS ", conn);
-                cmd.Parameters.AddWithValue("@NUMBER", number);
+                cmd.Parameters.AddWithValue("@ID_TAB", IdTable);
                 cmd.Parameters.AddWithValue("@STATUS", 1);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    ListBillInfo.Add(new DTO_Menu(dr["DISPLAYNAME"].ToString(), dr["COUNT"].ToString()
-                        , dr["PRICE"].ToString()));
+                    ListBillInfo.Add(new DTO_Menu(dr["DISPLAYNAME"].ToString(), 
+                        Int32.Parse(dr["COUNT"].ToString()), double.Parse(dr["PRICE"].ToString())));
                 }
                 if (cmd.ExecuteNonQuery() > 0)
                     return true;

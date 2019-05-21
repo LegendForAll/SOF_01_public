@@ -32,7 +32,7 @@ namespace MCoffee_GUI
         {
             DTO_FOOD_CATEGORY food_category_DTO = new DTO_FOOD_CATEGORY();
             food_category_DTO.ID_CAT = txbID.Text;
-            food_category_DTO.NAMECAT = txbName.Text;
+            food_category_DTO.DISPLAYNAME = txbName.Text;
             food_category_BUS.Insert(food_category_DTO);
             int nextID = 0;
             food_category_BUS.NextID(ref nextID);

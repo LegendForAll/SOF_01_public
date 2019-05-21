@@ -17,9 +17,9 @@ namespace MCoffee_BUS
         {
             return table.SelectAll(ref ListTable);
         }
-        public bool UpdateStatus(String number ,int status)
+        public bool UpdateStatus(String IdTable ,int status)
         {
-            return table.UpdateStatus(number,status);
+            return table.UpdateStatus(IdTable, status);
         }
     }
 }

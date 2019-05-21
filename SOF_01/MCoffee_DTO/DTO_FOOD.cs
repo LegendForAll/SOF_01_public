@@ -11,11 +11,11 @@ namespace MCoffee_DTO
         private string _ID_FOD; 
         private string _ID_CAT; 
         private string _DISPLAYNAME;
-        private int _OUTPUTPRICE;
+        private double _OUTPUTPRICE;
         private string _PICTURE;
 
         public DTO_FOOD() { }
-        public DTO_FOOD(String ID_FOD, String ID_CAT, String DISPLAYNAME, int OUTPUTPRICE,string PICTURE)
+        public DTO_FOOD(String ID_FOD, String ID_CAT, String DISPLAYNAME, double OUTPUTPRICE,string PICTURE)
         {
             _ID_FOD = ID_FOD;
             _ID_CAT = ID_CAT;
@@ -27,7 +27,7 @@ namespace MCoffee_DTO
         public string ID_FOD { get => _ID_FOD; set => _ID_FOD = value; }
         public string ID_CAT { get => _ID_CAT; set => _ID_CAT = value; }
         public string DISPLAYNAME { get => _DISPLAYNAME; set => _DISPLAYNAME = value; }
-        public int OUTPUTPRICE { get => _OUTPUTPRICE; set => _OUTPUTPRICE = value; }
+        public double OUTPUTPRICE { get => _OUTPUTPRICE; set => _OUTPUTPRICE = value; }
         public string PICTURE { get => _PICTURE; set => _PICTURE = value; }
     }
 }

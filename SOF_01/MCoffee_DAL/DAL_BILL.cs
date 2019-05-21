@@ -20,9 +20,9 @@ namespace MCoffee_DAL
                 SqlCommand cmd = new SqlCommand
                     ("SELECT [ID_BIL] " +
                     "FROM [BILL] " +
-                    "WHERE [NUMBER]=@NUMBER " +
+                    "WHERE [ID_TAB]=@ID_TAB " +
                     "AND STATUS = @STATUS", conn);
-                cmd.Parameters.AddWithValue("@NUMBER", IdTable);
+                cmd.Parameters.AddWithValue("@ID_TAB", IdTable);
                 cmd.Parameters.AddWithValue("@STATUS", 1);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -75,12 +75,14 @@ namespace MCoffee_DAL
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("INSERT INTO [BILL] " +
-                    "VALUES(@ID_BIL, @NUMBER,@SUMPRICE, @SUBPRICE, @STATUS)", conn);
+                    "VALUES(@ID_BIL,@DATETIME,@ID_EMP, @ID_TAB, @STATUS,@SUMPRICE, @SUBPRICE)", conn);
                 cmd.Parameters.AddWithValue("@ID_BIL", bill_info.ID_BIL);
-                cmd.Parameters.AddWithValue("@NUMBER", bill_info.NUMBER);
+                cmd.Parameters.AddWithValue("@DATETIME", bill_info.DATETIME);
+                cmd.Parameters.AddWithValue("@ID_EMP", bill_info.ID_EMP);
+                cmd.Parameters.AddWithValue("@ID_TAB", bill_info.ID_TAB);
+                cmd.Parameters.AddWithValue("@STATUS", bill_info.STATUS);
                 cmd.Parameters.AddWithValue("@SUMPRICE", bill_info.SUMPRICE);
                 cmd.Parameters.AddWithValue("@SUBPRICE", bill_info.SUBPRICE);
-                cmd.Parameters.AddWithValue("@STATUS", bill_info.STATUS);
                 if (cmd.ExecuteNonQuery() > 0)
                     return true;
             }
@@ -95,7 +97,7 @@ namespace MCoffee_DAL
 
             return false;
         }
-        public bool UpdateSumPrice(int SUMPRICE,String ID_BIL)
+        public bool UpdateSumPrice(double SUMPRICE,String ID_BIL)
         {
             try
             {
@@ -117,7 +119,7 @@ namespace MCoffee_DAL
             }
             return false;
         }
-        public bool UpdateSubPrice(int SUBPRICE, String ID_BIL)
+        public bool UpdateSubPrice(double SUBPRICE, String ID_BIL)
         {
             try
             {
@@ -139,7 +141,7 @@ namespace MCoffee_DAL
             }
             return false;
         }
-        public bool UpdateStatus(String ID_BIL, int status)
+        public bool UpdateStatus(String ID_BIL, string status)
         {
             try
             {

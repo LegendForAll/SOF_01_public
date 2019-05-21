@@ -12,9 +12,9 @@ namespace MCoffee_BUS
     public class BUS_BILL_INFO
     {
         DAL_BILL_INFO bill_info = new DAL_BILL_INFO();
-        public bool SelectAllByTableNumber(ref List<DTO_Menu> ListBillInfo, String number)
+        public bool SelectAllByTableNumber(ref List<DTO_Menu> ListBillInfo, String IdTable)
         {
-            return bill_info.SelectAllByTableNumber(ref ListBillInfo, number);
+            return bill_info.SelectAllByTableNumber(ref ListBillInfo, IdTable);
         }
         public bool Insert(DTO_BILL_INFO dal)
         {

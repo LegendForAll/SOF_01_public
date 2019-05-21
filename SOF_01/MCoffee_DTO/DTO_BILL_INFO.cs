@@ -12,10 +12,10 @@ namespace MCoffee_DTO
         private string _ID_FOD;
         private string _ID_BIL;
         private int _COUNT;
-        private int _PRICE;
+        private double _PRICE;
 
         public DTO_BILL_INFO() { }
-        public DTO_BILL_INFO(string ID_BILF, String ID_FOD, string ID_BIL, int COUNT, int PRICE)
+        public DTO_BILL_INFO(string ID_BILF, String ID_FOD, string ID_BIL, int COUNT, double PRICE)
         {
             _ID_BILF = ID_BILF;
             _ID_FOD = ID_FOD;
@@ -28,7 +28,7 @@ namespace MCoffee_DTO
         public string ID_FOD { get => _ID_FOD; set => _ID_FOD = value; }
         public string ID_BIL { get => _ID_BIL; set => _ID_BIL = value; }
         public int COUNT { get => _COUNT; set => _COUNT = value; }
-        public int PRICE { get => _PRICE; set => _PRICE = value; }
+        public double PRICE { get => _PRICE; set => _PRICE = value; }
 
     }
 }

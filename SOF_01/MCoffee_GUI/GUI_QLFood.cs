@@ -27,13 +27,13 @@ namespace MCoffee_GUI
             List<DTO_FOOD_CATEGORY> listcategoryView = new List<DTO_FOOD_CATEGORY>();
             food_category_BUS.SelectAll(ref listcategoryView);
             cbViewCategory.DataSource = listcategoryView;
-            cbViewCategory.DisplayMember = "NAMECAT";
+            cbViewCategory.DisplayMember = "DISPLAYNAME";
             
 
             List<DTO_FOOD_CATEGORY> listcategory = new List<DTO_FOOD_CATEGORY>();
             food_category_BUS.SelectAll(ref listcategory);
             cbCategory.DataSource = listcategory;
-            cbCategory.DisplayMember = "NAMECAT";
+            cbCategory.DisplayMember = "DISPLAYNAME";
             cbIDcategory.DataSource = listcategory;
             cbIDcategory.DisplayMember = "ID_CAT";
             cbIDcategory.Text = "1";
@@ -111,7 +111,7 @@ namespace MCoffee_GUI
                 {
                     DTO_FOOD food_DTO = new DTO_FOOD();
                     food_DTO.ID_FOD = txbID.Text;
-                    food_DTO.OUTPUTPRICE = Int32.Parse( txbPrice.Text);
+                    food_DTO.OUTPUTPRICE = double.Parse( txbPrice.Text);
                     food_DTO.DISPLAYNAME = txbName.Text;
                     food_DTO.ID_CAT = cbIDcategory.Text;
                     food_DTO.PICTURE = openFileDialog1.FileName;
@@ -175,11 +175,6 @@ namespace MCoffee_GUI
             clOUTPUTPRICE.HeaderText = "PRICE";
             clOUTPUTPRICE.DataPropertyName = "OUTPUTPRICE";
             dgvFoodCategory.Columns.Add(clOUTPUTPRICE);
-        }
-
-        private void btAdd_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btSelectPicture_Click(object sender, EventArgs e)

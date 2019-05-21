@@ -9,18 +9,18 @@ namespace MCoffee_DTO
     public class DTO_Menu
     {
         private string _DISPLAYNAME;
-        private string _NUMBER;
-        private string _PRICE;
+        private int _COUNT;
+        private Double _PRICE;
 
         public DTO_Menu() { }
-        public DTO_Menu(string DISPLAYNAME, String NUMBER, string PRICE)
+        public DTO_Menu(string DISPLAYNAME, int COUNT, Double PRICE)
         {
             _DISPLAYNAME = DISPLAYNAME;
-            _NUMBER = NUMBER;
+            _COUNT = COUNT;
             _PRICE = PRICE;
         }
         public string DISPLAYNAME { get => _DISPLAYNAME; set => _DISPLAYNAME = value; }
-        public string NUMBER { get => _NUMBER; set => _NUMBER = value; }
-        public string PRICE { get => _PRICE; set => _PRICE = value; }
+        public int COUNT { get => _COUNT; set => _COUNT = value; }
+        public double PRICE { get => _PRICE; set => _PRICE = value; }
    }
 }

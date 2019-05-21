@@ -17,9 +17,10 @@ namespace MCoffee_DAL
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO [FOOD_CATEGORY] VALUES(@ID_CAT, @NAMECAT)", conn);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [FOOD_CATEGORY]" +
+                    " VALUES(@ID_CAT, @DISPLAYNAME)", conn);
                 cmd.Parameters.AddWithValue("@ID_CAT", food_category.ID_CAT);
-                cmd.Parameters.AddWithValue("@NAMECAT", food_category.NAMECAT);
+                cmd.Parameters.AddWithValue("@DISPLAYNAME", food_category.DISPLAYNAME);
                 if (cmd.ExecuteNonQuery() > 0)
                     return true;
             }
@@ -39,7 +40,8 @@ namespace MCoffee_DAL
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 [ID_CAT] FROM [FOOD_CATEGORY] ORDER BY [ID_CAT] DESC", conn);
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 [ID_CAT] " +
+                    "FROM [FOOD_CATEGORY] ORDER BY [ID_CAT] DESC", conn);
                 SqlDataReader dr = cmd.ExecuteReader();
                 dr.Read();
                 String ID = dr["ID_CAT"].ToString();
@@ -63,11 +65,12 @@ namespace MCoffee_DAL
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT [ID_CAT] , [NAMECAT] FROM [FOOD_CATEGORY] ORDER BY [ID_CAT] ASC", conn);
+                SqlCommand cmd = new SqlCommand("SELECT [ID_CAT] , [DISPLAYNAME]" +
+                    " FROM [FOOD_CATEGORY] ORDER BY [ID_CAT] ASC", conn);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    ListCategory.Add(new DTO_FOOD_CATEGORY(dr["ID_CAT"].ToString(), dr["NAMECAT"].ToString()));
+                    ListCategory.Add(new DTO_FOOD_CATEGORY(dr["ID_CAT"].ToString(), dr["DISPLAYNAME"].ToString()));
                 }
                 if (cmd.ExecuteNonQuery() > 0)
                     return true;
