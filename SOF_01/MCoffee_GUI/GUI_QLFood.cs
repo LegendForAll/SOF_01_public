@@ -26,14 +26,12 @@ namespace MCoffee_GUI
         {
             List<DTO_FOOD_CATEGORY> listcategoryView = new List<DTO_FOOD_CATEGORY>();
             food_category_BUS.SelectAll(ref listcategoryView);
-            cbViewCategory.Items.Add(listcategoryView);
             cbViewCategory.DataSource = listcategoryView;
             cbViewCategory.DisplayMember = "NAMECAT";
             
 
             List<DTO_FOOD_CATEGORY> listcategory = new List<DTO_FOOD_CATEGORY>();
             food_category_BUS.SelectAll(ref listcategory);
-            cbCategory.Items.Add(listcategory);
             cbCategory.DataSource = listcategory;
             cbCategory.DisplayMember = "NAMECAT";
             cbIDcategory.DataSource = listcategory;
@@ -54,6 +52,10 @@ namespace MCoffee_GUI
                 txbName.Text = dgvFoodCategory.CurrentRow.Cells["DISPLAYNAME"].Value.ToString();
                 txbPrice.Text = dgvFoodCategory.CurrentRow.Cells["OUTPUTPRICE"].Value.ToString();
             }
+            DTO_FOOD food = new DTO_FOOD();
+            bool test = food_BUS.SelectAllByName(ref food, txbName.Text);
+            if (test)
+                pbPicture.Image = new Bitmap(food.PICTURE);
         }
 
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -94,6 +96,10 @@ namespace MCoffee_GUI
                 txbPrice.Text = dgvFoodCategory.Rows[numrow].Cells[2].Value.ToString();
             }
             cbCategory.Text = cbViewCategory.Text;
+            DTO_FOOD food = new DTO_FOOD();
+            bool test = food_BUS.SelectAllByName(ref food, txbName.Text);
+            if (test)
+                pbPicture.Image = new Bitmap(food.PICTURE);
         }
 
         private void btUpdate_Click(object sender, EventArgs e)
@@ -105,9 +111,10 @@ namespace MCoffee_GUI
                 {
                     DTO_FOOD food_DTO = new DTO_FOOD();
                     food_DTO.ID_FOD = txbID.Text;
-                    food_DTO.OUTPUTPRICE = txbPrice.Text;
+                    food_DTO.OUTPUTPRICE = Int32.Parse( txbPrice.Text);
                     food_DTO.DISPLAYNAME = txbName.Text;
                     food_DTO.ID_CAT = cbIDcategory.Text;
+                    food_DTO.PICTURE = openFileDialog1.FileName;
                     food_BUS.Update(food_DTO);
                     MessageBox.Show("Update thanh cong");
                     cbCategory_SelectedIndexChanged(sender, e);
@@ -140,6 +147,47 @@ namespace MCoffee_GUI
                 {
 
                 }
+            }
+        }
+
+        private void btTim_Click(object sender, EventArgs e)
+        {
+            cbCategory.Text = cbViewCategory.Text;
+            List<DTO_FOOD> listfood = new List<DTO_FOOD>();
+            food_BUS.Search(ref listfood, cbViewCategory.Text,txbSearch.Text);
+            dgvFoodCategory.Columns.Clear();
+            dgvFoodCategory.DataSource = null;
+            dgvFoodCategory.AutoGenerateColumns = false;
+            dgvFoodCategory.AllowUserToAddRows = false;
+            dgvFoodCategory.DataSource = listfood;
+            DataGridViewTextBoxColumn clID_FOD = new DataGridViewTextBoxColumn();
+            clID_FOD.Name = "ID_FOD";
+            clID_FOD.HeaderText = "ID";
+            clID_FOD.DataPropertyName = "ID_FOD";
+            dgvFoodCategory.Columns.Add(clID_FOD);
+            DataGridViewTextBoxColumn clDISPLAYNAME = new DataGridViewTextBoxColumn();
+            clDISPLAYNAME.Name = "DISPLAYNAME";
+            clDISPLAYNAME.HeaderText = "NAME";
+            clDISPLAYNAME.DataPropertyName = "DISPLAYNAME";
+            dgvFoodCategory.Columns.Add(clDISPLAYNAME);
+            DataGridViewTextBoxColumn clOUTPUTPRICE = new DataGridViewTextBoxColumn();
+            clOUTPUTPRICE.Name = "OUTPUTPRICE";
+            clOUTPUTPRICE.HeaderText = "PRICE";
+            clOUTPUTPRICE.DataPropertyName = "OUTPUTPRICE";
+            dgvFoodCategory.Columns.Add(clOUTPUTPRICE);
+        }
+
+        private void btAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btSelectPicture_Click(object sender, EventArgs e)
+        {
+            DialogResult result = openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                pbPicture.Image = new Bitmap(openFileDialog1.FileName);
             }
         }
     }

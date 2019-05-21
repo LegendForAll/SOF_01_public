@@ -38,6 +38,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.cbIDCAT = new System.Windows.Forms.ComboBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pbPicture = new System.Windows.Forms.PictureBox();
+            this.btSelectPicture = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -75,7 +79,7 @@
             // 
             // txbPrice
             // 
-            this.txbPrice.Location = new System.Drawing.Point(520, 68);
+            this.txbPrice.Location = new System.Drawing.Point(134, 173);
             this.txbPrice.Name = "txbPrice";
             this.txbPrice.Size = new System.Drawing.Size(155, 20);
             this.txbPrice.TabIndex = 4;
@@ -83,7 +87,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(453, 71);
+            this.label3.Location = new System.Drawing.Point(68, 176);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 5;
@@ -91,7 +95,7 @@
             // 
             // btAdd
             // 
-            this.btAdd.Location = new System.Drawing.Point(334, 152);
+            this.btAdd.Location = new System.Drawing.Point(330, 259);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(75, 23);
             this.btAdd.TabIndex = 6;
@@ -102,7 +106,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(231, 119);
+            this.label4.Location = new System.Drawing.Point(68, 118);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 7;
@@ -111,25 +115,50 @@
             // cbCategory
             // 
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(299, 110);
+            this.cbCategory.Location = new System.Drawing.Point(134, 118);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(165, 21);
+            this.cbCategory.Size = new System.Drawing.Size(155, 21);
             this.cbCategory.TabIndex = 8;
             // 
             // cbIDCAT
             // 
             this.cbIDCAT.FormattingEnabled = true;
-            this.cbIDCAT.Location = new System.Drawing.Point(299, 110);
+            this.cbIDCAT.Location = new System.Drawing.Point(134, 118);
             this.cbIDCAT.Name = "cbIDCAT";
-            this.cbIDCAT.Size = new System.Drawing.Size(165, 21);
+            this.cbIDCAT.Size = new System.Drawing.Size(155, 21);
             this.cbIDCAT.TabIndex = 9;
             this.cbIDCAT.Visible = false;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // pbPicture
+            // 
+            this.pbPicture.Location = new System.Drawing.Point(472, 118);
+            this.pbPicture.Name = "pbPicture";
+            this.pbPicture.Size = new System.Drawing.Size(193, 137);
+            this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPicture.TabIndex = 10;
+            this.pbPicture.TabStop = false;
+            // 
+            // btSelectPicture
+            // 
+            this.btSelectPicture.Location = new System.Drawing.Point(472, 71);
+            this.btSelectPicture.Name = "btSelectPicture";
+            this.btSelectPicture.Size = new System.Drawing.Size(109, 23);
+            this.btSelectPicture.TabIndex = 11;
+            this.btSelectPicture.Text = "Select Picture";
+            this.btSelectPicture.UseVisualStyleBackColor = true;
+            this.btSelectPicture.Click += new System.EventHandler(this.btSelectPicture_Click);
             // 
             // GUI_AddFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 187);
+            this.ClientSize = new System.Drawing.Size(800, 321);
+            this.Controls.Add(this.btSelectPicture);
+            this.Controls.Add(this.pbPicture);
             this.Controls.Add(this.cbIDCAT);
             this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.label4);
@@ -143,6 +172,7 @@
             this.Name = "GUI_AddFood";
             this.Text = "GUI_FOOD";
             this.Load += new System.EventHandler(this.GUI_AddFood_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,5 +190,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.ComboBox cbIDCAT;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.PictureBox pbPicture;
+        private System.Windows.Forms.Button btSelectPicture;
     }
 }

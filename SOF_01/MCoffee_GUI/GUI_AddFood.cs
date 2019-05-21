@@ -28,7 +28,8 @@ namespace MCoffee_GUI
             food_DTO.ID_FOD = txbID.Text;
             food_DTO.ID_CAT = cbIDCAT.Text;
             food_DTO.DISPLAYNAME = txbName.Text;
-            food_DTO.OUTPUTPRICE = txbPrice.Text;
+            food_DTO.OUTPUTPRICE = Int32.Parse(txbPrice.Text);
+            food_DTO.PICTURE = openFileDialog1.FileName;
             food_BUS.Insert(food_DTO);
             int nextID = 0;
             food_BUS.NextID(ref nextID);
@@ -48,6 +49,15 @@ namespace MCoffee_GUI
             cbIDCAT.DataSource = cbCategory.DataSource;
             cbIDCAT.DisplayMember = "ID_CAT";
             cbIDCAT.Text = "1";
+        }
+
+        private void btSelectPicture_Click(object sender, EventArgs e)
+        {
+            DialogResult result = openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                pbPicture.Image = new Bitmap( openFileDialog1.FileName);
+            }
         }
     }
 }

@@ -37,5 +37,14 @@ namespace MCoffee_BUS
         {
             return food.Delete(ID_FOD);
         }
+        public bool Search(ref List<DTO_FOOD> ListFood, String Category, String searchtext)
+        {
+            return food.Search(ref ListFood, Category, searchtext);
+
+        }
+        public bool SelectAllByName(ref DTO_FOOD Food, String Name)
+        {
+            return food.SelectAllByName(ref Food, Name);
+        }
     }
 }

@@ -31,8 +31,8 @@
             this.btAdd = new System.Windows.Forms.Button();
             this.btDelete = new System.Windows.Forms.Button();
             this.btUpdate = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btTim = new System.Windows.Forms.Button();
+            this.txbSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,7 +45,11 @@
             this.cbIDcategory = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.btSelectPicture = new System.Windows.Forms.Button();
+            this.pbPicture = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFoodCategory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // btAdd
@@ -56,6 +60,7 @@
             this.btAdd.TabIndex = 0;
             this.btAdd.Text = "Add";
             this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // btDelete
             // 
@@ -77,21 +82,22 @@
             this.btUpdate.UseVisualStyleBackColor = true;
             this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
             // 
-            // button4
+            // btTim
             // 
-            this.button4.Location = new System.Drawing.Point(713, 62);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Tìm";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btTim.Location = new System.Drawing.Point(713, 62);
+            this.btTim.Name = "btTim";
+            this.btTim.Size = new System.Drawing.Size(75, 23);
+            this.btTim.TabIndex = 3;
+            this.btTim.Text = "Tìm";
+            this.btTim.UseVisualStyleBackColor = true;
+            this.btTim.Click += new System.EventHandler(this.btTim_Click);
             // 
-            // textBox1
+            // txbSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(545, 62);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 20);
-            this.textBox1.TabIndex = 4;
+            this.txbSearch.Location = new System.Drawing.Point(545, 62);
+            this.txbSearch.Name = "txbSearch";
+            this.txbSearch.Size = new System.Drawing.Size(150, 20);
+            this.txbSearch.TabIndex = 4;
             // 
             // label1
             // 
@@ -195,11 +201,36 @@
             this.cbCategory.Size = new System.Drawing.Size(150, 21);
             this.cbCategory.TabIndex = 16;
             // 
+            // btSelectPicture
+            // 
+            this.btSelectPicture.Location = new System.Drawing.Point(499, 284);
+            this.btSelectPicture.Name = "btSelectPicture";
+            this.btSelectPicture.Size = new System.Drawing.Size(92, 23);
+            this.btSelectPicture.TabIndex = 17;
+            this.btSelectPicture.Text = "Select Picture";
+            this.btSelectPicture.UseVisualStyleBackColor = true;
+            this.btSelectPicture.Click += new System.EventHandler(this.btSelectPicture_Click);
+            // 
+            // pbPicture
+            // 
+            this.pbPicture.Location = new System.Drawing.Point(638, 284);
+            this.pbPicture.Name = "pbPicture";
+            this.pbPicture.Size = new System.Drawing.Size(150, 103);
+            this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPicture.TabIndex = 18;
+            this.pbPicture.TabStop = false;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // GUI_QLFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pbPicture);
+            this.Controls.Add(this.btSelectPicture);
             this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbIDcategory);
@@ -212,8 +243,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.txbSearch);
+            this.Controls.Add(this.btTim);
             this.Controls.Add(this.btUpdate);
             this.Controls.Add(this.btDelete);
             this.Controls.Add(this.btAdd);
@@ -221,6 +252,7 @@
             this.Text = "GUI_QLFood";
             this.Load += new System.EventHandler(this.GUI_QLFood_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFoodCategory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,8 +263,8 @@
         private System.Windows.Forms.Button btAdd;
         private System.Windows.Forms.Button btDelete;
         private System.Windows.Forms.Button btUpdate;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btTim;
+        private System.Windows.Forms.TextBox txbSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -245,5 +277,8 @@
         private System.Windows.Forms.ComboBox cbIDcategory;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.Button btSelectPicture;
+        private System.Windows.Forms.PictureBox pbPicture;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
