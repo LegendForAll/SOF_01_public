@@ -55,6 +55,11 @@ namespace MCoffee_BUS
         {
             return dal.Delete(id);
         }
+
+        public Result Update(DTO_User user)
+        {
+            return dal.Update(user);
+        }
         public bool isExit(String id)
         {
             List<DTO_TypeUser> user = new List<DTO_TypeUser>();

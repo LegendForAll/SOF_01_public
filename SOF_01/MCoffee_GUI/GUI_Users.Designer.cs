@@ -1,6 +1,6 @@
 ﻿namespace MCoffee_GUI
 {
-    partial class GUI_Users
+    partial class GUI_User
     {
         /// <summary>
         /// Required designer variable.
@@ -33,6 +33,13 @@
             this.cbxType = new System.Windows.Forms.ComboBox();
             this.dtpDateStart = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -48,8 +55,15 @@
             this.btnNameUser = new System.Windows.Forms.Button();
             this.btnIdUser = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.cbxType2 = new System.Windows.Forms.ComboBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Id2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Username2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateStart2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbxType2 = new System.Windows.Forms.ComboBox();
             this.dtpDateStart2 = new System.Windows.Forms.DateTimePicker();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtAddress2 = new System.Windows.Forms.TextBox();
@@ -125,12 +139,57 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Name,
+            this.Type,
+            this.Username,
+            this.Password,
+            this.DateStart,
+            this.Address});
             this.dataGridView1.Location = new System.Drawing.Point(28, 549);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 33;
             this.dataGridView1.Size = new System.Drawing.Size(1059, 452);
             this.dataGridView1.TabIndex = 16;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            // 
+            // Name
+            // 
+            this.Name.HeaderText = "Họ tên";
+            this.Name.Name = "Name";
+            // 
+            // Type
+            // 
+            this.Type.HeaderText = "Loại User";
+            this.Type.Name = "Type";
+            // 
+            // Username
+            // 
+            this.Username.HeaderText = "Username";
+            this.Username.Name = "Username";
+            // 
+            // Password
+            // 
+            this.Password.HeaderText = "Password";
+            this.Password.Name = "Password";
+            // 
+            // DateStart
+            // 
+            this.DateStart.HeaderText = "Date Start";
+            this.DateStart.Name = "DateStart";
+            // 
+            // Address
+            // 
+            this.Address.HeaderText = "Địa chỉ";
+            this.Address.Name = "Address";
             // 
             // btnDelete
             // 
@@ -253,8 +312,8 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.cbxType2);
             this.tabPage2.Controls.Add(this.dataGridView2);
+            this.tabPage2.Controls.Add(this.cbxType2);
             this.tabPage2.Controls.Add(this.dtpDateStart2);
             this.tabPage2.Controls.Add(this.btnUpdate);
             this.tabPage2.Controls.Add(this.txtAddress2);
@@ -277,6 +336,60 @@
             this.tabPage2.Text = "Sửa Nhân viên";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id2,
+            this.Name2,
+            this.Type2,
+            this.Username2,
+            this.Password2,
+            this.DateStart2,
+            this.Address2});
+            this.dataGridView2.Location = new System.Drawing.Point(28, 549);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 33;
+            this.dataGridView2.Size = new System.Drawing.Size(1059, 452);
+            this.dataGridView2.TabIndex = 26;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            // 
+            // Id2
+            // 
+            this.Id2.HeaderText = "Id";
+            this.Id2.Name = "Id2";
+            // 
+            // Name2
+            // 
+            this.Name2.HeaderText = "Họ tên";
+            this.Name2.Name = "Name2";
+            // 
+            // Type2
+            // 
+            this.Type2.HeaderText = "Loại User";
+            this.Type2.Name = "Type2";
+            // 
+            // Username2
+            // 
+            this.Username2.HeaderText = "Username";
+            this.Username2.Name = "Username2";
+            // 
+            // Password2
+            // 
+            this.Password2.HeaderText = "Password";
+            this.Password2.Name = "Password2";
+            // 
+            // DateStart2
+            // 
+            this.DateStart2.HeaderText = "Date Start";
+            this.DateStart2.Name = "DateStart2";
+            // 
+            // Address2
+            // 
+            this.Address2.HeaderText = "Địa chỉ";
+            this.Address2.Name = "Address2";
+            // 
             // cbxType2
             // 
             this.cbxType2.FormattingEnabled = true;
@@ -285,17 +398,9 @@
             this.cbxType2.Size = new System.Drawing.Size(568, 33);
             this.cbxType2.TabIndex = 25;
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(28, 549);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 33;
-            this.dataGridView2.Size = new System.Drawing.Size(1059, 452);
-            this.dataGridView2.TabIndex = 24;
-            // 
             // dtpDateStart2
             // 
+            this.dtpDateStart2.Enabled = false;
             this.dtpDateStart2.Location = new System.Drawing.Point(310, 341);
             this.dtpDateStart2.Name = "dtpDateStart2";
             this.dtpDateStart2.Size = new System.Drawing.Size(568, 31);
@@ -338,11 +443,14 @@
             this.txtPassword2.Name = "txtPassword2";
             this.txtPassword2.Size = new System.Drawing.Size(568, 31);
             this.txtPassword2.TabIndex = 16;
+            this.txtPassword2.UseSystemPasswordChar = true;
             // 
             // txtIdUser2
             // 
+            this.txtIdUser2.Enabled = false;
             this.txtIdUser2.Location = new System.Drawing.Point(310, 36);
             this.txtIdUser2.Name = "txtIdUser2";
+            this.txtIdUser2.ReadOnly = true;
             this.txtIdUser2.Size = new System.Drawing.Size(568, 31);
             this.txtIdUser2.TabIndex = 14;
             // 
@@ -409,7 +517,7 @@
             this.btnIdUser2.Text = "Mã Nhân viên";
             this.btnIdUser2.UseVisualStyleBackColor = true;
             // 
-            // GUI_Users
+            // GUI_User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -417,8 +525,9 @@
             this.ClientSize = new System.Drawing.Size(1136, 1112);
             this.Controls.Add(this.tabControl1);
             this.MaximizeBox = false;
-            this.Name = "GUI_Users";
+            //this.Name = "GUI_User";
             this.Text = "GUI_Users";
+            this.Load += new System.EventHandler(this.GUI_User_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -465,8 +574,22 @@
         private System.Windows.Forms.Button btnIdUser2;
         private System.Windows.Forms.DateTimePicker dtpDateStart;
         private System.Windows.Forms.DateTimePicker dtpDateStart2;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.ComboBox cbxType;
         private System.Windows.Forms.ComboBox cbxType2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateStart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Type2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Username2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Password2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateStart2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address2;
     }
 }

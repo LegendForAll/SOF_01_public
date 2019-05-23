@@ -153,5 +153,39 @@ namespace MCoffee_DAL
             return new Result(true);
 
         }
+        public Result Update(DTO_User userDTO)
+        {
+            String query = "UPDATE [USER] ";
+            query += "SET [ID_EMP] = @ID_EMP, [NAME] = @NAME, [TYPE] = @TYPE, [USERNAME] = @USERNAME," +
+                    "[PASSWORD] = @PASSWORD, [DATESTART] = @DATESTART, [ADDRESS] = @ADDRESS ";
+            query += "WHERE [ID_EMP] = @ID_EMP";
+
+            SqlCommand cmmd = new SqlCommand();
+            cmmd.Connection = conn;
+            cmmd.CommandType = System.Data.CommandType.Text;
+            cmmd.CommandText = query;
+
+            cmmd.Parameters.AddWithValue("@ID_EMP", userDTO.Id);
+            cmmd.Parameters.AddWithValue("@NAME", userDTO.Name);
+            cmmd.Parameters.AddWithValue("@TYPE", userDTO.Type);
+            cmmd.Parameters.AddWithValue("@USERNAME", userDTO.Username);
+            cmmd.Parameters.AddWithValue("@PASSWORD", userDTO.Password);
+            cmmd.Parameters.AddWithValue("@DATESTART", userDTO.DateStart);
+            cmmd.Parameters.AddWithValue("@ADDRESS", userDTO.Address);
+
+            try
+            {
+                conn.Open();
+                cmmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                conn.Close();
+                System.Console.WriteLine(e.Message);
+                return new Result(false, e.Message);
+            }
+            conn.Close();
+            return new Result(true);
+        }
     }
 }

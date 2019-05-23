@@ -20,6 +20,8 @@ namespace MCoffee_GUI
         public GUI_Login()
         {
             InitializeComponent();
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.AllowUserToAddRows = false;
         }
 
         private void Btn_login_Click(object sender, EventArgs e)
@@ -44,7 +46,13 @@ namespace MCoffee_GUI
             DataTable tblNV = new DataTable();
             tblNV = nv_BUS.Display("Select * from [USER]");
             dataGridView1.DataSource = tblNV;
-            dataGridView1.AllowUserToAddRows = false;
+            ID.DataPropertyName = "ID_EMP";
+            Name.DataPropertyName = "NAME";
+            Type.DataPropertyName = "TYPE";
+            Username.DataPropertyName = "USERNAME";
+            Password.DataPropertyName = "PASSWORD";
+            DateStart.DataPropertyName = "DATESTART";
+            Address.DataPropertyName = "ADDRESS";
         }
     }
 }

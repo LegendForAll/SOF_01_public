@@ -208,5 +208,5 @@ C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_GUI\bin\Debug\CrystalDecisions.Re
 C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_GUI\bin\Debug\CrystalDecisions.Shared.dll
 C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_GUI\bin\Debug\CrystalDecisions.Windows.Forms.dll
 C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_GUI\bin\Debug\FlashControlV71.dll
-C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_Users.resources
 C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.fReport.resources
+C:\Users\HoangMai\SOF_01_public\SOF_01\MCoffee_GUI\obj\Debug\MCoffee_GUI.GUI_User.resources

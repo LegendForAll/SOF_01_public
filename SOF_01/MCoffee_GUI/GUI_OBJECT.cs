@@ -111,7 +111,7 @@ namespace MCoffee_GUI
                 tbNumberRepo.Text = num_repo;
                 cbSuplier.SelectedIndex = cbSuplier.FindString(suplier);
                 cbUnit.SelectedIndex = cbUnit.FindString(unit);
-            }
+            }   
         }
 
         private void btUpdate_Click(object sender, EventArgs e)
@@ -133,7 +133,7 @@ namespace MCoffee_GUI
             if (bus_object.isExist(id))
             {
                 Result result = bus_object.update(obj);
-                if (result.Flag)
+                if (result.Flag)            
                 {
                     MessageBox.Show("Sửa nguyên liệu thành công", "Successful", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
