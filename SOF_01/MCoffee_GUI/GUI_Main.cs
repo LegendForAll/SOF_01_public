@@ -59,8 +59,15 @@ namespace MCoffee_GUI
             mapOps.Add(3, pbx_report);
             mapOps.Add(4, pbx_ops);
 
+            Dictionary<int, TabPage> tabOps = new Dictionary<int, TabPage>();
+            tabOps.Add(0, tabPage1);
+            tabOps.Add(1, tabPage2);
+            tabOps.Add(2, tabPage3);
+            tabOps.Add(3, tabPage4);
+            tabOps.Add(4, tabPage5);
+
             //locations (x, y)
-            int x = 3;
+            int x = 15;
             int y = 3;
 
             int[] ops = nv_BUS.Options(type);
@@ -69,17 +76,15 @@ namespace MCoffee_GUI
                 if(ops[i] == 0)
                 {
                     mapOps[i].Visible = false;
+                    tabControl1.TabPages.Remove(tabOps[i]);
                 }
                 else
                 {
-                    var point = new Point(3, y);
+                    var point = new Point(x, y);
                     mapOps[i].Location = point;
                     y = y + 65;
                 }
             }
-
-            //panel options
-            //Isvisible(-1);
         }
 
         private void Pbx_user_Click(object sender, EventArgs e)
@@ -93,7 +98,6 @@ namespace MCoffee_GUI
         private void Pbx_order_Click(object sender, EventArgs e)
         {
             MessageBox.Show("order");
-            int options = 1;
             pn_order.BringToFront();
             tabControl1.SelectedTab = tabPage2;
 
@@ -150,14 +154,12 @@ namespace MCoffee_GUI
             ShowBill(id);
 
             DTO_BILL bill = bil_BUS.SelectID_Table(id);
-            tbx_idTable.Text = id;
-            tbx_idBill.Text = bill.ID;
+
         }
 
         private void Pbx_repos_Click(object sender, EventArgs e)
         {
             MessageBox.Show("repos");
-            int options = 2;
             pn_repos.BringToFront();
             tabControl1.SelectedTab = tabPage3;
         }
@@ -165,7 +167,6 @@ namespace MCoffee_GUI
         private void Pbx_report_Click(object sender, EventArgs e)
         {
             MessageBox.Show("report");
-            int options = 3;
             pn_report.BringToFront();
             tabControl1.SelectedTab = tabPage4;
 
@@ -174,7 +175,6 @@ namespace MCoffee_GUI
         private void Pbx_ops_Click(object sender, EventArgs e)
         {
             MessageBox.Show("options");
-            int options = 4;
             pn_ops.BringToFront();
             tabControl1.SelectedTab = tabPage5;
         }
@@ -183,6 +183,18 @@ namespace MCoffee_GUI
         {
             Form rp_price = new GUI_reportPRICE();
             rp_price.Show();
+        }
+
+        private void btn_Food_Click(object sender, EventArgs e)
+        {
+            Form rp_food = new GUI_reportCROSSTAB();
+            rp_food.Show();
+        }
+
+        private void btn_repos_Click(object sender, EventArgs e)
+        {
+            Form rp_repos = new GUI_reportOBJECT();
+            rp_repos.Show();
         }
     }
 }

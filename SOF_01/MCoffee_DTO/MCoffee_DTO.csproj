@@ -48,6 +48,7 @@
     <Compile Include="DTO_FOOD_CATEGORY.cs" />
     <Compile Include="DTO_Input.cs" />
     <Compile Include="DTO_InputInfo.cs" />
+    <Compile Include="DTO_Menu.cs" />
     <Compile Include="DTO_Object.cs" />
     <Compile Include="DTO_Object2.cs" />
     <Compile Include="DTO_Suplier.cs" />

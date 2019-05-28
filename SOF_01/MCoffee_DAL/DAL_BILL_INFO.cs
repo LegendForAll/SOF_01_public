@@ -161,11 +161,12 @@ namespace MCoffee_DAL
             return listbill_in;
         }
 
-        public List<DTO_BILL_INFO> SelectAll(String id_bill)
+        public List<DTO_Menu> SelectAll(String id_bill)
         {
-            List<DTO_BILL_INFO> listbill_in = new List<DTO_BILL_INFO>();
-            String query = "SELECT * FROM [BILL_INFO] ";
-            query += "WHERE [ID_BIL] = @ID_BIL";
+            List<DTO_Menu> listbill_in = new List<DTO_Menu>();
+            String query = "SELECT * ";
+            query += "FROM [BILL_INFO] INNER JOIN [FOOD] ON [BILL_INFO].[ID_FOD] = [FOOD].[ID_FOD] ";
+            query += "WHERE [BILL_INFO].[ID_BIL] = @ID_BIL ";
 
             SqlCommand cmmd = new SqlCommand();
             cmmd.Connection = conn;
@@ -182,9 +183,7 @@ namespace MCoffee_DAL
                 {
                     while (reader.Read())
                     {
-                        listbill_in.Add(new DTO_BILL_INFO(reader["ID_BILF"].ToString(),
-                                                    reader["ID_FOD"].ToString(),
-                                                    reader["ID_BIL"].ToString(),
+                        listbill_in.Add(new DTO_Menu(reader["DISPLAYNAME"].ToString(),
                                                     Convert.ToInt32(reader["COUNT"].ToString()),
                                                     Convert.ToDouble(reader["PRICE"].ToString())));
                     }
