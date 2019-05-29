@@ -25,6 +25,10 @@ namespace MCoffee_BUS
         {
             return food.SelectAll(ref ListFood);
         }
+        public bool Select_ID(ref DTO_FOOD _food, string id_food)
+        {
+            return food.Select_ID(ref _food, id_food);
+        }
         public bool SelectAllByCategory(ref List<DTO_FOOD> ListFood,String Category)
         {
             return food.SelectAllByCategory(ref ListFood, Category);

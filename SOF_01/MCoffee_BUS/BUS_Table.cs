@@ -43,6 +43,11 @@ namespace MCoffee_BUS
             return dal_table.delete(id);
         }
 
+        public DTO_Table Select_ID(String id)
+        {
+            return dal_table.Select_ID(id);
+        }
+
         public List<DTO_Table> SelectAll()
         {
             return dal_table.SelectAll();

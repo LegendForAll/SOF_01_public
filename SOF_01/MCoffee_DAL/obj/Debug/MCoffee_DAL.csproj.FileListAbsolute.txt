@@ -69,3 +69,5 @@ D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_DAL\obj\Debug\MC
 D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.csproj.CopyComplete
 D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.dll
 D:\HK6\SOF_01_public-master\SOF_01_public-master\SOF_01\MCoffee_DAL\obj\Debug\MCoffee_DAL.pdb
+C:\Users\Ho Thai Ngoc\Desktop\SOF_01_public\SOF_01\MCoffee_DAL\bin\Debug\Untility.dll
+C:\Users\Ho Thai Ngoc\Desktop\SOF_01_public\SOF_01\MCoffee_DAL\bin\Debug\Untility.pdb

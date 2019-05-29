@@ -90,6 +90,39 @@ namespace MCoffee_DAL
             return false;
         }
 
+        public bool Select_ID(ref DTO_FOOD food, string id_food)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT [ID_FOD],[ID_CAT],[DISPLAYNAME], "
+                    + "[OUTPUTPRICE] FROM [FOOD] "
+                    + "WHERE [FOOD].[ID_FOD] = @ID_FOD ", conn
+                    );
+
+                cmd.Parameters.AddWithValue("@ID_FOD", id_food);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    food = new DTO_FOOD(dr["ID_FOD"].ToString(), dr["ID_CAT"].ToString()
+                        , dr["DISPLAYNAME"].ToString(), dr["OUTPUTPRICE"].ToString());
+                }
+                if (cmd.ExecuteNonQuery() > 0)
+                    return true;
+            }
+
+            catch (Exception e)
+            { }
+
+            finally
+            {
+                conn.Close();
+            }
+
+            return false;
+        }
+
         public bool SelectAllByCategory(ref List<DTO_FOOD> ListFood, String Category)
         {
             try

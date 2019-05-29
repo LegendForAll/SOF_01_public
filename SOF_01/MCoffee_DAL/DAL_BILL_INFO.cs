@@ -120,6 +120,27 @@ namespace MCoffee_DAL
 
         public Result delete(String id)
         {
+            String query = "DELETE FROM [BILL_INFO] ";
+            query += "WHERE [ID_BILF] = @ID_BILF";
+
+            SqlCommand cmmd = new SqlCommand();
+            cmmd.Connection = conn;
+            cmmd.CommandType = System.Data.CommandType.Text;
+            cmmd.CommandText = query;
+            cmmd.Parameters.AddWithValue("@ID_BILF", id);
+            try
+            {
+                conn.Open();
+                cmmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                conn.Close();
+                System.Console.WriteLine(e.Message);
+                return new Result(false, e.Message);
+            }
+
+            conn.Close();
             return new Result(true);
         }
 

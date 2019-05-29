@@ -67,7 +67,7 @@ namespace MCoffee_GUI
             tabOps.Add(4, tabPage5);
 
             //locations (x, y)
-            int x = 15;
+            int x = 6;
             int y = 3;
 
             int[] ops = nv_BUS.Options(type);
@@ -100,61 +100,8 @@ namespace MCoffee_GUI
             MessageBox.Show("order");
             pn_order.BringToFront();
             tabControl1.SelectedTab = tabPage2;
-
-            //gridview
-            List<DTO_Table> listtab = tab_BUS.SelectAll();
-            dataGridView1.DataSource = listtab;
-
-            //flowpanel
-            foreach (DTO_Table item in listtab)
-            {
-                //create button table
-                Button btn = new Button();
-                btn.Text = item.ID + Environment.NewLine;
-                btn.Size = new Size(80, 80);
-                fpn_table.Controls.Add(btn);
-
-                //add event button_click
-                btn.Click += Btn_Click;
-                btn.Tag = item;
-
-                //set color
-                switch (item.STATUS.ToString())
-                {
-                    case "1":
-                    {
-                            btn.BackColor = Color.Silver;
-                            break;
-                    }
-                    case "0":
-                    {
-                            btn.BackColor = Color.White;
-                            break;
-                    }
-                }
-            }
-        }
-
-        public void ShowBill (String id)
-        {
-            lst_bill.Items.Clear();
-            ListViewItem lsi = new ListViewItem(id.ToString());
-            lsi.SubItems.Add("Food");
-            lsi.SubItems.Add("Bill");
-            lsi.SubItems.Add("Count");
-            lsi.SubItems.Add("Price");
-            lst_bill.Items.Add(lsi);
-        }
-
-
-        private void Btn_Click(object sender, EventArgs e)
-        {
-            String id = ((sender as Button).Tag as DTO_Table).ID;
-            //MessageBox.Show("ID: " + id);
-            ShowBill(id);
-
-            DTO_BILL bill = bil_BUS.SelectID_Table(id);
-
+            Form frm_order = new GUI_ORDER();
+            frm_order.Show();
         }
 
         private void Pbx_repos_Click(object sender, EventArgs e)

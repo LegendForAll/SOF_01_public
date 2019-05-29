@@ -33,6 +33,11 @@ namespace MCoffee_BUS
             return dal_bill_in.insert(bill_in);
         }
 
+        public Result delete(String id)
+        {
+            return dal_bill_in.delete(id);
+        }
+
         public List<DTO_Menu> SelectAll(String id_bill)
         {
             return dal_bill_in.SelectAll(id_bill);
