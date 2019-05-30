@@ -17,7 +17,7 @@ namespace MCoffee_BUS
         {
             return food_category.Insert(dal);
         }
-        public bool NextID(ref int NextID)
+        public bool NextID(ref String NextID)
         {
             return food_category.NextID(ref NextID);
         }

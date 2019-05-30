@@ -30,51 +30,55 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI_Main));
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lb_type = new System.Windows.Forms.Label();
+            this.lb_userName = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.pn_user = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btn_BIL = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btn_CATE = new System.Windows.Forms.Button();
+            this.btn_FOD = new System.Windows.Forms.Button();
             this.pn_order = new System.Windows.Forms.Panel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.pn_repos = new System.Windows.Forms.Panel();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_Food = new System.Windows.Forms.Button();
             this.btn_repos = new System.Windows.Forms.Button();
             this.btn_price = new System.Windows.Forms.Button();
             this.pn_report = new System.Windows.Forms.Panel();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.pn_ops = new System.Windows.Forms.Panel();
-            this.lb_type = new System.Windows.Forms.Label();
-            this.lb_userName = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pbx_user = new System.Windows.Forms.PictureBox();
             this.pbx_order = new System.Windows.Forms.PictureBox();
             this.pbx_repos = new System.Windows.Forms.PictureBox();
             this.pbx_report = new System.Windows.Forms.PictureBox();
             this.pbx_ops = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_user)).BeginInit();
@@ -82,10 +86,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbx_repos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_report)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_ops)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -101,6 +101,38 @@
             this.panel4.Size = new System.Drawing.Size(687, 446);
             this.panel4.TabIndex = 4;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(70, 66);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 22;
+            this.pictureBox2.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lb_type);
+            this.panel1.Controls.Add(this.lb_userName);
+            this.panel1.Location = new System.Drawing.Point(469, 378);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(212, 61);
+            this.panel1.TabIndex = 23;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Username:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -109,6 +141,26 @@
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 22;
             this.label1.Text = "Actor:";
+            // 
+            // lb_type
+            // 
+            this.lb_type.AutoSize = true;
+            this.lb_type.Location = new System.Drawing.Point(67, 36);
+            this.lb_type.Name = "lb_type";
+            this.lb_type.Size = new System.Drawing.Size(31, 13);
+            this.lb_type.TabIndex = 1;
+            this.lb_type.Text = "Type";
+            // 
+            // lb_userName
+            // 
+            this.lb_userName.AutoSize = true;
+            this.lb_userName.BackColor = System.Drawing.Color.Transparent;
+            this.lb_userName.ForeColor = System.Drawing.Color.Black;
+            this.lb_userName.Location = new System.Drawing.Point(67, 14);
+            this.lb_userName.Name = "lb_userName";
+            this.lb_userName.Size = new System.Drawing.Size(55, 13);
+            this.lb_userName.TabIndex = 0;
+            this.lb_userName.Text = "Username";
             // 
             // tabControl1
             // 
@@ -136,15 +188,14 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "User";
             // 
-            // pictureBox2
+            // button7
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(70, 66);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 22;
-            this.pictureBox2.TabStop = false;
+            this.button7.Location = new System.Drawing.Point(11, 50);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(165, 50);
+            this.button7.TabIndex = 15;
+            this.button7.Text = "MANAGER USER";
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // pn_user
             // 
@@ -157,11 +208,11 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Transparent;
-            this.tabPage2.Controls.Add(this.button9);
+            this.tabPage2.Controls.Add(this.btn_BIL);
             this.tabPage2.Controls.Add(this.button8);
             this.tabPage2.Controls.Add(this.pictureBox3);
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.btn_CATE);
+            this.tabPage2.Controls.Add(this.btn_FOD);
             this.tabPage2.Controls.Add(this.pn_order);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -169,6 +220,55 @@
             this.tabPage2.Size = new System.Drawing.Size(602, 347);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Order food";
+            // 
+            // btn_BIL
+            // 
+            this.btn_BIL.Location = new System.Drawing.Point(11, 215);
+            this.btn_BIL.Name = "btn_BIL";
+            this.btn_BIL.Size = new System.Drawing.Size(165, 50);
+            this.btn_BIL.TabIndex = 24;
+            this.btn_BIL.Text = "BILL";
+            this.btn_BIL.UseVisualStyleBackColor = true;
+            this.btn_BIL.Click += new System.EventHandler(this.btn_BIL_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(11, 159);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(165, 50);
+            this.button8.TabIndex = 23;
+            this.button8.Text = "TABLE";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(203, 6);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(393, 335);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 22;
+            this.pictureBox3.TabStop = false;
+            // 
+            // btn_CATE
+            // 
+            this.btn_CATE.Location = new System.Drawing.Point(11, 103);
+            this.btn_CATE.Name = "btn_CATE";
+            this.btn_CATE.Size = new System.Drawing.Size(165, 50);
+            this.btn_CATE.TabIndex = 17;
+            this.btn_CATE.Text = "CATEGORY";
+            this.btn_CATE.UseVisualStyleBackColor = true;
+            this.btn_CATE.Click += new System.EventHandler(this.btn_CATE_Click);
+            // 
+            // btn_FOD
+            // 
+            this.btn_FOD.Location = new System.Drawing.Point(11, 47);
+            this.btn_FOD.Name = "btn_FOD";
+            this.btn_FOD.Size = new System.Drawing.Size(165, 50);
+            this.btn_FOD.TabIndex = 16;
+            this.btn_FOD.Text = "FOOD";
+            this.btn_FOD.UseVisualStyleBackColor = true;
+            this.btn_FOD.Click += new System.EventHandler(this.btn_FOD_Click);
             // 
             // pn_order
             // 
@@ -194,6 +294,52 @@
             this.tabPage3.Text = "Repository";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(203, 6);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(393, 335);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 23;
+            this.pictureBox4.TabStop = false;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(11, 217);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(165, 50);
+            this.button6.TabIndex = 20;
+            this.button6.Text = "INPUT OBJECT";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(11, 159);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(165, 50);
+            this.button5.TabIndex = 19;
+            this.button5.Text = "OBJECT";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(11, 102);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(165, 50);
+            this.button4.TabIndex = 18;
+            this.button4.Text = "UNIT";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(11, 44);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(165, 50);
+            this.button3.TabIndex = 17;
+            this.button3.Text = "SUPLIER";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // pn_repos
             // 
             this.pn_repos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -216,6 +362,16 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Report";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(203, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(393, 335);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
             // 
             // btn_Food
             // 
@@ -273,35 +429,6 @@
             this.pn_ops.Name = "pn_ops";
             this.pn_ops.Size = new System.Drawing.Size(27, 26);
             this.pn_ops.TabIndex = 16;
-            // 
-            // lb_type
-            // 
-            this.lb_type.AutoSize = true;
-            this.lb_type.Location = new System.Drawing.Point(67, 36);
-            this.lb_type.Name = "lb_type";
-            this.lb_type.Size = new System.Drawing.Size(31, 13);
-            this.lb_type.TabIndex = 1;
-            this.lb_type.Text = "Type";
-            // 
-            // lb_userName
-            // 
-            this.lb_userName.AutoSize = true;
-            this.lb_userName.BackColor = System.Drawing.Color.Transparent;
-            this.lb_userName.ForeColor = System.Drawing.Color.Black;
-            this.lb_userName.Location = new System.Drawing.Point(67, 14);
-            this.lb_userName.Name = "lb_userName";
-            this.lb_userName.Size = new System.Drawing.Size(55, 13);
-            this.lb_userName.TabIndex = 0;
-            this.lb_userName.Text = "Username";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Username:";
             // 
             // panel3
             // 
@@ -376,130 +503,6 @@
             this.pbx_ops.TabStop = false;
             this.pbx_ops.Click += new System.EventHandler(this.Pbx_ops_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.lb_type);
-            this.panel1.Controls.Add(this.lb_userName);
-            this.panel1.Location = new System.Drawing.Point(469, 378);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(212, 61);
-            this.panel1.TabIndex = 23;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(203, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(393, 335);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(11, 47);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 50);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "FOOD";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(11, 103);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(165, 50);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "CATEGORY";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(203, 6);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(393, 335);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 22;
-            this.pictureBox3.TabStop = false;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(11, 44);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(165, 50);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "SUPLIER";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(11, 102);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(165, 50);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "UNIT";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(11, 159);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(165, 50);
-            this.button5.TabIndex = 19;
-            this.button5.Text = "OBJECT";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(11, 217);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(165, 50);
-            this.button6.TabIndex = 20;
-            this.button6.Text = "INPUT OBJECT";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(203, 6);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(393, 335);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 23;
-            this.pictureBox4.TabStop = false;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(11, 50);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(165, 50);
-            this.button7.TabIndex = 15;
-            this.button7.Text = "MANAGER USER";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(11, 159);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(165, 50);
-            this.button8.TabIndex = 23;
-            this.button8.Text = "TABLE";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(11, 215);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(165, 50);
-            this.button9.TabIndex = 24;
-            this.button9.Text = "BILL";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
             // GUI_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -512,12 +515,17 @@
             this.Text = "GUI_Main";
             this.Load += new System.EventHandler(this.GUI_Main_Load);
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_user)).EndInit();
@@ -525,11 +533,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbx_repos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_report)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_ops)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -564,8 +567,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_FOD;
+        private System.Windows.Forms.Button btn_CATE;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
@@ -574,6 +577,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btn_BIL;
     }
 }

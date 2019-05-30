@@ -161,6 +161,12 @@
     <Compile Include="GUI_SUPLIER.Designer.cs">
       <DependentUpon>GUI_SUPLIER.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_TABLE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_TABLE.Designer.cs">
+      <DependentUpon>GUI_TABLE.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_UNIT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_SUPLIER.resx">
       <DependentUpon>GUI_SUPLIER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_TABLE.resx">
+      <DependentUpon>GUI_TABLE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_UNIT.resx">
       <DependentUpon>GUI_UNIT.cs</DependentUpon>

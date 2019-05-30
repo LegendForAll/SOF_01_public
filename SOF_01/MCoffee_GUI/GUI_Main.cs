@@ -143,5 +143,23 @@ namespace MCoffee_GUI
             Form rp_repos = new GUI_reportOBJECT();
             rp_repos.Show();
         }
+
+        private void btn_FOD_Click(object sender, EventArgs e)
+        {
+            Form frm_food = new GUI_AddFood();
+            frm_food.Show();
+        }
+
+        private void btn_CATE_Click(object sender, EventArgs e)
+        {
+            Form frm_category = new GUI_AddFoodCategory();
+            frm_category.Show();
+        }
+
+        private void btn_BIL_Click(object sender, EventArgs e)
+        {
+            Form frm_bil = new GUI_BILL();
+            frm_bil.Show();
+        }
     }
 }

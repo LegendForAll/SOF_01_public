@@ -23,7 +23,7 @@ namespace MCoffee_GUI
 
         private void GUI_AddFoodCategory_Load(object sender, EventArgs e)
         {
-            int nextID = 0;
+            String nextID = "";
             food_category_BUS.NextID(ref nextID);
             txbID.Text = nextID.ToString();
         }
@@ -33,10 +33,19 @@ namespace MCoffee_GUI
             DTO_FOOD_CATEGORY food_category_DTO = new DTO_FOOD_CATEGORY();
             food_category_DTO.ID_CAT = txbID.Text;
             food_category_DTO.NAMECAT = txbName.Text;
-            food_category_BUS.Insert(food_category_DTO);
-            int nextID = 0;
-            food_category_BUS.NextID(ref nextID);
-            txbID.Text = nextID.ToString();
+            bool result = food_category_BUS.Insert(food_category_DTO);
+
+            if(result)
+            {
+                MessageBox.Show("Inserted...", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                String nextID = "";
+                food_category_BUS.NextID(ref nextID);
+                txbID.Text = nextID.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Error...", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

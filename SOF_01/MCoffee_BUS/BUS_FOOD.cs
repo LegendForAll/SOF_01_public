@@ -13,11 +13,11 @@ namespace MCoffee_BUS
     {
         DAL_FOOD food = new DAL_FOOD();
 
-        public bool Insert(DTO_FOOD dal)
+        public bool Insert(DTO_FOOD ifood)
         {
-            return food.Insert(dal);
+            return food.Insert(ifood);
         }
-        public bool NextID(ref int NextID)
+        public bool NextID(ref String NextID)
         {
             return food.NextID(ref NextID);
         }

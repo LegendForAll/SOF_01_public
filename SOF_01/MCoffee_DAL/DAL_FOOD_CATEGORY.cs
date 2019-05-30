@@ -34,29 +34,49 @@ namespace MCoffee_DAL
 
             return false;
         }
-        public bool NextID(ref int NextID)
+        public bool NextID(ref String NextID)
         {
+            String query = "SELECT TOP 1 [ID_CAT] FROM [FOOD_CATEGORY] ORDER BY [ID_CAT] DESC";
+            SqlCommand cmmd = new SqlCommand();
+            cmmd.Connection = conn;
+            cmmd.CommandType = System.Data.CommandType.Text;
+            cmmd.CommandText = query;
+
+            String id = String.Empty;
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 [ID_CAT] FROM [FOOD_CATEGORY] ORDER BY [ID_CAT] DESC", conn);
-                SqlDataReader dr = cmd.ExecuteReader();
-                dr.Read();
-                String ID = dr["ID_CAT"].ToString();
-                NextID = int.Parse(ID) + 1;
-                if (cmd.ExecuteNonQuery() > 0)
-                    return true;
+                SqlDataReader reader;
+                reader = cmmd.ExecuteReader();
+
+                if (reader.HasRows == true)
+                {
+                    while (reader.Read())
+                        id = reader["ID_CAT"].ToString();
+                    String pre = id.Substring(0, 2);
+                    String suf = id.Substring(2, id.Length - 2);
+
+                    int num = Int32.Parse(suf);
+                    num = num + 1;
+
+                    String strNum = num.ToString();
+                    suf = suf.Substring(0, suf.Length - strNum.Length);
+                    suf = suf + strNum;
+
+                    id = pre + suf;
+                    NextID = id;
+                }
+                else id = "CA0001";
             }
-
             catch (Exception e)
-            { }
-
-            finally
             {
                 conn.Close();
+                System.Console.WriteLine(e.Message);
+                return false;
             }
 
-            return false;
+            conn.Close();
+            return true;
         }
 
         public bool SelectAll(ref List<DTO_FOOD_CATEGORY> ListCategory)

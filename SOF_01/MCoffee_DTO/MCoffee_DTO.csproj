@@ -46,6 +46,7 @@
     <Compile Include="DTO_BILL_INFO.cs" />
     <Compile Include="DTO_FOOD.cs" />
     <Compile Include="DTO_FOOD_CATEGORY.cs" />
+    <Compile Include="DTO_infoBill.cs" />
     <Compile Include="DTO_Input.cs" />
     <Compile Include="DTO_InputInfo.cs" />
     <Compile Include="DTO_Menu.cs" />

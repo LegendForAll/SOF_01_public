@@ -29,16 +29,15 @@ namespace MCoffee_GUI
             cbViewCategory.Items.Add(listcategoryView);
             cbViewCategory.DataSource = listcategoryView;
             cbViewCategory.DisplayMember = "NAMECAT";
-            
+            cbViewCategory.ValueMember = "ID_CAT";
+
 
             List<DTO_FOOD_CATEGORY> listcategory = new List<DTO_FOOD_CATEGORY>();
             food_category_BUS.SelectAll(ref listcategory);
             cbCategory.Items.Add(listcategory);
             cbCategory.DataSource = listcategory;
             cbCategory.DisplayMember = "NAMECAT";
-            cbIDcategory.DataSource = listcategory;
-            cbIDcategory.DisplayMember = "ID_CAT";
-            cbIDcategory.Text = "1";
+            cbCategory.ValueMember = "ID_CAT";
 
             List<DTO_FOOD> listfood = new List<DTO_FOOD>();
             food_BUS.SelectAllByCategory(ref listfood, cbViewCategory.Text);
@@ -46,7 +45,7 @@ namespace MCoffee_GUI
             dgvFoodCategory.AllowUserToAddRows = false;
             if (listfood.Count == 0)
             {
-                MessageBox.Show("Chưa có nhân viên nào trong danh sách");
+                MessageBox.Show("Food is null.");
             }
             else
             {
@@ -61,21 +60,25 @@ namespace MCoffee_GUI
             cbCategory.Text = cbViewCategory.Text;
             List<DTO_FOOD> listfood = new List<DTO_FOOD>();
             food_BUS.SelectAllByCategory(ref listfood, cbViewCategory.Text);
+
             dgvFoodCategory.Columns.Clear();
             dgvFoodCategory.DataSource = null;
             dgvFoodCategory.AutoGenerateColumns = false;
             dgvFoodCategory.AllowUserToAddRows = false;
             dgvFoodCategory.DataSource = listfood;
+
             DataGridViewTextBoxColumn clID_FOD = new DataGridViewTextBoxColumn();
             clID_FOD.Name = "ID_FOD";
             clID_FOD.HeaderText = "ID";
             clID_FOD.DataPropertyName = "ID_FOD";
             dgvFoodCategory.Columns.Add(clID_FOD);
+
             DataGridViewTextBoxColumn clDISPLAYNAME = new DataGridViewTextBoxColumn();
             clDISPLAYNAME.Name = "DISPLAYNAME";
             clDISPLAYNAME.HeaderText = "NAME";
             clDISPLAYNAME.DataPropertyName = "DISPLAYNAME";
             dgvFoodCategory.Columns.Add(clDISPLAYNAME);
+
             DataGridViewTextBoxColumn clOUTPUTPRICE = new DataGridViewTextBoxColumn();
             clOUTPUTPRICE.Name = "OUTPUTPRICE";
             clOUTPUTPRICE.HeaderText = "PRICE";
@@ -107,10 +110,19 @@ namespace MCoffee_GUI
                     food_DTO.ID_FOD = txbID.Text;
                     food_DTO.OUTPUTPRICE = txbPrice.Text;
                     food_DTO.DISPLAYNAME = txbName.Text;
-                    food_DTO.ID_CAT = cbIDcategory.Text;
-                    food_BUS.Update(food_DTO);
-                    MessageBox.Show("Update thanh cong");
-                    cbCategory_SelectedIndexChanged(sender, e);
+                    food_DTO.ID_CAT = cbCategory.SelectedValue.ToString();
+
+                    bool result = food_BUS.Update(food_DTO);
+
+                    if(result)
+                    {
+                        MessageBox.Show("Updated...", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cbCategory_SelectedIndexChanged(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error...", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }                   
                 }
                 catch (Exception f)
                 { }
@@ -130,7 +142,7 @@ namespace MCoffee_GUI
                 try
                 {
                     food_BUS.Delete(txbID.Text);
-                    MessageBox.Show("Xóa Thành Công");
+                    MessageBox.Show("Deleted...", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     cbCategory_SelectedIndexChanged(sender, e);
                 }
                 catch (Exception f)

@@ -26,28 +26,40 @@ namespace MCoffee_GUI
         {
             DTO_FOOD food_DTO= new DTO_FOOD();
             food_DTO.ID_FOD = txbID.Text;
-            food_DTO.ID_CAT = cbIDCAT.Text;
+            food_DTO.ID_CAT = cbCategory.SelectedValue.ToString();
             food_DTO.DISPLAYNAME = txbName.Text;
             food_DTO.OUTPUTPRICE = txbPrice.Text;
-            food_BUS.Insert(food_DTO);
-            int nextID = 0;
-            food_BUS.NextID(ref nextID);
-            txbID.Text = nextID.ToString();
+
+            bool result =  food_BUS.Insert(food_DTO);
+
+            if(result)
+            {
+                MessageBox.Show("Inserted...", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                String nextID = "";
+                food_BUS.NextID(ref nextID);
+                txbID.Text = nextID.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Error...", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
         }
 
         private void GUI_AddFood_Load(object sender, EventArgs e)
         {
-            int nextID = 0;
+            String nextID = "";
             food_BUS.NextID(ref nextID);
             txbID.Text = nextID.ToString();
+
             List<DTO_FOOD_CATEGORY> listcategory = new List<DTO_FOOD_CATEGORY>();
             food_category_BUS.SelectAll(ref listcategory);
+
             cbCategory.Items.Add(listcategory);
             cbCategory.DataSource = listcategory;
             cbCategory.DisplayMember = "NAMECAT";
-            //cbIDCAT.DataSource = cbCategory.DataSource;
-            //cbIDCAT.DisplayMember = "ID_CAT";
-            //cbIDCAT.Text = "1";
+            cbCategory.ValueMember = "ID_CAT";
         }
     }
 }

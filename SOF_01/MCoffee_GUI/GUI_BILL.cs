@@ -53,8 +53,8 @@ namespace MCoffee_GUI
 
         public void LoadDataGridBillInfo(String id_bill)
         {
-            //List<DTO_BILL_INFO> listInfo = bus_bil_info.SelectAll(id_bill);
-            //dgv_info.DataSource = listInfo;
+            List<DTO_infoBill> listInfo = bus_bil_info.SelectAll_IDBill(id_bill);
+            dgv_info.DataSource = listInfo;
         }
 
         private void dgv_bill_CellClick(object sender, DataGridViewCellEventArgs e)

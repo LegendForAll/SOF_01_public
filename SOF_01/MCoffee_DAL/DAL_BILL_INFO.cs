@@ -144,6 +144,46 @@ namespace MCoffee_DAL
             return new Result(true);
         }
 
+        public List<DTO_infoBill> SelectAll_IDBill(String ibill)
+        {
+            List<DTO_infoBill> listbill_in = new List<DTO_infoBill>();
+            String query = "SELECT * ";
+            query += "FROM [BILL_INFO] INNER JOIN [FOOD] ON [BILL_INFO].[ID_FOD] = [FOOD].[ID_FOD] ";
+            query += "WHERE [BILL_INFO].[ID_BIL] = @ID_BIL ";
+
+            SqlCommand cmmd = new SqlCommand();
+            cmmd.Connection = conn;
+            cmmd.CommandType = System.Data.CommandType.Text;
+            cmmd.CommandText = query;
+            cmmd.Parameters.AddWithValue("@ID_BIL", ibill);
+
+            try
+            {
+                conn.Open();
+                SqlDataReader reader;
+                reader = cmmd.ExecuteReader();
+                if (reader.HasRows == true)
+                {
+                    while (reader.Read())
+                    {
+                        listbill_in.Add(new DTO_infoBill(reader["ID_FOD"].ToString(),
+                                                    reader["DISPLAYNAME"].ToString(),
+                                                    Convert.ToInt32(reader["COUNT"].ToString()),
+                                                    Convert.ToDouble(reader["PRICE"].ToString())));
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                conn.Close();
+                System.Console.WriteLine(e.Message);
+                return null;
+            }
+
+            conn.Close();
+            return listbill_in;
+        }
+
         public List<DTO_BILL_INFO> SelectAll()
         {
             List<DTO_BILL_INFO> listbill_in = new List<DTO_BILL_INFO>();
@@ -153,6 +193,7 @@ namespace MCoffee_DAL
             cmmd.Connection = conn;
             cmmd.CommandType = System.Data.CommandType.Text;
             cmmd.CommandText = query;
+
 
             try
             {
