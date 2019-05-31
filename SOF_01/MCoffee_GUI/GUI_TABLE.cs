@@ -30,30 +30,34 @@ namespace MCoffee_GUI
             //flowpanel
             foreach (DTO_Table item in listtab)
             {
-                //create button table
-                Button btn = new Button();
-                btn.Text = item.ID + Environment.NewLine;
-                btn.Size = new Size(80, 80);
-                fpn_table.Controls.Add(btn);
-
-                //add event button_click
-                btn.Click += Btn_Click;
-                btn.Tag = item;
-
-                //set color
-                switch (item.STATUS.ToString())
+                if (item.AREA != "AR1_DEL")
                 {
-                    case "1":
-                        {
-                            btn.BackColor = Color.Silver;
-                            break;
-                        }
-                    case "0":
-                        {
-                            btn.BackColor = Color.White;
-                            break;
-                        }
+                    //create button table
+                    Button btn = new Button();
+                    btn.Text = item.ID + Environment.NewLine;
+                    btn.Size = new Size(80, 80);
+                    fpn_table.Controls.Add(btn);
+
+                    //add event button_click
+                    btn.Click += Btn_Click;
+                    btn.Tag = item;
+
+                    //set color
+                    switch (item.STATUS.ToString())
+                    {
+                        case "1":
+                            {
+                                btn.BackColor = Color.Silver;
+                                break;
+                            }
+                        case "0":
+                            {
+                                btn.BackColor = Color.White;
+                                break;
+                            }
+                    }
                 }
+
             }
         }
 
@@ -62,14 +66,41 @@ namespace MCoffee_GUI
             
         }
 
+        public void auto_id()
+        {
+            String id = tab_BUS.nextID();
+            tbx_id.Text = id;
+        }
+
         private void GUI_TABLE_Load(object sender, EventArgs e)
         {
             loadFlowpanel();
+            auto_id();
         }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(cbx_status.SelectedIndex.ToString());
+            //MessageBox.Show(cbx_status.SelectedIndex.ToString());
+            DTO_Table itable = new DTO_Table(tbx_id.Text, ntd_number.Value.ToString(), "AR1", ntd_limit.Value.ToString(), cbx_status.SelectedIndex.ToString());
+            Result result = tab_BUS.insert(itable);
+            if(result.Flag)
+            {
+                MessageBox.Show("Inserted...", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadFlowpanel();
+                auto_id();
+            }
+            else
+            {
+                MessageBox.Show("Error...", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            Form frm_up = new GUI_QLTable();
+            this.Hide();
+            frm_up.ShowDialog();
+            this.Show();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace MCoffee_GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GUI_TABLE());
+            Application.Run(new GUI_Login());
         }
     }
 }

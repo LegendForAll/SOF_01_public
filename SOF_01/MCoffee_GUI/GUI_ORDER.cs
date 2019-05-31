@@ -44,29 +44,32 @@ namespace MCoffee_GUI
             //flowpanel
             foreach (DTO_Table item in listtab)
             {
-                //create button table
-                Button btn = new Button();
-                btn.Text = item.ID + Environment.NewLine;
-                btn.Size = new Size(80, 80);
-                fpn_table.Controls.Add(btn);
-
-                //add event button_click
-                btn.Click += Btn_Click;
-                btn.Tag = item;
-
-                //set color
-                switch (item.STATUS.ToString())
+                if (item.AREA != "AR1_DEL")
                 {
-                    case "1":
-                        {
-                            btn.BackColor = Color.Silver;
-                            break;
-                        }
-                    case "0":
-                        {
-                            btn.BackColor = Color.White;
-                            break;
-                        }
+                    //create button table
+                    Button btn = new Button();
+                    btn.Text = item.ID + Environment.NewLine;
+                    btn.Size = new Size(80, 80);
+                    fpn_table.Controls.Add(btn);
+
+                    //add event button_click
+                    btn.Click += Btn_Click;
+                    btn.Tag = item;
+
+                    //set color
+                    switch (item.STATUS.ToString())
+                    {
+                        case "1":
+                            {
+                                btn.BackColor = Color.Silver;
+                                break;
+                            }
+                        case "0":
+                            {
+                                btn.BackColor = Color.White;
+                                break;
+                            }
+                    }
                 }
             }
         }

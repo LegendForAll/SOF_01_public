@@ -101,7 +101,9 @@ namespace MCoffee_GUI
             pn_order.BringToFront();
             tabControl1.SelectedTab = tabPage2;
             Form frm_order = new GUI_ORDER();
-            frm_order.Show();
+            this.Hide();
+            frm_order.ShowDialog();
+            this.Show();
         }
 
         private void Pbx_repos_Click(object sender, EventArgs e)
@@ -130,36 +132,57 @@ namespace MCoffee_GUI
         {
             Form rp_price = new GUI_reportPRICE();
             rp_price.Show();
+            this.Hide();
+            rp_price.ShowDialog();
+            this.Show();
         }
 
         private void btn_Food_Click(object sender, EventArgs e)
         {
             Form rp_food = new GUI_reportCROSSTAB();
-            rp_food.Show();
+            this.Hide();
+            rp_food.ShowDialog();
+            this.Show();
         }
 
         private void btn_repos_Click(object sender, EventArgs e)
         {
             Form rp_repos = new GUI_reportOBJECT();
-            rp_repos.Show();
+            this.Hide();
+            rp_repos.ShowDialog();
+            this.Show();
         }
 
         private void btn_FOD_Click(object sender, EventArgs e)
         {
             Form frm_food = new GUI_AddFood();
-            frm_food.Show();
+            this.Hide();
+            frm_food.ShowDialog();
+            this.Show();
         }
 
         private void btn_CATE_Click(object sender, EventArgs e)
         {
             Form frm_category = new GUI_AddFoodCategory();
-            frm_category.Show();
+            this.Hide();
+            frm_category.ShowDialog();
+            this.Show();
         }
 
         private void btn_BIL_Click(object sender, EventArgs e)
         {
             Form frm_bil = new GUI_BILL();
-            frm_bil.Show();
+            this.Hide();
+            frm_bil.ShowDialog();
+            this.Show();
+        }
+
+        private void btn_Table_Click(object sender, EventArgs e)
+        {
+            Form frm_tab = new GUI_TABLE();
+            this.Hide();
+            frm_tab.ShowDialog();
+            this.Show();
         }
     }
 }

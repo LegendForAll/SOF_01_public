@@ -38,7 +38,7 @@
             this.ntd_number = new System.Windows.Forms.NumericUpDown();
             this.ntd_limit = new System.Windows.Forms.NumericUpDown();
             this.cbx_status = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_update = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ntd_number)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ntd_limit)).BeginInit();
             this.SuspendLayout();
@@ -100,6 +100,7 @@
             // 
             // tbx_id
             // 
+            this.tbx_id.Enabled = false;
             this.tbx_id.Location = new System.Drawing.Point(445, 23);
             this.tbx_id.Name = "tbx_id";
             this.tbx_id.Size = new System.Drawing.Size(70, 20);
@@ -131,21 +132,22 @@
             this.cbx_status.Size = new System.Drawing.Size(70, 21);
             this.cbx_status.TabIndex = 10;
             // 
-            // button2
+            // btn_update
             // 
-            this.button2.Location = new System.Drawing.Point(380, 180);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_update.Location = new System.Drawing.Point(380, 180);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(75, 23);
+            this.btn_update.TabIndex = 11;
+            this.btn_update.Text = "Update";
+            this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // GUI_TABLE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 425);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_update);
             this.Controls.Add(this.cbx_status);
             this.Controls.Add(this.ntd_limit);
             this.Controls.Add(this.ntd_number);
@@ -178,6 +180,6 @@
         private System.Windows.Forms.NumericUpDown ntd_number;
         private System.Windows.Forms.NumericUpDown ntd_limit;
         private System.Windows.Forms.ComboBox cbx_status;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_update;
     }
 }

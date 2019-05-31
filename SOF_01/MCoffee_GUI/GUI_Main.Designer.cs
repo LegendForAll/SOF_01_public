@@ -42,7 +42,7 @@
             this.pn_user = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btn_BIL = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btn_Table = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btn_CATE = new System.Windows.Forms.Button();
             this.btn_FOD = new System.Windows.Forms.Button();
@@ -209,7 +209,7 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Transparent;
             this.tabPage2.Controls.Add(this.btn_BIL);
-            this.tabPage2.Controls.Add(this.button8);
+            this.tabPage2.Controls.Add(this.btn_Table);
             this.tabPage2.Controls.Add(this.pictureBox3);
             this.tabPage2.Controls.Add(this.btn_CATE);
             this.tabPage2.Controls.Add(this.btn_FOD);
@@ -231,14 +231,15 @@
             this.btn_BIL.UseVisualStyleBackColor = true;
             this.btn_BIL.Click += new System.EventHandler(this.btn_BIL_Click);
             // 
-            // button8
+            // btn_Table
             // 
-            this.button8.Location = new System.Drawing.Point(11, 159);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(165, 50);
-            this.button8.TabIndex = 23;
-            this.button8.Text = "TABLE";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btn_Table.Location = new System.Drawing.Point(11, 159);
+            this.btn_Table.Name = "btn_Table";
+            this.btn_Table.Size = new System.Drawing.Size(165, 50);
+            this.btn_Table.TabIndex = 23;
+            this.btn_Table.Text = "TABLE";
+            this.btn_Table.UseVisualStyleBackColor = true;
+            this.btn_Table.Click += new System.EventHandler(this.btn_Table_Click);
             // 
             // pictureBox3
             // 
@@ -576,7 +577,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btn_Table;
         private System.Windows.Forms.Button btn_BIL;
     }
 }

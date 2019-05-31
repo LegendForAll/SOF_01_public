@@ -131,6 +131,12 @@
     <Compile Include="GUI_QLFood.Designer.cs">
       <DependentUpon>GUI_QLFood.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_QLTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_QLTable.Designer.cs">
+      <DependentUpon>GUI_QLTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_reportCROSSTAB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_QLFood.resx">
       <DependentUpon>GUI_QLFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_QLTable.resx">
+      <DependentUpon>GUI_QLTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_reportCROSSTAB.resx">
       <DependentUpon>GUI_reportCROSSTAB.cs</DependentUpon>
