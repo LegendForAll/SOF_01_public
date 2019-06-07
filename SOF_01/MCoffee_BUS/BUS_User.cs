@@ -14,6 +14,11 @@ namespace MCoffee_BUS
         // create 1 object - data access layer doing with database
         DAL_User dal = new DAL_User();
 
+        public String nextID()
+        {
+            return dal.nextID();
+        }
+
         public bool Insert(DTO_User usr)
         {
             return dal.Insert(usr);

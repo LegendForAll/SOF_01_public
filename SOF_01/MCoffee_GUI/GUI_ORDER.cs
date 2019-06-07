@@ -27,6 +27,8 @@ namespace MCoffee_GUI
         List<DTO_BILL_INFO> list_in = new List<DTO_BILL_INFO>();
         int status_tab;
 
+        int isOder = 0;
+
 
         public GUI_ORDER()
         {
@@ -112,9 +114,9 @@ namespace MCoffee_GUI
             if ((sender as Button).BackColor == Color.White)
             {
                 status_tab = 0;
-                btn_add.Enabled = true;
+                //btn_add.Enabled = true;
                 btn_order.Enabled = true;
-                btn_submit.Enabled = true;
+                //btn_submit.Enabled = true;
             }
             if ((sender as Button).BackColor == Color.Green)
             {
@@ -130,6 +132,10 @@ namespace MCoffee_GUI
             cbx_category.DataSource = listcategory;
             cbx_category.DisplayMember = "NAMECAT";
             cbx_category.ValueMember = "ID_CAT";
+
+            btn_add.Enabled = false;
+            btn_order.Enabled = false;
+            btn_submit.Enabled = false;
         }
 
         private void cbx_category_SelectedIndexChanged(object sender, EventArgs e)
@@ -146,6 +152,8 @@ namespace MCoffee_GUI
         {
             if(listbill_info == null)
             {
+                btn_add.Enabled = true;
+                btn_submit.Enabled = true;
                 MessageBox.Show("Table id null.");
                 String id_bill_current = bus_bill.nextID();
                 lb_ID.Text = id_bill_current;
@@ -187,6 +195,20 @@ namespace MCoffee_GUI
                 }
                 //btn_order.Enabled = false;
             }
+
+            //predict price
+            Double sum_price = 0, subprice = 0;
+            if (temp != null)
+            {
+                foreach (DTO_BILL_INFO item in temp)
+                {
+                    sum_price += item.PRICE;
+                }
+
+                lb_sum.Text = sum_price.ToString();
+                lb_sub.Text = subprice.ToString();
+
+            }
         }
 
         private void cbx_food_SelectedIndexChanged(object sender, EventArgs e)
@@ -199,29 +221,41 @@ namespace MCoffee_GUI
 
         private void btn_submit_Click(object sender, EventArgs e)
         {
-            List<DTO_BILL_INFO> temp = list_in;
-            Double sum_price = 0, subprice = 0;
-            Double custom_price = Convert.ToDouble(ntd_price.Value);
-
-            if (temp != null)
+            if(ntd_price.Value == 0)
             {
-                foreach (DTO_BILL_INFO item in temp)
-                {
-                    sum_price += item.PRICE;
-                }
-                subprice = custom_price - sum_price;
+                MessageBox.Show("Don't input price!");
             }
-            MessageBox.Show("price: " + custom_price + " " + subprice +" "+ sum_price);
+            else
+            {
+                List<DTO_BILL_INFO> temp = list_in;
+                Double sum_price = 0, subprice = 0;
+                Double custom_price = Convert.ToDouble(ntd_price.Value);
+
+                if (temp != null)
+                {
+                    foreach (DTO_BILL_INFO item in temp)
+                    {
+                        sum_price += item.PRICE;
+                    }
+                    subprice = custom_price - sum_price;
 
 
-            //insert bill 
-            DTO_BILL bill = new DTO_BILL(lb_ID.Text, dtp_time.Value, "U02", lb_id_table.Text, "DONE", sum_price, subprice);
-            Result result = bus_bill.insert(bill);
 
-            //insert bill info
-            lst_bill.Items.Clear();
-            lb_sum.Text = sum_price.ToString();
-            lb_sub.Text = subprice.ToString();
+                    //insert bill 
+                    DTO_BILL bill = new DTO_BILL(lb_ID.Text, dtp_time.Value, "U02", lb_id_table.Text, "DONE", sum_price, subprice);
+                    Result result = bus_bill.insert(bill);
+
+                    //insert bill info
+                    lst_bill.Items.Clear();
+                    lb_sum.Text = sum_price.ToString();
+                    lb_sub.Text = subprice.ToString();
+
+                    btn_add.Enabled = false;
+                    btn_order.Enabled = false;
+                    btn_submit.Enabled = false;
+                }
+                //MessageBox.Show("price: " + custom_price + " " + subprice + " " + sum_price);
+            }
         }
 
         private void btn_reset_Click(object sender, EventArgs e)
@@ -239,6 +273,7 @@ namespace MCoffee_GUI
             lst_bill.Items.Clear();
             lb_sum.Text = ".....";
             lb_sub.Text = ".....";
+            lb_ID.Text = "ID";
             MessageBox.Show("Reset");
         }
 

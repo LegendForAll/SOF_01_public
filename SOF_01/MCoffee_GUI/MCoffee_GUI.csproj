@@ -137,6 +137,12 @@
     <Compile Include="GUI_QLTable.Designer.cs">
       <DependentUpon>GUI_QLTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_QLUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_QLUser.Designer.cs">
+      <DependentUpon>GUI_QLUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_reportCROSSTAB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,8 +185,20 @@
     <Compile Include="GUI_UNIT.Designer.cs">
       <DependentUpon>GUI_UNIT.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_USER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_USER.Designer.cs">
+      <DependentUpon>GUI_USER.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report_S.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_S.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RP_Food.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -229,6 +247,9 @@
     <EmbeddedResource Include="GUI_QLTable.resx">
       <DependentUpon>GUI_QLTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI_QLUser.resx">
+      <DependentUpon>GUI_QLUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_reportCROSSTAB.resx">
       <DependentUpon>GUI_reportCROSSTAB.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,6 +271,9 @@
     <EmbeddedResource Include="GUI_UNIT.resx">
       <DependentUpon>GUI_UNIT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI_USER.resx">
+      <DependentUpon>GUI_USER.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -260,6 +284,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report_S.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_S.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="RP_Food.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RP_Food.cs</LastGenOutput>

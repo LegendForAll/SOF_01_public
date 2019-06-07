@@ -29,7 +29,6 @@ namespace MCoffee_GUI
             String query = "SELECT OBJECT.DISPLAYNAME, SUPLIER.DISPLAYNAME AS Expr1, OBJECT.NUM_REPO, OBJECT.ID_OBJ, UNIT.DISPLAYNAME AS Expr2 ";
             query += "FROM OBJECT INNER JOIN SUPLIER ON OBJECT.ID_SUP = SUPLIER.ID_SUP ";
             query += "INNER JOIN UNIT ON OBJECT.ID_UNI = UNIT.ID_UNI ";
-            query += "WHERE [OBJECT].[DISPLAYNAME] = '" + obs + "'";
 
             SqlCommand cmmd = new SqlCommand(query, conn);
 
@@ -39,7 +38,8 @@ namespace MCoffee_GUI
             adapter.Fill(dataSet1.DataTable4);
 
             ReportDocument report = new ReportDocument();
-            report.Load("D:\\HK6\\SOF_01_public-master\\SOF_01_public-master\\SOF_01\\MCoffee_GUI\\RP_object.rpt");
+            //report.Load("D:\\HK6\\SOF_01_public-master\\SOF_01_public-master\\SOF_01\\MCoffee_GUI\\RP_object.rpt");
+            report.Load("C:\\Users\\Ho Thai Ngoc\\Desktop\\SOF_01_public\\SOF_01\\MCoffee_GUI\\RP_object.rpt");
             report.SetDataSource(dataSet1.Tables["DataTable4"]);
 
             crystalReportViewer1.ReportSource = report;

@@ -38,7 +38,9 @@ namespace MCoffee_GUI
             query += "INNER JOIN FOOD_CATEGORY ON FOOD.ID_CAT = FOOD_CATEGORY.ID_CAT ";
             query += "INNER JOIN [USER] ON BILL.ID_EMP = [USER].ID_EMP ";
             query += "GROUP BY FOOD_CATEGORY.DISPLAYNAME, FOOD.DISPLAYNAME, BILL.DATETIME, BILL.ID_TAB, BILL_INFO.ID_BILF, BILL_INFO.COUNT ";
-            query += "HAVING [BILL].[DATETIME] = '" + dateInput.ToShortDateString() + "'";
+            query += "HAVING DAY([BILL].[DATETIME]) = '" + dateInput.Day + "'";
+            query += "AND MONTH([BILL].[DATETIME]) = '" + dateInput.Month + "'";
+            query += "AND YEAR([BILL].[DATETIME]) = '" + dateInput.Year + "'";
 
             SqlCommand cmmd = new SqlCommand(query, conn);
 
@@ -47,7 +49,7 @@ namespace MCoffee_GUI
             adapter.Fill(dataSet1.DataTable3);
 
             ReportDocument report = new ReportDocument();
-            report.Load("D:\\HK6\\SOF_01_public-master\\SOF_01_public-master\\SOF_01\\MCoffee_GUI\\RP_Food.rpt");
+            report.Load("C:\\Users\\Ho Thai Ngoc\\Desktop\\SOF_01_public\\SOF_01\\MCoffee_GUI\\RP_Food.rpt");
             report.SetDataSource(dataSet1.Tables["DataTable3"]);
 
             crystalReportViewer1.ReportSource = report;

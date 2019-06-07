@@ -1,155 +1,111 @@
-/*    ==Scripting Parameters==
-
-    Source Server Version : SQL Server 2016 (13.0.1742)
-    Source Database Engine Edition : Microsoft SQL Server Enterprise Edition
-    Source Database Engine Type : Standalone SQL Server
-
-    Target Server Version : SQL Server 2016
-    Target Database Engine Edition : Microsoft SQL Server Enterprise Edition
-    Target Database Engine Type : Standalone SQL Server
-*/
 
 USE [master]
 GO
 
-/****** Object:  Database [DB_SOF_01]    Script Date: 5/14/2019 4:14:56 PM ******/
+WHILE EXISTS(select NULL from sys.databases where name='DB_SOF_01')
+BEGIN
+    DECLARE @SQL varchar(max)
+    SELECT @SQL = COALESCE(@SQL,'') + 'Kill ' + Convert(varchar, SPId) + ';'
+    FROM MASTER..SysProcesses
+    WHERE DBId = DB_ID(N'DB_SOF_01') AND SPId <> @@SPId
+    EXEC(@SQL)
+    DROP DATABASE [DB_SOF_01]
+END
+GO
+
+/* Collation = SQL_Latin1_General_CP1_CI_AS */
 CREATE DATABASE [DB_SOF_01]
- CONTAINMENT = NONE
- ON  PRIMARY 
-( NAME = N'DB_SOF_01', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\DATA\DB_SOF_01.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
- LOG ON 
-( NAME = N'DB_SOF_01_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\DATA\DB_SOF_01_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
-GO
-
-ALTER DATABASE [DB_SOF_01] SET COMPATIBILITY_LEVEL = 130
-GO
-
-IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
-begin
-EXEC [DB_SOF_01].[dbo].[sp_fulltext_database] @action = 'enable'
-end
-GO
-
-ALTER DATABASE [DB_SOF_01] SET ANSI_NULL_DEFAULT OFF 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET ANSI_NULLS OFF 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET ANSI_PADDING OFF 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET ANSI_WARNINGS OFF 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET ARITHABORT OFF 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET AUTO_CLOSE OFF 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET AUTO_SHRINK OFF 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET AUTO_UPDATE_STATISTICS ON 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET CURSOR_CLOSE_ON_COMMIT OFF 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET CURSOR_DEFAULT  GLOBAL 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET CONCAT_NULL_YIELDS_NULL OFF 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET NUMERIC_ROUNDABORT OFF 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET QUOTED_IDENTIFIER OFF 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET RECURSIVE_TRIGGERS OFF 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET  DISABLE_BROKER 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET DATE_CORRELATION_OPTIMIZATION OFF 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET TRUSTWORTHY OFF 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET ALLOW_SNAPSHOT_ISOLATION OFF 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET PARAMETERIZATION SIMPLE 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET READ_COMMITTED_SNAPSHOT OFF 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET HONOR_BROKER_PRIORITY OFF 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET RECOVERY FULL 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET  MULTI_USER 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET PAGE_VERIFY CHECKSUM  
-GO
-
-ALTER DATABASE [DB_SOF_01] SET DB_CHAINING OFF 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET TARGET_RECOVERY_TIME = 60 SECONDS 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET DELAYED_DURABILITY = DISABLED 
-GO
-
-ALTER DATABASE [DB_SOF_01] SET QUERY_STORE = OFF
 GO
 
 USE [DB_SOF_01]
 GO
 
-ALTER DATABASE SCOPED CONFIGURATION SET LEGACY_CARDINALITY_ESTIMATION = OFF;
+USE [DB_SOF_01]
 GO
 
-ALTER DATABASE SCOPED CONFIGURATION FOR SECONDARY SET LEGACY_CARDINALITY_ESTIMATION = PRIMARY;
+/****** Object:  Table [dbo].[TABLE]    Script Date: 5/21/2019 11:17:50 AM ******/
+SET ANSI_NULLS ON
 GO
 
-ALTER DATABASE SCOPED CONFIGURATION SET MAXDOP = 0;
+SET QUOTED_IDENTIFIER ON
 GO
 
-ALTER DATABASE SCOPED CONFIGURATION FOR SECONDARY SET MAXDOP = PRIMARY;
+CREATE TABLE [dbo].[TABLE](
+	[ID_TAB] [nvarchar](10) NOT NULL,
+	[NUMBER] [nvarchar](10) NOT NULL,
+	[AREA] [nvarchar](10) NOT NULL,
+	[LIMIT] [int] NOT NULL,
+	[STATUS] [int] NOT NULL,
+ CONSTRAINT [PK_TABLE] PRIMARY KEY CLUSTERED 
+(
+	[ID_TAB] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO
 
-ALTER DATABASE SCOPED CONFIGURATION SET PARAMETER_SNIFFING = ON;
+
+USE [DB_SOF_01]
 GO
 
-ALTER DATABASE SCOPED CONFIGURATION FOR SECONDARY SET PARAMETER_SNIFFING = PRIMARY;
+/****** Object:  Table [dbo].[USER]    Script Date: 5/14/2019 10:08:19 PM ******/
+SET ANSI_NULLS ON
 GO
 
-ALTER DATABASE SCOPED CONFIGURATION SET QUERY_OPTIMIZER_HOTFIXES = OFF;
+SET QUOTED_IDENTIFIER ON
 GO
 
-ALTER DATABASE SCOPED CONFIGURATION FOR SECONDARY SET QUERY_OPTIMIZER_HOTFIXES = PRIMARY;
+CREATE TABLE [dbo].[USER](
+	[ID_EMP] [nvarchar](10) NOT NULL,
+	[NAME] [nvarchar](50) NOT NULL,
+	[TYPE] [nvarchar](50) NOT NULL,
+	[USERNAME] [nvarchar](50) NOT NULL,
+	[PASSWORD] [nvarchar](10) NOT NULL,
+	[DATESTART] [datetime2](7) NOT NULL,
+	[ADDRESS] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_USER] PRIMARY KEY CLUSTERED 
+(
+	[ID_EMP] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO
 
-ALTER DATABASE [DB_SOF_01] SET  READ_WRITE 
+USE [DB_SOF_01]
 GO
 
+USE [DB_SOF_01]
+GO
+
+/****** Object:  Table [dbo].[FOOD]    Script Date: 5/17/2019 7:51:23 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[FOOD](
+	[ID_FOD] [nvarchar](10) NOT NULL,
+	[ID_CAT] [nvarchar](10) NOT NULL,
+	[DISPLAYNAME] [nvarchar](50) NOT NULL,
+	[OUTPUTPRICE] [money] NOT NULL
+) ON [PRIMARY]
+GO
+
+
+USE [DB_SOF_01]
+GO
+
+/****** Object:  Table [dbo].[FOOD_CATEGORY]    Script Date: 5/17/2019 7:51:46 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[FOOD_CATEGORY](
+	[ID_CAT] [nvarchar](10) NOT NULL,
+	[DISPLAYNAME] [nvarchar](50) NOT NULL
+) ON [PRIMARY]
+GO
 
 USE [DB_SOF_01]
 GO
@@ -266,4 +222,878 @@ REFERENCES [dbo].[OBJECT] ([ID_OBJ])
 GO
 
 ALTER TABLE [dbo].[INPUT_INFO] CHECK CONSTRAINT [FK_INPUT_INFO_OBJECT]
+GO
+
+
+USE [DB_SOF_01]
+GO
+
+/****** Object:  Table [dbo].[BILL]    Script Date: 5/17/2019 7:52:30 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[BILL](
+	[ID_BIL] [nvarchar](10) NOT NULL,
+	[DATETIME] [datetime2](7) NOT NULL,
+	[ID_EMP] [nvarchar](10) NOT NULL,
+	[ID_TAB] [nvarchar](10) NOT NULL,
+	[STATUS] [nvarchar](10) NULL,
+	[SUMPRICE] [money] NOT NULL,
+	[SUBPRICE] [money] NOT NULL,
+ CONSTRAINT [PK_BILL] PRIMARY KEY CLUSTERED 
+(
+	[ID_BIL] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+USE [DB_SOF_01]
+GO
+
+/****** Object:  Table [dbo].[BILL_INFO]    Script Date: 5/17/2019 7:52:57 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[BILL_INFO](
+	[ID_BILF] [nvarchar](10) NOT NULL,
+	[ID_FOD] [nvarchar](10) NOT NULL,
+	[ID_BIL] [nvarchar](10) NOT NULL,
+	[COUNT] [int] NOT NULL,
+	[PRICE] [money] NOT NULL,
+ CONSTRAINT [PK_BILL_INFO] PRIMARY KEY CLUSTERED 
+(
+	[ID_BILF] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+--insert value
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[UNIT] ([ID_UNI], [DISPLAYNAME]) VALUES ('UN01','Kilogam')
+GO
+INSERT INTO [dbo].[UNIT] ([ID_UNI], [DISPLAYNAME]) VALUES ('UN02','gam')
+GO
+INSERT INTO [dbo].[UNIT] ([ID_UNI], [DISPLAYNAME]) VALUES ('UN03','Miligam')
+GO
+
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[TABLE] ([ID_TAB], [NUMBER], [AREA], [LIMIT], [STATUS])
+     VALUES ('TB01', '01', 'AR1', 2, 0)
+GO
+INSERT INTO [dbo].[TABLE] ([ID_TAB], [NUMBER], [AREA], [LIMIT], [STATUS])
+     VALUES ('TB02', '02', 'AR1', 2, 0)
+GO
+INSERT INTO [dbo].[TABLE] ([ID_TAB], [NUMBER], [AREA], [LIMIT], [STATUS])
+     VALUES ('TB03', '03', 'AR1', 2, 0)
+GO
+INSERT INTO [dbo].[TABLE] ([ID_TAB], [NUMBER], [AREA], [LIMIT], [STATUS])
+     VALUES ('TB04', '04', 'AR1', 2, 0)
+GO
+INSERT INTO [dbo].[TABLE] ([ID_TAB], [NUMBER], [AREA], [LIMIT], [STATUS])
+     VALUES ('TB05', '05', 'AR1', 2, 0)
+GO
+INSERT INTO [dbo].[TABLE] ([ID_TAB], [NUMBER], [AREA], [LIMIT], [STATUS])
+     VALUES ('TB06', '06', 'AR1', 2, 0)
+GO
+INSERT INTO [dbo].[TABLE] ([ID_TAB], [NUMBER], [AREA], [LIMIT], [STATUS])
+     VALUES ('TB07', '07', 'AR1', 2, 0)
+GO
+INSERT INTO [dbo].[TABLE] ([ID_TAB], [NUMBER], [AREA], [LIMIT], [STATUS])
+     VALUES ('TB08', '08', 'AR1', 2, 0)
+GO
+INSERT INTO [dbo].[TABLE] ([ID_TAB], [NUMBER], [AREA], [LIMIT], [STATUS])
+     VALUES ('TB09', '09', 'AR1', 2, 0)
+GO
+INSERT INTO [dbo].[TABLE] ([ID_TAB], [NUMBER], [AREA], [LIMIT], [STATUS])
+     VALUES ('TB10', '10', 'AR1', 2, 0)
+GO
+INSERT INTO [dbo].[TABLE] ([ID_TAB], [NUMBER], [AREA], [LIMIT], [STATUS])
+     VALUES ('TB11', '11', 'AR1', 2, 0)
+GO
+INSERT INTO [dbo].[TABLE] ([ID_TAB], [NUMBER], [AREA], [LIMIT], [STATUS])
+     VALUES ('TB12', '12', 'AR1', 2, 0)
+GO
+INSERT INTO [dbo].[TABLE] ([ID_TAB], [NUMBER], [AREA], [LIMIT], [STATUS])
+     VALUES ('TB13', '13', 'AR1', 2, 0)
+GO
+INSERT INTO [dbo].[TABLE] ([ID_TAB], [NUMBER], [AREA], [LIMIT], [STATUS])
+     VALUES ('TB14', '14', 'AR1', 2, 0)
+GO
+INSERT INTO [dbo].[TABLE] ([ID_TAB], [NUMBER], [AREA], [LIMIT], [STATUS])
+     VALUES ('TB15', '15', 'AR1', 2, 0)
+GO
+
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[USER]
+           ([ID_EMP]
+           ,[NAME]
+           ,[TYPE]
+           ,[USERNAME]
+           ,[PASSWORD]
+           ,[DATESTART]
+           ,[ADDRESS])
+     VALUES ('U01', 'Arina', 'E01', 'em01', '1', '9/9/2019', 'HCM')
+GO
+
+INSERT INTO [dbo].[USER]
+           ([ID_EMP]
+           ,[NAME]
+           ,[TYPE]
+           ,[USERNAME]
+           ,[PASSWORD]
+           ,[DATESTART]
+           ,[ADDRESS])
+     VALUES ('U02', 'Nami', 'E02', 'em02', '2', '9/9/2019', 'HCM')
+GO
+
+INSERT INTO [dbo].[USER]
+           ([ID_EMP]
+           ,[NAME]
+           ,[TYPE]
+           ,[USERNAME]
+           ,[PASSWORD]
+           ,[DATESTART]
+           ,[ADDRESS])
+     VALUES ('U03', 'Dari', 'E03', 'em03', '3', '9/9/2019', 'HCM')
+GO
+
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[SUPLIER]
+           ([ID_SUP]
+           ,[DISPLAYNAME]
+           ,[ADDRESS]
+           ,[PHONENUMBER]
+           ,[CONTRACTDATE])
+     VALUES
+           ('SU04'
+           ,'SUP_SUGAR'
+           ,'HCM'
+           ,'0123456789'
+           ,'1/1/2018')
+GO
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[SUPLIER]
+           ([ID_SUP]
+           ,[DISPLAYNAME]
+           ,[ADDRESS]
+           ,[PHONENUMBER]
+           ,[CONTRACTDATE])
+     VALUES
+           ('SU01'
+           ,'SUP_SUGAR'
+           ,'HCM'
+           ,'0123456789'
+           ,'1/1/2018')
+GO
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[SUPLIER]
+           ([ID_SUP]
+           ,[DISPLAYNAME]
+           ,[ADDRESS]
+           ,[PHONENUMBER]
+           ,[CONTRACTDATE])
+     VALUES
+           ('SU02'
+           ,'SUP_MILK'
+           ,'HCM'
+           ,'0123456789'
+           ,'1/1/2018')
+GO
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[SUPLIER]
+           ([ID_SUP]
+           ,[DISPLAYNAME]
+           ,[ADDRESS]
+           ,[PHONENUMBER]
+           ,[CONTRACTDATE])
+     VALUES
+           ('SU03'
+           ,'SUP_TEA'
+           ,'HCM'
+           ,'0123456789'
+           ,'1/1/2018')
+GO
+
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[OBJECT]
+           ([ID_OBJ]
+           ,[DISPLAYNAME]
+           ,[ID_SUP]
+           ,[ID_UNI]
+           ,[NUM_REPO])
+     VALUES
+           ('OB01'
+           ,'Sugar_A'
+           ,'SU01'
+           ,'UN01'
+           ,15)
+GO
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[OBJECT]
+           ([ID_OBJ]
+           ,[DISPLAYNAME]
+           ,[ID_SUP]
+           ,[ID_UNI]
+           ,[NUM_REPO])
+     VALUES
+           ('OB02'
+           ,'Sugar_B'
+           ,'SU01'
+           ,'UN01'
+           ,15)
+GO
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[OBJECT]
+           ([ID_OBJ]
+           ,[DISPLAYNAME]
+           ,[ID_SUP]
+           ,[ID_UNI]
+           ,[NUM_REPO])
+     VALUES
+           ('OB03'
+           ,'Milk_A'
+           ,'SU02'
+           ,'UN02'
+           ,15)
+GO
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[OBJECT]
+           ([ID_OBJ]
+           ,[DISPLAYNAME]
+           ,[ID_SUP]
+           ,[ID_UNI]
+           ,[NUM_REPO])
+     VALUES
+           ('OB04'
+           ,'Milk_B'
+           ,'SU02'
+           ,'UN02'
+           ,15)
+GO
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[OBJECT]
+           ([ID_OBJ]
+           ,[DISPLAYNAME]
+           ,[ID_SUP]
+           ,[ID_UNI]
+           ,[NUM_REPO])
+     VALUES
+           ('OB05'
+           ,'Tea_A'
+           ,'SU03'
+           ,'UN02'
+           ,15)
+GO
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[OBJECT]
+           ([ID_OBJ]
+           ,[DISPLAYNAME]
+           ,[ID_SUP]
+           ,[ID_UNI]
+           ,[NUM_REPO])
+     VALUES
+           ('OB06'
+           ,'Tea_B'
+           ,'SU03'
+           ,'UN02'
+           ,15)
+GO
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[OBJECT]
+           ([ID_OBJ]
+           ,[DISPLAYNAME]
+           ,[ID_SUP]
+           ,[ID_UNI]
+           ,[NUM_REPO])
+     VALUES
+           ('OB07'
+           ,'Sugar_C'
+           ,'SU01'
+           ,'UN01'
+           ,15)
+GO
+
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[INPUT]
+           ([ID_INP]
+           ,[DATEINPUT])
+     VALUES
+           ('IP001'
+           ,'6/1/2019')
+GO
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[INPUT]
+           ([ID_INP]
+           ,[DATEINPUT])
+     VALUES
+           ('IP002'
+           ,'6/1/2019')
+GO
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[INPUT]
+           ([ID_INP]
+           ,[DATEINPUT])
+     VALUES
+           ('IP003'
+           ,'6/1/2019')
+GO
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[INPUT]
+           ([ID_INP]
+           ,[DATEINPUT])
+     VALUES
+           ('IP004'
+           ,'6/1/2019')
+GO
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[INPUT]
+           ([ID_INP]
+           ,[DATEINPUT])
+     VALUES
+           ('IP005'
+           ,'6/1/2019')
+GO
+
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[INPUT_INFO]
+           ([ID_INF]
+           ,[ID_INP]
+           ,[ID_OBJ]
+           ,[ID_EMP]
+           ,[COUNT]
+           ,[INPUTPRICE])
+     VALUES
+           ('IF001'
+           ,'IP001'
+           ,'OB01'
+           ,'U02'
+           ,10
+           ,'100000')
+GO
+
+INSERT INTO [dbo].[INPUT_INFO]
+           ([ID_INF]
+           ,[ID_INP]
+           ,[ID_OBJ]
+           ,[ID_EMP]
+           ,[COUNT]
+           ,[INPUTPRICE])
+     VALUES
+           ('IF003'
+           ,'IP001'
+           ,'OB02'
+           ,'U02'
+           ,10
+           ,'100000')
+GO
+
+
+INSERT INTO [dbo].[INPUT_INFO]
+           ([ID_INF]
+           ,[ID_INP]
+           ,[ID_OBJ]
+           ,[ID_EMP]
+           ,[COUNT]
+           ,[INPUTPRICE])
+     VALUES
+           ('IF003'
+           ,'IP001'
+           ,'OB02'
+           ,'U02'
+           ,10
+           ,'100000')
+GO
+
+
+INSERT INTO [dbo].[INPUT_INFO]
+           ([ID_INF]
+           ,[ID_INP]
+           ,[ID_OBJ]
+           ,[ID_EMP]
+           ,[COUNT]
+           ,[INPUTPRICE])
+     VALUES
+           ('IF004'
+           ,'IP002'
+           ,'OB02'
+           ,'U02'
+           ,10
+           ,'100000')
+GO
+
+INSERT INTO [dbo].[INPUT_INFO]
+           ([ID_INF]
+           ,[ID_INP]
+           ,[ID_OBJ]
+           ,[ID_EMP]
+           ,[COUNT]
+           ,[INPUTPRICE])
+     VALUES
+           ('IF005'
+           ,'IP002'
+           ,'OB03'
+           ,'U02'
+           ,10
+           ,'100000')
+GO
+
+
+INSERT INTO [dbo].[INPUT_INFO]
+           ([ID_INF]
+           ,[ID_INP]
+           ,[ID_OBJ]
+           ,[ID_EMP]
+           ,[COUNT]
+           ,[INPUTPRICE])
+     VALUES
+           ('IF006'
+           ,'IP003'
+           ,'OB01'
+           ,'U02'
+           ,10
+           ,'100000')
+GO
+
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[FOOD_CATEGORY]
+           ([ID_CAT]
+           ,[DISPLAYNAME])
+     VALUES
+           ('CA01'
+           ,'Espresso')
+GO
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[FOOD_CATEGORY]
+           ([ID_CAT]
+           ,[DISPLAYNAME])
+     VALUES
+           ('CA02'
+           ,'Coffee')
+GO
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[FOOD_CATEGORY]
+           ([ID_CAT]
+           ,[DISPLAYNAME])
+     VALUES
+           ('CA03'
+           ,'Milk ')
+GO
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[FOOD_CATEGORY]
+           ([ID_CAT]
+           ,[DISPLAYNAME])
+     VALUES
+           ('CA04'
+           ,'Macha')
+GO
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[FOOD_CATEGORY]
+           ([ID_CAT]
+           ,[DISPLAYNAME])
+     VALUES
+           ('CA05'
+           ,'PinkTea')
+GO
+
+
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[FOOD]
+           ([ID_FOD]
+           ,[ID_CAT]
+           ,[DISPLAYNAME]
+           ,[OUTPUTPRICE])
+     VALUES
+           ('F01'
+           ,'CA01'
+           ,'Cappucino'
+           ,10)
+GO
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[FOOD]
+           ([ID_FOD]
+           ,[ID_CAT]
+           ,[DISPLAYNAME]
+           ,[OUTPUTPRICE])
+     VALUES
+           ('F02'
+           ,'CA01'
+           ,'Americano'
+           ,10)
+GO
+
+INSERT INTO [dbo].[FOOD]
+           ([ID_FOD]
+           ,[ID_CAT]
+           ,[DISPLAYNAME]
+           ,[OUTPUTPRICE])
+     VALUES
+           ('F03'
+           ,'CA01'
+           ,'Late'
+           ,20)
+GO
+
+INSERT INTO [dbo].[FOOD]
+           ([ID_FOD]
+           ,[ID_CAT]
+           ,[DISPLAYNAME]
+           ,[OUTPUTPRICE])
+     VALUES
+           ('F04'
+           ,'CA02'
+           ,'Coffee Phin'
+           ,20)
+GO
+
+INSERT INTO [dbo].[FOOD]
+           ([ID_FOD]
+           ,[ID_CAT]
+           ,[DISPLAYNAME]
+           ,[OUTPUTPRICE])
+     VALUES
+           ('F05'
+           ,'CA02'
+           ,'Coffee Cool'
+           ,20)
+GO
+
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[BILL]
+           ([ID_BIL]
+           ,[DATETIME]
+           ,[ID_EMP]
+           ,[ID_TAB]
+           ,[STATUS]
+           ,[SUMPRICE]
+           ,[SUBPRICE])
+     VALUES
+           ('B01'
+           ,'6/1/2019'
+           ,'U02'
+           ,'TB01'
+           ,'DONE'
+           ,50
+           ,0)
+GO
+
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[BILL]
+           ([ID_BIL]
+           ,[DATETIME]
+           ,[ID_EMP]
+           ,[ID_TAB]
+           ,[STATUS]
+           ,[SUMPRICE]
+           ,[SUBPRICE])
+     VALUES
+           ('B02'
+           ,'6/1/2019'
+           ,'U02'
+           ,'TB02'
+           ,'DONE'
+           ,60
+           ,0)
+GO
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[BILL]
+           ([ID_BIL]
+           ,[DATETIME]
+           ,[ID_EMP]
+           ,[ID_TAB]
+           ,[STATUS]
+           ,[SUMPRICE]
+           ,[SUBPRICE])
+     VALUES
+           ('B03'
+           ,'6/1/2019'
+           ,'U02'
+           ,'TB01'
+           ,'DONE'
+           ,100
+           ,0)
+GO
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[BILL]
+           ([ID_BIL]
+           ,[DATETIME]
+           ,[ID_EMP]
+           ,[ID_TAB]
+           ,[STATUS]
+           ,[SUMPRICE]
+           ,[SUBPRICE])
+     VALUES
+           ('B04'
+           ,'5/1/2019'
+           ,'U02'
+           ,'TB05'
+           ,'DONE'
+           ,50
+           ,0)
+GO
+
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[BILL]
+           ([ID_BIL]
+           ,[DATETIME]
+           ,[ID_EMP]
+           ,[ID_TAB]
+           ,[STATUS]
+           ,[SUMPRICE]
+           ,[SUBPRICE])
+     VALUES
+           ('B05'
+           ,'5/10/2019'
+           ,'U02'
+           ,'TB06'
+           ,'DONE'
+           ,100
+           ,0)
+GO
+
+
+USE [DB_SOF_01]
+GO
+
+INSERT INTO [dbo].[BILL_INFO]
+           ([ID_BILF]
+           ,[ID_FOD]
+           ,[ID_BIL]
+           ,[COUNT]
+           ,[PRICE])
+     VALUES
+           ('BF01'
+           ,'F01'
+           ,'B01'
+           ,4
+           ,40)
+GO
+
+INSERT INTO [dbo].[BILL_INFO]
+           ([ID_BILF]
+           ,[ID_FOD]
+           ,[ID_BIL]
+           ,[COUNT]
+           ,[PRICE])
+     VALUES
+           ('BF02'
+           ,'F01'
+           ,'B01'
+           ,1
+           ,10)
+GO
+
+INSERT INTO [dbo].[BILL_INFO]
+           ([ID_BILF]
+           ,[ID_FOD]
+           ,[ID_BIL]
+           ,[COUNT]
+           ,[PRICE])
+     VALUES
+           ('BF03'
+           ,'F02'
+           ,'B02'
+           ,6
+           ,60)
+GO
+
+INSERT INTO [dbo].[BILL_INFO]
+           ([ID_BILF]
+           ,[ID_FOD]
+           ,[ID_BIL]
+           ,[COUNT]
+           ,[PRICE])
+     VALUES
+           ('BF04'
+           ,'F03'
+           ,'B03'
+           ,2
+           ,40)
+GO
+
+INSERT INTO [dbo].[BILL_INFO]
+           ([ID_BILF]
+           ,[ID_FOD]
+           ,[ID_BIL]
+           ,[COUNT]
+           ,[PRICE])
+     VALUES
+           ('BF05'
+           ,'F04'
+           ,'B03'
+           ,1
+           ,20)
+GO
+
+
+INSERT INTO [dbo].[BILL_INFO]
+           ([ID_BILF]
+           ,[ID_FOD]
+           ,[ID_BIL]
+           ,[COUNT]
+           ,[PRICE])
+     VALUES
+           ('BF06'
+           ,'F01'
+           ,'B04'
+           ,1
+           ,10)
+GO
+
+INSERT INTO [dbo].[BILL_INFO]
+           ([ID_BILF]
+           ,[ID_FOD]
+           ,[ID_BIL]
+           ,[COUNT]
+           ,[PRICE])
+     VALUES
+           ('BF07'
+           ,'F02'
+           ,'B04'
+           ,1
+           ,10)
+GO
+
+INSERT INTO [dbo].[BILL_INFO]
+           ([ID_BILF]
+           ,[ID_FOD]
+           ,[ID_BIL]
+           ,[COUNT]
+           ,[PRICE])
+     VALUES
+           ('BF09'
+           ,'F03'
+           ,'B05'
+           ,1
+           ,20)
+GO
+
+INSERT INTO [dbo].[BILL_INFO]
+           ([ID_BILF]
+           ,[ID_FOD]
+           ,[ID_BIL]
+           ,[COUNT]
+           ,[PRICE])
+     VALUES
+           ('BF11'
+           ,'F04'
+           ,'B05'
+           ,1
+           ,20)
+GO
+
+INSERT INTO [dbo].[BILL_INFO]
+           ([ID_BILF]
+           ,[ID_FOD]
+           ,[ID_BIL]
+           ,[COUNT]
+           ,[PRICE])
+     VALUES
+           ('BF12'
+           ,'F01'
+           ,'B05'
+           ,1
+           ,10)
 GO

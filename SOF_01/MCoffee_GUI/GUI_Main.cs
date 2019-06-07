@@ -126,31 +126,26 @@ namespace MCoffee_GUI
             MessageBox.Show("options");
             pn_ops.BringToFront();
             tabControl1.SelectedTab = tabPage5;
+            Form frm = new GUI_QLFood();
+            frm.Show();
         }
 
         private void btn_price_Click(object sender, EventArgs e)
         {
             Form rp_price = new GUI_reportPRICE();
             rp_price.Show();
-            this.Hide();
-            rp_price.ShowDialog();
-            this.Show();
         }
 
         private void btn_Food_Click(object sender, EventArgs e)
         {
             Form rp_food = new GUI_reportCROSSTAB();
-            this.Hide();
-            rp_food.ShowDialog();
-            this.Show();
+            rp_food.Show();
         }
 
         private void btn_repos_Click(object sender, EventArgs e)
         {
             Form rp_repos = new GUI_reportOBJECT();
-            this.Hide();
-            rp_repos.ShowDialog();
-            this.Show();
+            rp_repos.Show();
         }
 
         private void btn_FOD_Click(object sender, EventArgs e)
