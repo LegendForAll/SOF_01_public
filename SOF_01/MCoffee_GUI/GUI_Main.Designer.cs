@@ -38,7 +38,13 @@
             this.lb_userName = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button7 = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btn_update = new System.Windows.Forms.Button();
             this.pn_user = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btn_BIL = new System.Windows.Forms.Button();
@@ -73,6 +79,8 @@
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabPage3.SuspendLayout();
@@ -179,7 +187,9 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Transparent;
-            this.tabPage1.Controls.Add(this.button7);
+            this.tabPage1.Controls.Add(this.panel5);
+            this.tabPage1.Controls.Add(this.panel2);
+            this.tabPage1.Controls.Add(this.btn_update);
             this.tabPage1.Controls.Add(this.pn_user);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -188,14 +198,72 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "User";
             // 
-            // button7
+            // panel5
             // 
-            this.button7.Location = new System.Drawing.Point(11, 50);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(165, 50);
-            this.button7.TabIndex = 15;
-            this.button7.Text = "MANAGER USER";
-            this.button7.UseVisualStyleBackColor = true;
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Location = new System.Drawing.Point(224, 140);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(361, 165);
+            this.panel5.TabIndex = 18;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(38, 40);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(106, 117);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "1. Category Manager\r\n\r\n2. Food Manager\r\n\r\n3. Table Manager\r\n\r\n4. Bill Manager\r\n\r\n" +
+    "5. Create report";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 13);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Use rights: Cashier";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Location = new System.Drawing.Point(224, 34);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(361, 100);
+            this.panel2.TabIndex = 17;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(38, 37);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(86, 39);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "1. User Manager\r\n\r\n2. Create report";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Use rights: Admin";
+            // 
+            // btn_update
+            // 
+            this.btn_update.Location = new System.Drawing.Point(29, 52);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(165, 50);
+            this.btn_update.TabIndex = 15;
+            this.btn_update.Text = "MANAGER USER";
+            this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // pn_user
             // 
@@ -521,6 +589,10 @@
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabPage3.ResumeLayout(false);
@@ -576,8 +648,14 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.Button btn_Table;
         private System.Windows.Forms.Button btn_BIL;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

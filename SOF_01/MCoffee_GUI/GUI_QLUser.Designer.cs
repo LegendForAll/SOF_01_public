@@ -44,7 +44,7 @@
             this.tbx_id = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_update = new System.Windows.Forms.Button();
-            this.btn_cancel = new System.Windows.Forms.Button();
+            this.btn_insert = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -186,22 +186,24 @@
             this.btn_update.TabIndex = 31;
             this.btn_update.Text = "Update";
             this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
-            // btn_cancel
+            // btn_insert
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(441, 311);
-            this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(75, 23);
-            this.btn_cancel.TabIndex = 32;
-            this.btn_cancel.Text = "Cancel";
-            this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_insert.Location = new System.Drawing.Point(441, 311);
+            this.btn_insert.Name = "btn_insert";
+            this.btn_insert.Size = new System.Drawing.Size(75, 23);
+            this.btn_insert.TabIndex = 32;
+            this.btn_insert.Text = "Insert";
+            this.btn_insert.UseVisualStyleBackColor = true;
+            this.btn_insert.Click += new System.EventHandler(this.btn_insert_Click);
             // 
             // GUI_QLUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(549, 346);
-            this.Controls.Add(this.btn_cancel);
+            this.Controls.Add(this.btn_insert);
             this.Controls.Add(this.btn_update);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dtp_date);
@@ -244,6 +246,6 @@
         private System.Windows.Forms.TextBox tbx_id;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_update;
-        private System.Windows.Forms.Button btn_cancel;
+        private System.Windows.Forms.Button btn_insert;
     }
 }

@@ -44,11 +44,5 @@ namespace MCoffee_GUI
                 MessageBox.Show("Error...", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void btn_update_Click(object sender, EventArgs e)
-        {
-            Form frm = new GUI_QLUser();
-            frm.Show();
-        }
     }
 }

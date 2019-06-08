@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MCoffee_DTO;
 using MCoffee_DAL;
 using System.Data;
+using Untility;
 
 namespace MCoffee_BUS
 {
@@ -34,7 +35,7 @@ namespace MCoffee_BUS
             Dictionary<string, int[]> dic = new Dictionary<string, int[]>();
 
             //binary options
-            int[] E01_option = new int[] { 1, 0, 0, 0, 1 };
+            int[] E01_option = new int[] { 1, 0, 0, 1, 1 };
             int[] E02_option = new int[] { 0, 1, 0, 1, 1 };
             int[] E03_option = new int[] { 0, 0, 1, 1 ,1 };
             dic.Add("E01", E01_option);
@@ -53,6 +54,11 @@ namespace MCoffee_BUS
         public List<DTO_User> SelectAll()
         {
             return dal.SelectAll();
+        }
+
+        public Result Update(DTO_User userDTO)
+        {
+            return dal.Update(userDTO);
         }
     }
 }

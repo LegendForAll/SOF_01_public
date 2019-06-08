@@ -38,6 +38,13 @@ namespace MCoffee_GUI
 
         public void LoadDataGridBill()
         {
+
+            //button load
+            btn_order.Enabled = false;
+            btn_add.Enabled = false;
+            btn_reset.Enabled = false;
+            btn_submit.Enabled = false;
+
             List<DTO_BILL> listbill = bus_bill.SelectAll();
 
             fpn_table.Controls.Clear();
@@ -168,46 +175,54 @@ namespace MCoffee_GUI
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            String id_info = bus_infoBill.nextID();
-            bus_infoBill = new BUS_BILL_INFO();
-            DTO_BILL_INFO temp_info = new DTO_BILL_INFO(id_info, cbx_food.SelectedValue.ToString(), lb_ID.Text,
-                                                    Convert.ToInt32(ntd_food.Value),
-                                                    Convert.ToDouble(lb_price_food.Text) * Convert.ToInt32(ntd_food.Value));
-            bus_infoBill.insert(temp_info);
-            //MessageBox.Show("ID: " + id_info +" "+ cbx_food.SelectedValue.ToString() + " " + lb_ID.Text + Convert.ToInt32(ntd_food.Value).ToString() + " " + lb_price_food.Text);
-
-            list_in.Add(new DTO_BILL_INFO(id_info, cbx_food.SelectedValue.ToString(), lb_ID.Text,
-                                                    Convert.ToInt32(ntd_food.Value),
-                                                    Convert.ToDouble(lb_price_food.Text) * Convert.ToInt32(ntd_food.Value)));
-            //MessageBox.Show(list_in[0].PRICE.ToString());
-
-            //convert list bill - list menu
-            lst_bill.Items.Clear();
-            List<DTO_BILL_INFO> temp = list_in;
-            if (temp != null)
+            if(ntd_food.Value == 0)
             {
-                foreach (DTO_BILL_INFO item in temp)
-                {
-                    ListViewItem lsi = new ListViewItem(item.ID_FOD);
-                    lsi.SubItems.Add(item.COUNT.ToString());
-                    lsi.SubItems.Add(item.PRICE.ToString());
-                    lst_bill.Items.Add(lsi);
-                }
-                //btn_order.Enabled = false;
+                MessageBox.Show("Food is not null.");
             }
-
-            //predict price
-            Double sum_price = 0, subprice = 0;
-            if (temp != null)
+            else
             {
-                foreach (DTO_BILL_INFO item in temp)
+                btn_reset.Enabled = true;
+                String id_info = bus_infoBill.nextID();
+                //bus_infoBill = new BUS_BILL_INFO();
+                //DTO_BILL_INFO temp_info = new DTO_BILL_INFO(id_info, cbx_food.SelectedValue.ToString(), lb_ID.Text,
+                //                                        Convert.ToInt32(ntd_food.Value),
+                //                                        Convert.ToDouble(lb_price_food.Text) * Convert.ToInt32(ntd_food.Value));
+                //bus_infoBill.insert(temp_info);
+                //MessageBox.Show("ID: " + id_info +" "+ cbx_food.SelectedValue.ToString() + " " + lb_ID.Text + Convert.ToInt32(ntd_food.Value).ToString() + " " + lb_price_food.Text);
+
+                list_in.Add(new DTO_BILL_INFO(id_info, cbx_food.SelectedValue.ToString(), lb_ID.Text,
+                                                        Convert.ToInt32(ntd_food.Value),
+                                                        Convert.ToDouble(lb_price_food.Text) * Convert.ToInt32(ntd_food.Value)));
+                //MessageBox.Show(list_in[0].PRICE.ToString());
+
+                //convert list bill - list menu
+                lst_bill.Items.Clear();
+                List<DTO_BILL_INFO> temp = list_in;
+                if (temp.Count() != 0)
                 {
-                    sum_price += item.PRICE;
+                    foreach (DTO_BILL_INFO item in temp)
+                    {
+                        ListViewItem lsi = new ListViewItem(item.ID_FOD);
+                        lsi.SubItems.Add(item.COUNT.ToString());
+                        lsi.SubItems.Add(item.PRICE.ToString());
+                        lst_bill.Items.Add(lsi);
+                    }
+                    //btn_order.Enabled = false;
                 }
 
-                lb_sum.Text = sum_price.ToString();
-                lb_sub.Text = subprice.ToString();
+                //predict price
+                Double sum_price = 0, subprice = 0;
+                if (temp.Count() != 0)
+                {
+                    foreach (DTO_BILL_INFO item in temp)
+                    {
+                        sum_price += item.PRICE;
+                    }
 
+                    lb_sum.Text = sum_price.ToString();
+                    lb_sub.Text = subprice.ToString();
+
+                }
             }
         }
 
@@ -231,11 +246,15 @@ namespace MCoffee_GUI
                 Double sum_price = 0, subprice = 0;
                 Double custom_price = Convert.ToDouble(ntd_price.Value);
 
-                if (temp != null)
+                if (temp.Count() != 0)
                 {
                     foreach (DTO_BILL_INFO item in temp)
                     {
                         sum_price += item.PRICE;
+                        //insert bill infor
+                        String id_info = bus_infoBill.nextID();
+                        DTO_BILL_INFO temp_bill_info = new DTO_BILL_INFO(id_info, item.ID_FOD, item.ID_BIL, item.COUNT, item.PRICE);
+                        bus_infoBill.insert(temp_bill_info);
                     }
                     subprice = custom_price - sum_price;
 
@@ -253,26 +272,37 @@ namespace MCoffee_GUI
                     btn_add.Enabled = false;
                     btn_order.Enabled = false;
                     btn_submit.Enabled = false;
+                    btn_reset.Enabled = false;
                 }
-                //MessageBox.Show("price: " + custom_price + " " + subprice + " " + sum_price);
+                else
+                {
+                    MessageBox.Show("You must add food for bill");
+                }
+
             }
         }
 
         private void btn_reset_Click(object sender, EventArgs e)
         {
             List<DTO_BILL_INFO> temp = list_in;
-            if (temp != null)
+            if (temp.Count() != 0)
             {
                 foreach (DTO_BILL_INFO item in temp)
                 {
                     bus_infoBill = new BUS_BILL_INFO();
                     bus_infoBill.delete(item.ID);
                 }
+
+                btn_add.Enabled = false;
+                btn_order.Enabled = false;
+                btn_submit.Enabled = false;
+                btn_reset.Enabled = false;
             }
 
             lst_bill.Items.Clear();
             lb_sum.Text = ".....";
             lb_sub.Text = ".....";
+            lb_price_food.Text = "...";
             lb_ID.Text = "ID";
             MessageBox.Show("Reset");
         }

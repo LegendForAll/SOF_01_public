@@ -66,7 +66,7 @@
             // 
             this.cbx_food.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_food.FormattingEnabled = true;
-            this.cbx_food.Location = new System.Drawing.Point(240, 37);
+            this.cbx_food.Location = new System.Drawing.Point(341, 32);
             this.cbx_food.Name = "cbx_food";
             this.cbx_food.Size = new System.Drawing.Size(121, 21);
             this.cbx_food.TabIndex = 36;
@@ -76,7 +76,7 @@
             // 
             this.cbx_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_category.FormattingEnabled = true;
-            this.cbx_category.Location = new System.Drawing.Point(240, 12);
+            this.cbx_category.Location = new System.Drawing.Point(341, 7);
             this.cbx_category.Name = "cbx_category";
             this.cbx_category.Size = new System.Drawing.Size(121, 21);
             this.cbx_category.TabIndex = 35;
@@ -84,7 +84,7 @@
             // 
             // btn_order
             // 
-            this.btn_order.Location = new System.Drawing.Point(556, 72);
+            this.btn_order.Location = new System.Drawing.Point(657, 67);
             this.btn_order.Name = "btn_order";
             this.btn_order.Size = new System.Drawing.Size(67, 50);
             this.btn_order.TabIndex = 34;
@@ -94,7 +94,7 @@
             // 
             // btn_submit
             // 
-            this.btn_submit.Location = new System.Drawing.Point(486, 324);
+            this.btn_submit.Location = new System.Drawing.Point(587, 319);
             this.btn_submit.Name = "btn_submit";
             this.btn_submit.Size = new System.Drawing.Size(137, 50);
             this.btn_submit.TabIndex = 33;
@@ -111,7 +111,7 @@
             this.columnHeader5});
             this.lst_bill.Enabled = false;
             this.lst_bill.GridLines = true;
-            this.lst_bill.Location = new System.Drawing.Point(240, 84);
+            this.lst_bill.Location = new System.Drawing.Point(341, 79);
             this.lst_bill.Name = "lst_bill";
             this.lst_bill.Size = new System.Drawing.Size(310, 234);
             this.lst_bill.TabIndex = 29;
@@ -139,12 +139,12 @@
             this.fpn_table.BackColor = System.Drawing.Color.Transparent;
             this.fpn_table.Location = new System.Drawing.Point(7, 39);
             this.fpn_table.Name = "fpn_table";
-            this.fpn_table.Size = new System.Drawing.Size(222, 329);
+            this.fpn_table.Size = new System.Drawing.Size(328, 329);
             this.fpn_table.TabIndex = 28;
             // 
             // btn_reset
             // 
-            this.btn_reset.Location = new System.Drawing.Point(556, 128);
+            this.btn_reset.Location = new System.Drawing.Point(657, 123);
             this.btn_reset.Name = "btn_reset";
             this.btn_reset.Size = new System.Drawing.Size(67, 50);
             this.btn_reset.TabIndex = 37;
@@ -163,7 +163,7 @@
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(556, 12);
+            this.btn_add.Location = new System.Drawing.Point(657, 7);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(67, 54);
             this.btn_add.TabIndex = 39;
@@ -173,7 +173,7 @@
             // 
             // ntd_food
             // 
-            this.ntd_food.Location = new System.Drawing.Point(77, 23);
+            this.ntd_food.Location = new System.Drawing.Point(80, 32);
             this.ntd_food.Name = "ntd_food";
             this.ntd_food.Size = new System.Drawing.Size(41, 20);
             this.ntd_food.TabIndex = 40;
@@ -207,7 +207,7 @@
             // 
             // ntd_price
             // 
-            this.ntd_price.Location = new System.Drawing.Point(380, 324);
+            this.ntd_price.Location = new System.Drawing.Point(481, 319);
             this.ntd_price.Name = "ntd_price";
             this.ntd_price.Size = new System.Drawing.Size(100, 20);
             this.ntd_price.TabIndex = 44;
@@ -217,7 +217,7 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.lb_ID);
             this.panel1.Controls.Add(this.lb_id_table);
-            this.panel1.Location = new System.Drawing.Point(556, 184);
+            this.panel1.Location = new System.Drawing.Point(730, 123);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(67, 59);
             this.panel1.TabIndex = 45;
@@ -238,15 +238,15 @@
             this.panel2.Controls.Add(this.lb_price_food);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.ntd_food);
-            this.panel2.Location = new System.Drawing.Point(367, 12);
+            this.panel2.Location = new System.Drawing.Point(468, 7);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(183, 46);
+            this.panel2.Size = new System.Drawing.Size(183, 66);
             this.panel2.TabIndex = 47;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 30);
+            this.label2.Location = new System.Drawing.Point(21, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 47;
@@ -255,7 +255,7 @@
             // Label10
             // 
             this.Label10.AutoSize = true;
-            this.Label10.Location = new System.Drawing.Point(243, 328);
+            this.Label10.Location = new System.Drawing.Point(344, 323);
             this.Label10.Name = "Label10";
             this.Label10.Size = new System.Drawing.Size(37, 13);
             this.Label10.TabIndex = 48;
@@ -264,7 +264,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(243, 355);
+            this.label4.Location = new System.Drawing.Point(344, 350);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 49;
@@ -273,7 +273,7 @@
             // lb_sum
             // 
             this.lb_sum.AutoSize = true;
-            this.lb_sum.Location = new System.Drawing.Point(286, 328);
+            this.lb_sum.Location = new System.Drawing.Point(387, 323);
             this.lb_sum.Name = "lb_sum";
             this.lb_sum.Size = new System.Drawing.Size(28, 13);
             this.lb_sum.TabIndex = 50;
@@ -282,7 +282,7 @@
             // lb_sub
             // 
             this.lb_sub.AutoSize = true;
-            this.lb_sub.Location = new System.Drawing.Point(286, 355);
+            this.lb_sub.Location = new System.Drawing.Point(387, 350);
             this.lb_sub.Name = "lb_sub";
             this.lb_sub.Size = new System.Drawing.Size(28, 13);
             this.lb_sub.TabIndex = 51;
@@ -301,7 +301,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(242, 66);
+            this.label7.Location = new System.Drawing.Point(343, 61);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 13);
             this.label7.TabIndex = 53;
@@ -321,7 +321,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 383);
+            this.ClientSize = new System.Drawing.Size(728, 383);
             this.Controls.Add(this.btn_put);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btn_free);

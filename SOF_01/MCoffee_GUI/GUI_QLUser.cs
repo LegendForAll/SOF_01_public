@@ -45,5 +45,29 @@ namespace MCoffee_GUI
                 tbx_address.Text = dataGridView1.Rows[numrow].Cells[6].Value.ToString();
             }
         }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            DTO_User iuser = new DTO_User(tbx_id.Text, tbx_name.Text, cbx_type.Text, tbx_user.Text, tbx_pass.Text, dtp_date.Value, tbx_address.Text);
+            Result isUpdate = user_BUS.Update(iuser);
+            if(isUpdate.Flag)
+            {
+                MessageBox.Show("Updated...", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Error...", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_insert_Click(object sender, EventArgs e)
+        {
+            Form frm = new GUI_USER();
+            this.Hide();
+            frm.ShowDialog();
+            LoadData();
+            this.Show();
+        }
     }
 }

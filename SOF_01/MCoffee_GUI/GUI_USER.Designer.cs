@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btn_add = new System.Windows.Forms.Button();
-            this.btn_update = new System.Windows.Forms.Button();
             this.tbx_id = new System.Windows.Forms.TextBox();
             this.tbx_name = new System.Windows.Forms.TextBox();
             this.tbx_pass = new System.Windows.Forms.TextBox();
@@ -48,23 +47,13 @@
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(216, 138);
+            this.btn_add.Location = new System.Drawing.Point(286, 145);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(75, 23);
             this.btn_add.TabIndex = 0;
             this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
-            // 
-            // btn_update
-            // 
-            this.btn_update.Location = new System.Drawing.Point(297, 138);
-            this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(75, 23);
-            this.btn_update.TabIndex = 1;
-            this.btn_update.Text = "Update";
-            this.btn_update.UseVisualStyleBackColor = true;
-            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // tbx_id
             // 
@@ -205,7 +194,6 @@
             this.Controls.Add(this.tbx_pass);
             this.Controls.Add(this.tbx_name);
             this.Controls.Add(this.tbx_id);
-            this.Controls.Add(this.btn_update);
             this.Controls.Add(this.btn_add);
             this.Name = "GUI_USER";
             this.Text = "GUI_USER";
@@ -217,7 +205,6 @@
         #endregion
 
         private System.Windows.Forms.Button btn_add;
-        private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.TextBox tbx_id;
         private System.Windows.Forms.TextBox tbx_name;
         private System.Windows.Forms.TextBox tbx_pass;

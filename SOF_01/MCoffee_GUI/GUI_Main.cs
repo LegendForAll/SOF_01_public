@@ -179,5 +179,11 @@ namespace MCoffee_GUI
             frm_tab.ShowDialog();
             this.Show();
         }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            Form frm = new GUI_QLUser();
+            frm.Show();
+        }
     }
 }
